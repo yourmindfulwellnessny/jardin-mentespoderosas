@@ -4,26 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Florecer en Gratitud · Mujeres con Propósito</title>
-<meta name="description" content="Jardín de Mujeres con Mente Poderosa. Trae a esa mujer en tu vida a quien le das gracias. Sábado 21 de noviembre 2026, 1:30–5:00 pm, Salón Elite, Wallington NJ.">
-<meta property="og:title" content="Florecer en Gratitud · Mujeres con Propósito">
+<meta name="description" content="Una cena de Thanksgiving para agradecer. Trae a esa mujer en tu vida a quien le das gracias. Sábado 21 de noviembre 2026, 1:30–5:00 pm, Salón Elite, Wallington NJ.">
+<meta property="og:title" content="Florecer en Gratitud · Cena de Thanksgiving">
 <meta property="og:description" content="Trae a esa mujer en tu vida a quien le das gracias. Sáb 21 nov · 1:30–5:00 pm · Wallington, NJ.">
 <meta property="og:image" content="jardin.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
+    /* marca */
     --plum: #6b1145;
     --plum-deep: #4a0b30;
     --orchid: #b256a7;
-    --blush: #fbe9ef;
-    --sage: #4f8a3c;
-    --sage-light: #e7f3df;
-    --gold: #c9a24a;
-    --gold-light: #f8eed6;
-    --cream: #fffaf6;
-    --ink: #3b1f33;
-    --muted: #6f5868;
-    --line: #f0dfe7;
+    --leaf: #5aa33f;
+    /* Thanksgiving */
+    --pumpkin: #e36f1e;
+    --pumpkin-soft: #fde3cc;
+    --cranberry: #a31f3c;
+    --gold: #e0a531;
+    --gold-soft: #fff1d2;
+    --cream: #fff8ef;
+    --ink: #3b1f2b;
+    --muted: #6e5560;
+    --line: #f3dcc8;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -34,202 +37,221 @@
     line-height: 1.65;
     font-size: 18px;
     overflow-x: hidden;
+    text-align: center;
   }
   [hidden] { display: none !important; }
   img { max-width: 100%; display: block; }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
-  h1, h2, h3, .brand { font-family: 'Quicksand', sans-serif; line-height: 1.15; text-wrap: balance; }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 0 16px; }
+  h1, h2, h3, .q { font-family: 'Quicksand', sans-serif; line-height: 1.15; text-wrap: balance; }
   p { text-wrap: pretty; }
-  svg.i { width: 26px; height: 26px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .ico3d { width: 64px; height: 64px; margin: 0 auto; }
 
-  /* ---------- petals ---------- */
-  .petals { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
-  .petals span { position: absolute; top: -40px; opacity: 0.5; animation: fall linear infinite; }
-  @keyframes fall { 0% { transform: translateY(-40px) rotate(0deg); } 100% { transform: translateY(110vh) rotate(360deg); } }
-  @media (prefers-reduced-motion: reduce) { .petals { display: none; } }
-  main, header, footer, .photo-wrap { position: relative; z-index: 1; }
+  /* hojas que caen */
+  .leaves { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .leaves img { position: absolute; top: -50px; opacity: 0.75; animation: fall linear infinite; }
+  @keyframes fall {
+    0% { transform: translate(0, -50px) rotate(0deg); }
+    50% { transform: translate(30px, 50vh) rotate(180deg); }
+    100% { transform: translate(-20px, 110vh) rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) { .leaves { display: none; } }
+  header, main, footer, .band { position: relative; z-index: 1; }
 
-  /* ---------- hero ---------- */
-  .hero {
-    text-align: center;
-    padding: 28px 16px 0;
-    background:
-      radial-gradient(ellipse at 15% 10%, rgba(178, 86, 167, 0.18), transparent 55%),
-      radial-gradient(ellipse at 90% 0%, rgba(79, 138, 60, 0.14), transparent 50%),
-      linear-gradient(180deg, var(--blush) 0%, var(--cream) 85%);
-  }
-  .logo { width: min(230px, 60vw); margin: 0 auto 16px; }
-  .community {
-    font-family: 'Quicksand', sans-serif; font-weight: 700;
-    font-size: clamp(1rem, 4.4vw, 1.25rem); color: var(--sage);
-    max-width: 340px; margin: 0 auto; text-align: center; line-height: 1.3;
-  }
-  .community::after { content: ""; display: block; width: 60px; height: 3px; border-radius: 3px; background: var(--gold); margin: 12px auto 0; }
-  .hero h1 { font-size: clamp(2.5rem, 11vw, 4.2rem); color: var(--plum); font-weight: 700; margin-top: 14px; }
-  .hero .sub { font-family: 'Quicksand', sans-serif; font-weight: 600; font-size: clamp(1.4rem, 6vw, 1.9rem); color: var(--orchid); margin-top: 4px; }
-  .hero .lead {
-    font-family: 'Quicksand', sans-serif; font-weight: 700;
-    font-size: clamp(1.35rem, 5.4vw, 1.7rem); color: var(--plum-deep);
-    max-width: 440px; margin: 18px auto 0; text-align: center; text-wrap: balance;
-  }
+  /* botones */
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 10px;
     text-decoration: none; border: 0; cursor: pointer; font-family: 'Quicksand', sans-serif;
-    background: linear-gradient(135deg, var(--plum), var(--orchid));
-    color: #fff; font-weight: 700; font-size: 1.15rem;
-    padding: 17px 30px; border-radius: 999px;
-    box-shadow: 0 10px 26px rgba(107, 17, 69, 0.28);
+    background: linear-gradient(135deg, var(--pumpkin), var(--cranberry));
+    color: #fff; font-weight: 700; font-size: clamp(1rem, 4.6vw, 1.18rem);
+    padding: 16px 24px; white-space: nowrap; border-radius: 999px;
+    box-shadow: 0 12px 28px rgba(163, 31, 60, 0.32);
     transition: transform .15s ease, box-shadow .15s ease;
   }
-  .btn svg.i { width: 22px; height: 22px; }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(107, 17, 69, 0.34); }
+  .btn img { width: 30px; height: 30px; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(163, 31, 60, 0.38); }
   .btn.block { display: flex; width: 100%; }
+  .btn.green { background: linear-gradient(135deg, #3f8a2f, var(--leaf)); box-shadow: 0 10px 24px rgba(63, 138, 47, 0.3); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    padding: 26px 16px 40px;
+    background:
+      radial-gradient(ellipse at 10% 0%, rgba(227, 111, 30, 0.22), transparent 55%),
+      radial-gradient(ellipse at 95% 10%, rgba(178, 86, 167, 0.20), transparent 50%),
+      linear-gradient(180deg, #ffe9d6 0%, var(--cream) 90%);
+  }
+  .logo { width: min(220px, 58vw); margin: 0 auto 14px; }
+  .community { font-family: 'Quicksand', sans-serif; font-weight: 700; color: var(--leaf); font-size: clamp(1rem, 4.4vw, 1.2rem); line-height: 1.3; max-width: 330px; margin: 0 auto; }
+  .hero h1 { font-size: clamp(2.5rem, 11vw, 4.2rem); color: var(--plum); font-weight: 700; margin-top: 12px; }
+  .hero .sub { display: flex; align-items: center; justify-content: center; gap: 8px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: clamp(1.4rem, 6vw, 1.9rem); color: var(--pumpkin); margin-top: 6px; }
+  .hero .sub img { width: 46px; height: 46px; }
+  .hero .lead { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: clamp(1.3rem, 5.4vw, 1.65rem); color: var(--plum-deep); max-width: 420px; margin: 16px auto 0; }
+  .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 18px; }
+  .chips span { background: #fff; border: 1.5px solid var(--line); border-radius: 999px; padding: 6px 14px; font-weight: 800; font-size: 0.92rem; color: var(--cranberry); }
   .hero .btn { margin-top: 22px; }
-  .countdown { margin-top: 12px; font-size: 0.98rem; color: var(--muted); font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
-  .countdown b { color: var(--plum); }
-  .countdown svg.i { width: 18px; height: 18px; color: var(--orchid); }
+  .countdown { margin-top: 12px; font-size: 0.98rem; color: var(--muted); font-weight: 700; }
+  .countdown b { color: var(--cranberry); }
 
-  /* ---------- photo ---------- */
-  .photo-wrap { padding: 34px 16px 10px; }
-  .photo {
-    max-width: 680px; margin: 0 auto; position: relative;
-    background: #fff; padding: 10px 10px 52px; border-radius: 6px;
-    box-shadow: 0 18px 40px rgba(74, 11, 48, 0.18);
-    transform: rotate(-1.2deg);
+  /* ---------- la cena (central) ---------- */
+  .band.dinner {
+    background:
+      radial-gradient(circle at 50% 0%, rgba(224, 165, 49, 0.35), transparent 60%),
+      linear-gradient(180deg, #7a1838 0%, var(--plum-deep) 100%);
+    color: #fff; padding: 48px 16px 54px;
   }
-  .photo img { border-radius: 3px; width: 100%; aspect-ratio: 672 / 325; object-fit: cover; }
-  .photo figcaption {
-    position: absolute; left: 0; right: 0; bottom: 12px; text-align: center;
-    font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--plum);
+  .eyebrow { font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 800; color: var(--leaf); }
+  .dinner .eyebrow { color: var(--gold); }
+  .dinner h2 { font-size: clamp(2rem, 8vw, 2.8rem); margin-top: 6px; }
+  .dinner .intro { max-width: 520px; margin: 12px auto 0; font-size: 1.08rem; opacity: 0.95; }
+  .turkey { width: min(190px, 48vw); margin: 22px auto 0; filter: drop-shadow(0 18px 26px rgba(0,0,0,0.35)); animation: bob 4s ease-in-out infinite; }
+  @keyframes bob { 50% { transform: translateY(-8px); } }
+  .menu {
+    max-width: 520px; margin: 22px auto 0; background: var(--cream); color: var(--ink);
+    border-radius: 24px; padding: 26px 20px 22px; position: relative;
+    box-shadow: 0 20px 44px rgba(0,0,0,0.3);
+    outline: 2px solid var(--gold); outline-offset: -10px;
   }
+  .menu h3 { color: var(--cranberry); font-size: 1.5rem; }
+  .menu .sep { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 8px 0 6px; color: var(--gold); }
+  .menu .sep::before, .menu .sep::after { content: ""; width: 60px; height: 1.5px; background: var(--gold); }
+  .menu .sep img { width: 26px; height: 26px; }
+  .dish { padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .dish:last-child { border-bottom: 0; }
+  .dish img { width: 58px; height: 58px; margin: 0 auto 4px; }
+  .dish b { display: block; font-family: 'Quicksand', sans-serif; font-weight: 700; color: var(--plum); font-size: 1.15rem; line-height: 1.3; }
+  .dish span { color: var(--muted); font-size: 0.98rem; }
 
-  /* ---------- sections ---------- */
+  /* ---------- foto ---------- */
+  .photo-wrap { padding: 40px 16px 6px; overflow: hidden; }
+  .photo { max-width: 680px; margin: 0 auto; background: #fff; padding: 10px 10px 50px; border-radius: 6px; box-shadow: 0 18px 40px rgba(74, 11, 48, 0.18); transform: rotate(-1.2deg); position: relative; }
+  .photo img { width: 100%; border-radius: 3px; }
+  .photo figcaption { position: absolute; left: 0; right: 0; bottom: 12px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 1.2rem; color: var(--plum); }
+  .photo .deco { position: absolute; width: 58px; height: 58px; }
+  .photo .d1 { top: -26px; right: -10px; transform: rotate(14deg); }
+  .photo .d2 { bottom: -22px; left: -12px; transform: rotate(-18deg); }
+
+  /* ---------- secciones ---------- */
   section { padding: 46px 0 6px; }
-  .eyebrow { text-align: center; font-size: 0.82rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--sage); font-weight: 800; }
-  section h2 { text-align: center; color: var(--plum); font-size: clamp(1.8rem, 7vw, 2.4rem); margin-top: 6px; font-weight: 700; }
-  .story p { text-align: center; font-size: 1.08rem; margin-top: 14px; }
-  .story p strong { color: var(--plum); }
+  section h2 { color: var(--plum); font-size: clamp(1.8rem, 7vw, 2.4rem); margin-top: 6px; font-weight: 700; }
+  .story p { font-size: 1.08rem; margin-top: 14px; }
+  .story p strong { color: var(--cranberry); }
 
-  .care {
-    margin-top: 26px; background: var(--sage-light); border-radius: 22px; padding: 22px 20px;
-    display: flex; gap: 14px; align-items: flex-start;
-  }
-  .care .badge { width: 52px; height: 52px; border-radius: 50%; background: #fff; color: var(--sage); display: grid; place-items: center; flex-shrink: 0; }
-  .care h3 { color: var(--sage); font-size: 1.2rem; }
-  .care p { margin-top: 6px; font-size: 1.02rem; text-align: left; }
+  .care { margin-top: 26px; background: #fff; border-radius: 24px; padding: 24px 20px; border: 1.5px solid var(--line); box-shadow: 0 10px 26px rgba(163, 31, 60, 0.07); }
+  .care img { width: 76px; height: 76px; margin: 0 auto 6px; }
+  .care h3 { color: var(--leaf); font-size: 1.3rem; }
+  .care p { margin-top: 8px; font-size: 1.04rem; }
 
-  .quote {
-    margin: 28px auto 0; max-width: 560px; text-align: center;
-    background: linear-gradient(150deg, var(--plum-deep), var(--plum) 70%);
-    color: #fff; border-radius: 26px; padding: 30px 24px 26px;
-  }
-  .quote .badge { width: 56px; height: 56px; margin: 0 auto 14px; border-radius: 50%; background: rgba(255,255,255,0.14); display: grid; place-items: center; color: var(--gold-light); }
-  .quote .badge svg.i { width: 30px; height: 30px; }
-  .quote blockquote { font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: clamp(1.45rem, 6vw, 1.9rem); line-height: 1.3; }
-  .quote blockquote span { display: block; color: var(--gold-light); }
-  .quote .sign { margin-top: 16px; display: inline-block; padding-top: 12px; border-top: 2px solid rgba(255,255,255,0.3); font-weight: 800; letter-spacing: 0.08em; font-size: 0.95rem; text-transform: uppercase; }
+  .quote { margin: 26px auto 0; max-width: 560px; background: linear-gradient(140deg, var(--pumpkin), var(--cranberry)); color: #fff; border-radius: 26px; padding: 28px 22px 24px; box-shadow: 0 14px 30px rgba(163, 31, 60, 0.25); }
+  .quote img { width: 60px; height: 60px; margin: 0 auto 10px; }
+  .quote .q { font-weight: 700; font-size: clamp(1.5rem, 6.2vw, 2rem); line-height: 1.28; }
+  .quote .sign { display: inline-block; margin-top: 14px; padding-top: 10px; border-top: 2px solid rgba(255,255,255,0.45); font-weight: 800; letter-spacing: 0.08em; font-size: 0.95rem; text-transform: uppercase; }
 
-  /* ---------- details ---------- */
-  .pill {
-    display: flex; align-items: center; justify-content: center; gap: 8px; width: fit-content;
-    margin: 14px auto 0; background: var(--plum); color: #fff;
-    border-radius: 999px; padding: 8px 18px; font-weight: 800; font-size: 0.98rem;
-  }
-  .pill svg.i { width: 18px; height: 18px; }
+  .pill { display: inline-flex; align-items: center; justify-content: center; gap: 8px; margin-top: 12px; background: var(--cranberry); color: #fff; border-radius: 999px; padding: 8px 18px; font-weight: 800; font-size: 0.98rem; }
+  .pill img { width: 24px; height: 24px; }
   .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
-  .tile {
-    background: #fff; border-radius: 20px; padding: 18px 14px; text-align: center;
-    border: 1px solid var(--line); box-shadow: 0 6px 18px rgba(107, 17, 69, 0.06);
-  }
-  .tile .ico { width: 54px; height: 54px; border-radius: 50%; margin: 0 auto 8px; display: grid; place-items: center; background: var(--blush); color: var(--plum); }
-  .tile:nth-child(even) .ico { background: var(--sage-light); color: var(--sage); }
-  .tile .lbl { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); font-weight: 800; }
+  .tile { background: #fff; border-radius: 22px; padding: 18px 12px; border: 1.5px solid var(--line); box-shadow: 0 8px 20px rgba(163, 31, 60, 0.06); }
+  .tile img { width: 62px; height: 62px; margin: 0 auto 6px; }
+  .tile .lbl { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); font-weight: 800; }
   .tile .val { font-family: 'Quicksand', sans-serif; font-weight: 700; color: var(--plum-deep); font-size: 1.08rem; line-height: 1.3; margin-top: 2px; }
   .tile .val span { display: block; font-family: 'Nunito', sans-serif; font-weight: 600; color: var(--ink); font-size: 0.92rem; }
   .tile.wide { grid-column: 1 / -1; }
 
-  /* ---------- experiences ---------- */
-  .gifts { display: grid; gap: 12px; margin-top: 22px; }
-  .gift { display: flex; gap: 14px; align-items: center; background: #fff; border-radius: 18px; padding: 14px 16px; border: 1px solid var(--line); box-shadow: 0 6px 18px rgba(107, 17, 69, 0.05); }
-  .gift .ico { width: 50px; height: 50px; border-radius: 14px; background: var(--gold-light); color: var(--plum); display: grid; place-items: center; flex-shrink: 0; }
-  .gift b { font-family: 'Quicksand', sans-serif; font-weight: 700; color: var(--plum); display: block; font-size: 1.06rem; line-height: 1.3; }
-  .gift span { font-size: 0.96rem; color: var(--muted); }
+  .moments { display: grid; gap: 12px; margin-top: 22px; }
+  .moment { background: #fff; border-radius: 22px; padding: 18px 16px; border: 1.5px solid var(--line); }
+  .moment img { width: 62px; height: 62px; margin: 0 auto 4px; }
+  .moment b { display: block; font-family: 'Quicksand', sans-serif; font-weight: 700; color: var(--plum); font-size: 1.12rem; }
+  .moment span { color: var(--muted); font-size: 0.98rem; }
 
-  /* ---------- contribution ---------- */
-  .contrib {
-    margin-top: 22px; text-align: center; border-radius: 28px; padding: 28px 20px 24px;
-    background: radial-gradient(circle at 50% 0%, #fff 0%, var(--gold-light) 100%);
-    border: 2px solid var(--gold);
-  }
-  .contrib .lbl { font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.82rem; color: var(--sage); }
-  .contrib .amt { font-family: 'Quicksand', sans-serif; font-size: 4rem; font-weight: 700; color: var(--plum); line-height: 1; margin-top: 6px; }
+  /* ---------- contribución ---------- */
+  .contrib { margin-top: 22px; border-radius: 28px; padding: 26px 20px 22px; background: radial-gradient(circle at 50% 0%, #fff 0%, var(--gold-soft) 100%); border: 2px solid var(--gold); }
+  .contrib .lbl { font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.82rem; color: var(--leaf); }
+  .contrib .amt { font-family: 'Quicksand', sans-serif; font-size: 4rem; font-weight: 700; color: var(--cranberry); line-height: 1; margin-top: 6px; }
   .contrib .who { font-weight: 700; margin-top: 6px; }
   .contrib .courtesy { font-family: 'Quicksand', sans-serif; font-weight: 700; color: var(--orchid); font-size: 1.15rem; margin-top: 2px; }
-  .contrib .btn { margin-top: 18px; }
+  .note { background: #fff; border-radius: 16px; padding: 14px; margin-top: 16px; font-size: 0.98rem; border: 1.5px dashed var(--orchid); }
+  .note img { width: 36px; height: 36px; margin: 0 auto 4px; }
 
-  .note {
-    display: flex; gap: 10px; align-items: flex-start; text-align: left;
-    background: #fff; border-radius: 16px; padding: 12px 14px; margin-top: 16px;
-    border-left: 4px solid var(--orchid); font-size: 0.98rem;
-  }
-  .note svg.i { color: var(--orchid); width: 22px; height: 22px; margin-top: 2px; }
-
-  /* ---------- reserve ---------- */
-  .card { margin-top: 22px; background: #fff; border-radius: 28px; padding: 24px 18px 26px; box-shadow: 0 18px 44px rgba(107, 17, 69, 0.12); border-top: 6px solid var(--orchid); }
-  .steps { display: grid; gap: 12px; margin-bottom: 20px; }
-  .step { display: flex; gap: 12px; align-items: center; }
-  .step i { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: var(--blush); color: var(--plum); font-style: normal; font-weight: 800; flex-shrink: 0; font-family: 'Quicksand', sans-serif; }
+  .card { margin-top: 20px; background: #fff; border-radius: 28px; padding: 24px 18px 26px; box-shadow: 0 18px 44px rgba(163, 31, 60, 0.12); border-top: 6px solid var(--pumpkin); }
+  .steps { display: grid; gap: 14px; margin-bottom: 20px; }
+  .step i { display: grid; place-items: center; width: 36px; height: 36px; margin: 0 auto 4px; border-radius: 50%; background: var(--pumpkin-soft); color: var(--cranberry); font-style: normal; font-weight: 800; font-family: 'Quicksand', sans-serif; }
   .step span { font-weight: 600; }
-  .fine { font-size: 0.9rem; color: var(--muted); text-align: center; margin-top: 10px; }
+  .fine { font-size: 0.9rem; color: var(--muted); margin-top: 10px; }
 
-  details.zelle { margin-top: 22px; border: 1.5px solid var(--line); border-radius: 18px; padding: 4px 16px; background: var(--cream); }
-  details.zelle summary { cursor: pointer; padding: 12px 0; font-family: 'Quicksand', sans-serif; font-weight: 700; color: var(--sage); list-style: none; display: flex; align-items: center; gap: 8px; }
+  details.zelle { margin-top: 22px; border: 1.5px solid var(--line); border-radius: 18px; padding: 4px 16px; background: var(--cream); text-align: left; }
+  details.zelle summary { cursor: pointer; padding: 12px 0; font-family: 'Quicksand', sans-serif; font-weight: 700; color: #3f8a2f; list-style: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
   details.zelle summary::-webkit-details-marker { display: none; }
-  details.zelle summary::after { content: "+"; margin-left: auto; font-size: 1.4rem; line-height: 1; }
+  details.zelle summary::after { content: "+"; font-size: 1.4rem; line-height: 1; }
   details.zelle[open] summary::after { content: "–"; }
   details.zelle .inner { padding-bottom: 16px; }
   label { display: block; font-weight: 800; margin: 14px 0 6px; color: var(--plum-deep); }
   label .opt { color: var(--muted); font-weight: 600; }
-  input, select, textarea { width: 100%; font: inherit; font-size: 1rem; color: var(--ink); border: 1.5px solid #ead7e1; border-radius: 14px; padding: 13px 14px; background: #fff; }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--orchid); box-shadow: 0 0 0 4px rgba(178, 86, 167, 0.14); }
+  input, select, textarea { width: 100%; font: inherit; font-size: 1rem; color: var(--ink); border: 1.5px solid #ecd6c4; border-radius: 14px; padding: 13px 14px; background: #fff; }
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--pumpkin); box-shadow: 0 0 0 4px rgba(227, 111, 30, 0.15); }
   textarea { min-height: 74px; resize: vertical; }
-  .zelle-box { margin-top: 18px; border-radius: 18px; background: var(--sage-light); padding: 16px; text-align: center; }
+  .zelle-box { margin-top: 18px; border-radius: 18px; background: #eef7e8; padding: 16px; text-align: center; }
   .zelle-box .num { font-family: 'Quicksand', sans-serif; font-size: 1.45rem; font-weight: 700; color: var(--plum); white-space: nowrap; }
   .zelle-box img { width: 160px; margin: 10px auto 0; border-radius: 12px; background: #fff; padding: 6px; }
-  .btn.green { background: linear-gradient(135deg, var(--sage), #74a85a); box-shadow: 0 10px 24px rgba(79, 138, 60, 0.28); }
   form .btn { margin-top: 16px; }
+  form .fine { text-align: center; }
 
-  /* ---------- footer ---------- */
-  footer { text-align: center; padding: 50px 16px 60px; margin-top: 40px; background: linear-gradient(180deg, var(--cream), var(--blush)); }
-  footer .brand { font-size: 1.6rem; font-weight: 700; color: var(--plum); }
-  footer img { width: 150px; margin: 18px auto 10px; }
-  footer p { color: var(--muted); font-size: 0.98rem; }
-  footer a { color: var(--plum); font-weight: 800; text-decoration: none; }
-  footer .links { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px 18px; margin-top: 8px; }
-  footer .links a { display: inline-flex; align-items: center; gap: 6px; }
-  footer .links svg.i { width: 18px; height: 18px; }
+  /* ---------- cierre cálido ---------- */
+  .band.closing {
+    margin-top: 50px; padding: 50px 16px 56px;
+    background:
+      radial-gradient(circle at 50% 0%, rgba(224, 165, 49, 0.30), transparent 60%),
+      linear-gradient(180deg, var(--pumpkin-soft) 0%, #ffd9bd 100%);
+  }
+  .host { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 0 auto; border: 6px solid #fff; box-shadow: 0 14px 30px rgba(163, 31, 60, 0.25); }
+  .letter { max-width: 520px; margin: 18px auto 0; background: #fff; border-radius: 26px; padding: 26px 22px; box-shadow: 0 14px 30px rgba(163, 31, 60, 0.12); }
+  .letter h2 { color: var(--cranberry); font-size: clamp(1.7rem, 7vw, 2.2rem); }
+  .letter p { margin-top: 12px; font-size: 1.06rem; }
+  .letter .firma { font-family: 'Quicksand', sans-serif; font-weight: 700; color: var(--plum); font-size: 1.2rem; margin-top: 14px; }
+  .letter .btn { margin-top: 20px; }
+  .closing .brand { margin-top: 30px; }
+  .closing .brand img { width: 150px; margin: 0 auto; }
+  .closing .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 18px; margin-top: 10px; }
+  .closing .links a { color: var(--plum); font-weight: 800; text-decoration: none; }
 
   @media (max-width: 360px) { .grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
-<div class="petals" aria-hidden="true" id="petals"></div>
+<!-- Íconos 3D: Microsoft Fluent Emoji (licencia MIT) -->
+<div class="leaves" aria-hidden="true" id="leaves"></div>
 
 <header class="hero">
   <img class="logo" src="logo-mindful-wellness.png" alt="Mindful Wellness">
   <div class="community">Jardín de Mujeres con Mente Poderosa</div>
   <h1>Mujeres con Propósito</h1>
-  <div class="sub">Florecer en Gratitud</div>
+  <div class="sub"><img src="iconos/loto.png" alt="">Florecer en Gratitud</div>
   <p class="lead">Trae a esa mujer en tu vida a quien le das gracias</p>
-  <a class="btn js-contribuir" href="#reserva"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1" /> <circle cx="12" cy="8" r="2" /> <path d="M12 10v12" /> <path d="M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z" /> <path d="M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z" /></svg> Reservo nuestro lugar</a>
+  <div class="chips"><span>Sáb 21 de noviembre</span><span>1:30 – 5:00 pm</span><span>Wallington, NJ</span></div>
+  <a class="btn js-contribuir" href="#reserva"><img src="iconos/pavo.png" alt="">¡Yo voy! Reservo mi lugar</a>
   <p class="countdown" id="countdown"></p>
 </header>
+
+<div class="band dinner">
+  <div class="eyebrow">El corazón de la tarde</div>
+  <h2>Te esperamos a la mesa</h2>
+  <p class="intro">Una cena de Thanksgiving hecha con amor, para sentarnos juntas, servirnos, brindar y dar gracias por todo lo vivido este año.</p>
+  <img class="turkey" src="iconos/pavo.png" alt="Pavo de Thanksgiving">
+  <div class="menu">
+    <h3>Nuestra cena de gratitud</h3>
+    <div class="sep"><img src="iconos/hoja.png" alt=""></div>
+    <div class="dish"><img src="iconos/pavo.png" alt=""><b>Pavo preparado por Mindful Wellness</b><span>Horneado con cariño para todas.</span></div>
+    <div class="dish"><img src="iconos/pie.png" alt=""><b>Acompañantes y postres compartidos</b><span>Lo que cada una trae a la mesa la hace más nuestra.</span></div>
+    <div class="dish"><img src="iconos/brindis.png" alt=""><b>Brindis de celebración</b><span>Por la gratitud, por nosotras y por lo que vendrá.</span></div>
+    <div class="dish"><img src="iconos/vela.png" alt=""><b>Una mesa vestida de luz</b><span>Velas, flores y todas de blanco.</span></div>
+  </div>
+</div>
 
 <div class="photo-wrap">
   <figure class="photo">
     <img src="jardin.jpg" alt="Las mujeres del Jardín reunidas y sonriendo alrededor de una mesa">
     <figcaption>Así florecemos juntas</figcaption>
+    <img class="deco d1" src="iconos/hoja.png" alt="">
+    <img class="deco d2" src="iconos/loto.png" alt="">
   </figure>
 </div>
 
@@ -242,16 +264,14 @@
     <p>Esta vez <strong>la traes contigo</strong>. Un encuentro para celebrar, compartir y agradecer a las mujeres que han hecho florecer algo en nuestra vida.</p>
 
     <div class="care">
-      <div class="badge"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16" /> <path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9" /> <path d="m2 15 6 6" /> <path d="M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z" /></svg></div>
-      <div>
-        <h3>Este encuentro también es para ti</h3>
-        <p>Cuidar de ti, venir y compartir es parte de tu cuidado personal. Es tu manera de agradecerte por todo lo que has avanzado este año y de construir tu nuevo camino, agradecida por lo que vendrá.</p>
-      </div>
+      <img src="iconos/loto.png" alt="">
+      <h3>Este encuentro también es para ti</h3>
+      <p>Cuidar de ti, venir y compartir es parte de tu cuidado personal. Es tu manera de agradecerte por todo lo que has avanzado este año y de construir tu nuevo camino, agradecida por lo que vendrá.</p>
     </div>
 
     <div class="quote">
-      <div class="badge"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1" /> <circle cx="12" cy="8" r="2" /> <path d="M12 10v12" /> <path d="M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z" /> <path d="M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z" /></svg></div>
-      <blockquote>Cuando una mujer agradece, <span>otra mujer florece.</span></blockquote>
+      <img src="iconos/girasol.png" alt="">
+      <div class="q">Cuando una mujer agradece,<br>otra mujer florece.</div>
       <div class="sign">Mujeres con Propósito</div>
     </div>
   </section>
@@ -259,28 +279,23 @@
   <section>
     <div class="eyebrow">Guarda la fecha</div>
     <h2>Te esperamos</h2>
-    <div class="pill"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10h18V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7" /> <path d="M8 2v4" /> <path d="M16 2v4" /> <path d="M21.29 14.7a2.43 2.43 0 0 0-2.65-.52c-.3.12-.57.3-.8.53l-.34.34-.35-.34a2.43 2.43 0 0 0-2.65-.53c-.3.12-.56.3-.79.53-.95.94-1 2.53.2 3.74L17.5 22l3.6-3.55c1.2-1.21 1.14-2.8.19-3.74Z" /></svg> Reserva antes del 12 de noviembre</div>
+    <div class="pill"><img src="iconos/reloj-arena.png" alt="">Reserva antes del 12 de noviembre</div>
     <div class="grid">
-      <div class="tile"><div class="ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /> <path d="M8 14h.01" /> <path d="M12 14h.01" /> <path d="M16 14h.01" /> <path d="M8 18h.01" /> <path d="M12 18h.01" /> <path d="M16 18h.01" /></svg></div><div class="lbl">Fecha</div><div class="val">Sábado 21<span>de noviembre 2026</span></div></div>
-      <div class="tile"><div class="ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></svg></div><div class="lbl">Hora</div><div class="val">1:30 – 5:00 pm<span>llega con calma</span></div></div>
-      <div class="tile wide"><div class="ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" /> <circle cx="12" cy="10" r="3" /></svg></div><div class="lbl">Lugar</div><div class="val">Salón Elite de Mujeres con Propósito<span>Wallington, NJ</span></div></div>
-      <div class="tile"><div class="ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" /></svg></div><div class="lbl">Código de vestimenta</div><div class="val">Nos vestimos de blanco<span>tú y tu invitada</span></div></div>
-      <div class="tile"><div class="ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5.8 11.3 2 22l10.7-3.79" /> <path d="M4 3h.01" /> <path d="M22 8h.01" /> <path d="M15 2h.01" /> <path d="M22 20h.01" /> <path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10" /> <path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17" /> <path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7" /> <path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z" /></svg></div><div class="lbl">Celebración</div><div class="val">Brindis de celebración<span>por la gratitud</span></div></div>
+      <div class="tile"><img src="iconos/calendario.png" alt=""><div class="lbl">Fecha</div><div class="val">Sábado 21<span>de noviembre 2026</span></div></div>
+      <div class="tile"><img src="iconos/reloj.png" alt=""><div class="lbl">Hora</div><div class="val">1:30 – 5:00 pm<span>llega con calma</span></div></div>
+      <div class="tile wide"><img src="iconos/lugar.png" alt=""><div class="lbl">Lugar</div><div class="val">Salón Elite de Mujeres con Propósito<span>Wallington, NJ</span></div></div>
+      <div class="tile"><img src="iconos/vestido.png" alt=""><div class="lbl">Código de vestimenta</div><div class="val">Nos vestimos de blanco<span>tú y tu invitada</span></div></div>
+      <div class="tile"><img src="iconos/brindis.png" alt=""><div class="lbl">Celebración</div><div class="val">Brindis de celebración<span>por la gratitud</span></div></div>
     </div>
-  </section>
 
-  <section>
-    <div class="eyebrow">Lo que vivirás</div>
-    <h2>Una tarde para agradecer</h2>
-    <div class="gifts">
-      <div class="gift"><div class="ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /> <path d="M7 2v20" /> <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" /></svg></div><div><b>Pavo preparado por Mindful Wellness</b><span>Una mesa compartida, hecha con cariño.</span></div></div>
-      <div class="gift"><div class="ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1" /> <path d="M12 8v13" /> <path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7" /> <path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5" /></svg></div><div><b>Un homenaje a tu invitada</b><span>Ella viene como tu regalo de gratitud.</span></div></div>
-      <div class="gift"><div class="ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 20h10" /> <path d="M10 20c5.5-2.5.8-6.4 3-10" /> <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" /> <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z" /></svg></div><div><b>Conectar y seguir floreciendo</b><span>Mujeres reales, historias reales, haciendo la diferencia.</span></div></div>
+    <div class="moments">
+      <div class="moment"><img src="iconos/corazon-regalo.png" alt=""><b>Un homenaje a tu invitada</b><span>Ella viene como tu regalo de gratitud.</span></div>
+      <div class="moment"><img src="iconos/ramo.png" alt=""><b>Conectar y seguir floreciendo</b><span>Mujeres reales, historias reales, haciendo la diferencia.</span></div>
     </div>
   </section>
 
   <section id="reserva">
-    <div class="eyebrow">Tu lugar te espera</div>
+    <div class="eyebrow">Tu lugar en la mesa te espera</div>
     <h2>Reserva para las dos</h2>
 
     <div class="contrib">
@@ -288,21 +303,21 @@
       <div class="amt">$50</div>
       <div class="who">Mujeres del Jardín de Mentes Poderosas</div>
       <div class="courtesy">Tu invitada, con nuestra cortesía</div>
-      <div class="note"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <path d="M12 16v-4" /> <path d="M12 8h.01" /></svg><div>Recuerda colocar <b>tu nombre y el de tu invitada</b> cuando realices tu contribución.</div></div>
+      <div class="note"><img src="iconos/carta.png" alt="">Recuerda colocar <b>tu nombre y el de tu invitada</b> cuando realices tu contribución.</div>
     </div>
 
     <div class="card">
       <div class="steps">
         <div class="step"><i>1</i><span>Toca «Hacer mi contribución».</span></div>
         <div class="step"><i>2</i><span>Escribe tu nombre, el de tu invitada y si traerás algo adicional.</span></div>
-        <div class="step"><i>3</i><span>Completa tu contribución de $50 y ¡su lugar queda reservado!</span></div>
+        <div class="step"><i>3</i><span>Completa tu contribución de $50 y ¡su lugar en la mesa queda reservado!</span></div>
       </div>
 
-      <a class="btn block js-contribuir" id="stripe-btn" href="#zelle" hidden><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /></svg> Hacer mi contribución</a>
+      <a class="btn block js-contribuir" id="stripe-btn" href="#zelle" hidden><img src="iconos/regalo.png" alt="">Hacer mi contribución</a>
       <p class="fine" id="stripe-note" hidden>Con tarjeta, Apple Pay o Google Pay, de forma segura con Stripe.</p>
 
       <details class="zelle" id="zelle">
-        <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg> ¿Prefieres Zelle?</summary>
+        <summary>¿Prefieres Zelle?</summary>
         <div class="inner">
           <form id="zelle-form" novalidate>
             <label for="nombre">Tu nombre</label>
@@ -331,7 +346,7 @@
               <img src="zelle-qr.jpg" alt="Código QR de Zelle de Mindful Wellness & Coaching LLC">
             </div>
 
-            <button class="btn block green" type="submit"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg> Confirmar mi reserva por WhatsApp</button>
+            <button class="btn block green" type="submit">Confirmar mi reserva por WhatsApp</button>
             <p class="fine" id="form-msg" role="status">Se abrirá WhatsApp con tu registro listo. Envíalo junto con tu comprobante.</p>
           </form>
         </div>
@@ -341,13 +356,20 @@
 
 </main>
 
-<footer>
-  <div class="brand">Florezcamos juntas</div>
-  <img src="logo-mindful-wellness.png" alt="Mindful Wellness">
-  <p>¿Preguntas? <a id="wa-link" href="#">WhatsApp 201-679-9969</a></p>
-  <div class="links">
-    <a href="https://instagram.com/mindfulwellnessnyc" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /> <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /> <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg> @mindfulwellnessnyc</a>
-    <a href="https://mindfulwellness.nyc/" target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /></svg> mindfulwellness.nyc</a>
+<footer class="band closing">
+  <img class="host" src="monica.jpg" alt="Mónica Villalba">
+  <div class="letter">
+    <h2>Esta mesa no está completa sin ti</h2>
+    <p>Voy a preparar el pavo con todo mi cariño y a esperarte con los brazos abiertos. Trae a esa mujer que ha hecho florecer algo en tu vida, y regálate esta tarde para agradecer, reír y celebrar todo lo que has construido este año.</p>
+    <div class="firma">Con amor, Mónica</div>
+    <a class="btn js-contribuir" href="#reserva"><img src="iconos/loto.png" alt="">¡Yo voy!</a>
+  </div>
+  <div class="brand">
+    <img src="logo-mindful-wellness.png" alt="Mindful Wellness">
+    <div class="links">
+      <a href="https://instagram.com/mindfulwellnessnyc" target="_blank" rel="noopener">@mindfulwellnessnyc</a>
+      <a href="https://mindfulwellness.nyc/" target="_blank" rel="noopener">mindfulwellness.nyc</a>
+    </div>
   </div>
 </footer>
 
@@ -362,7 +384,6 @@
   // =========================================
 
   document.getElementById("zelle-num").textContent = ZELLE;
-  document.getElementById("wa-link").href = "https://wa.me/" + WHATSAPP;
 
   const zelle = document.getElementById("zelle");
   if (STRIPE_LINK) {
@@ -379,19 +400,21 @@
 
   const days = Math.ceil((EVENT_DATE - new Date()) / 86400000);
   const cd = document.getElementById("countdown");
-  if (days > 1) cd.innerHTML = '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /> <path d="M20 3v4" /> <path d="M22 5h-4" /> <path d="M4 17v2" /> <path d="M5 18H3" /></svg> Faltan <b>' + days + ' días</b> para florecer juntas';
-  else if (days === 1) cd.innerHTML = '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /> <path d="M20 3v4" /> <path d="M22 5h-4" /> <path d="M4 17v2" /> <path d="M5 18H3" /></svg> <b>¡Es mañana!</b>';
+  if (days > 1) cd.innerHTML = "Faltan <b>" + days + " días</b> para sentarnos juntas a la mesa";
+  else if (days === 1) cd.innerHTML = "<b>¡Es mañana!</b> Te esperamos a la mesa";
 
-  const petals = document.getElementById("petals");
-  const kinds = ["🌸", "🍃", "✿", "🌷"];
-  for (let i = 0; i < 12; i++) {
-    const s = document.createElement("span");
-    s.textContent = kinds[i % kinds.length];
-    s.style.left = Math.random() * 100 + "vw";
-    s.style.fontSize = 12 + Math.random() * 12 + "px";
-    s.style.animationDuration = 16 + Math.random() * 16 + "s";
-    s.style.animationDelay = -Math.random() * 30 + "s";
-    petals.appendChild(s);
+  const leaves = document.getElementById("leaves");
+  const kinds = ["iconos/hoja.png", "iconos/hojas.png"];
+  for (let i = 0; i < 10; i++) {
+    const img = document.createElement("img");
+    img.src = kinds[i % kinds.length];
+    img.alt = "";
+    const size = 18 + Math.random() * 18;
+    img.style.width = img.style.height = size + "px";
+    img.style.left = Math.random() * 100 + "vw";
+    img.style.animationDuration = 16 + Math.random() * 16 + "s";
+    img.style.animationDelay = -Math.random() * 30 + "s";
+    leaves.appendChild(img);
   }
 
   document.getElementById("zelle-form").addEventListener("submit", function (e) {
