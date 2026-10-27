@@ -3,26 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Florecer en Gratitud · Registro</title>
-<meta name="description" content="Mujeres con Propósito · Florecer en Gratitud. Sábado 21 de noviembre 2026, 1:30–5:00 pm. Regístrate y reserva tu lugar y el de tu invitada.">
+<title>Florecer en Gratitud · Mujeres con Propósito</title>
+<meta name="description" content="Trae a esa mujer en tu vida a quien le das gracias. Sábado 21 de noviembre 2026, 1:30–5:00 pm, Salón Elite, Wallington NJ. Todas de blanco.">
 <meta property="og:title" content="Florecer en Gratitud · Mujeres con Propósito">
-<meta property="og:description" content="Sábado 21 de noviembre, 1:30–5:00 pm · Todas de blanco · $50 por pareja. Reserva aquí.">
+<meta property="og:description" content="Trae a esa mujer en tu vida a quien le das gracias. Sáb 21 nov · 1:30–5:00 pm · Wallington, NJ.">
+<meta property="og:image" content="jardin.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,500;1,600&family=Playfair+Display:ital,wght@0,700;1,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --lavender: #b256a7;
-    --lavender-light: #d98fce;
-    --lavender-dark: #6e2f68;
-    --mint: #75d375;
-    --mint-dark: #45a648;
-    --cream: #fdf8f6;
-    --white: #ffffff;
-    --ink: #3a2540;
-    --muted: #7a6680;
+    --plum: #6b1145;
+    --plum-deep: #4a0b30;
+    --orchid: #b256a7;
+    --blush: #fbe9ef;
+    --blush-2: #f6d6e2;
+    --sage: #5d7a32;
+    --sage-light: #e6efd8;
     --gold: #c9a24a;
-    --gold-light: #f3e3b5;
-    --line: #eadfe6;
+    --gold-light: #f6ead0;
+    --cream: #fffaf6;
+    --ink: #3b1f33;
+    --muted: #7d6475;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -34,179 +35,310 @@
     font-size: 18px;
     overflow-x: hidden;
   }
-  h1, h2 { font-family: 'Playfair Display', serif; line-height: 1.15; }
-  .script { font-family: 'Cormorant Garamond', serif; font-style: italic; }
-  .wrap { max-width: 640px; margin: 0 auto; padding: 0 16px; }
+  img { max-width: 100%; display: block; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+  .script { font-family: 'Great Vibes', cursive; font-weight: 400; }
+  h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.1; }
 
-  /* HERO */
+  /* ---------- petals ---------- */
+  .petals { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+  .petals span {
+    position: absolute; top: -40px; font-size: 18px; opacity: 0.55;
+    animation: fall linear infinite;
+  }
+  @keyframes fall {
+    0% { transform: translateY(-40px) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(360deg); }
+  }
+  @media (prefers-reduced-motion: reduce) { .petals { display: none; } }
+  main, header, footer { position: relative; z-index: 1; }
+
+  /* ---------- hero ---------- */
   .hero {
-    background: radial-gradient(circle at 50% 0%, #ffffff 0%, #fbf4ee 55%, var(--gold-light) 100%);
     text-align: center;
-    padding: 64px 16px 48px;
-    border-bottom: 1px solid var(--line);
+    padding: 28px 16px 0;
+    background:
+      radial-gradient(ellipse at 15% 10%, rgba(178, 86, 167, 0.18), transparent 55%),
+      radial-gradient(ellipse at 90% 0%, rgba(93, 122, 50, 0.14), transparent 50%),
+      linear-gradient(180deg, var(--blush) 0%, var(--cream) 85%);
   }
-  .hero .kicker {
-    font-size: 0.85rem; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--lavender-dark); font-weight: 800;
+  .logo { width: min(240px, 62vw); margin: 0 auto 18px; }
+  .kicker {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: clamp(0.68rem, 3vw, 0.82rem); letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--plum); font-weight: 800; white-space: nowrap;
   }
+  .kicker::before, .kicker::after { content: ""; width: 22px; height: 1.5px; background: var(--gold); }
   .hero h1 {
-    font-size: clamp(2.4rem, 10vw, 3.8rem);
-    color: var(--lavender-dark);
-    margin: 10px 0 6px;
+    font-size: clamp(2.6rem, 11vw, 4.6rem);
+    color: var(--plum); font-weight: 800; margin-top: 10px; letter-spacing: -0.01em;
   }
-  .hero .script { font-size: clamp(1.3rem, 5vw, 1.7rem); color: var(--gold); }
-  .hero .flower { font-size: 2.4rem; display: block; margin-bottom: 6px; }
-
-  /* DETAILS */
-  .details {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
-    margin: -28px auto 0; position: relative;
+  .hero h1 em { display: block; font-style: normal; color: var(--sage); }
+  .hero .script.sub { font-size: clamp(2.2rem, 9vw, 3.2rem); color: var(--gold); margin-top: 2px; line-height: 1.2; }
+  .hero .lead {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: clamp(1.3rem, 5.2vw, 1.75rem); color: var(--plum-deep);
+    max-width: 520px; margin: 14px auto 0;
   }
-  .detail {
-    background: var(--white); border: 1px solid var(--line); border-radius: 16px;
-    padding: 16px; text-align: center; box-shadow: 0 6px 20px rgba(110, 47, 104, 0.07);
+  .btn {
+    display: inline-block; text-decoration: none; border: 0; cursor: pointer; font-family: inherit;
+    background: linear-gradient(135deg, var(--plum), var(--orchid));
+    color: #fff; font-weight: 800; font-size: 1.12rem;
+    padding: 17px 30px; border-radius: 999px;
+    box-shadow: 0 10px 26px rgba(107, 17, 69, 0.28);
+    transition: transform .15s ease, box-shadow .15s ease;
   }
-  .detail .ico { font-size: 1.5rem; }
-  .detail .lbl { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); font-weight: 700; }
-  .detail .val { font-weight: 800; font-size: 1.05rem; }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(107, 17, 69, 0.34); }
+  .btn.block { display: block; width: 100%; text-align: center; }
+  .btn.green { background: linear-gradient(135deg, var(--sage), #7fa046); box-shadow: 0 10px 26px rgba(93, 122, 50, 0.3); }
+  .hero .btn { margin-top: 22px; }
+  .countdown { margin-top: 12px; font-size: 0.95rem; color: var(--muted); font-weight: 700; }
+  .countdown b { color: var(--plum); }
 
-  section { padding: 40px 0 8px; }
-  section h2 { font-size: clamp(1.6rem, 6vw, 2.1rem); color: var(--lavender-dark); margin-bottom: 12px; text-align: center; }
-  .intro { text-align: center; color: var(--ink); }
-  .intro p + p { margin-top: 12px; }
+  /* ---------- photo ---------- */
+  .photo-wrap { padding: 34px 16px 10px; }
+  .photo {
+    max-width: 680px; margin: 0 auto; position: relative;
+    background: #fff; padding: 10px 10px 54px; border-radius: 6px;
+    box-shadow: 0 18px 40px rgba(74, 11, 48, 0.18);
+    transform: rotate(-1.4deg);
+  }
+  .photo img { border-radius: 3px; width: 100%; aspect-ratio: 672 / 325; object-fit: cover; }
+  .photo figcaption {
+    position: absolute; left: 0; right: 0; bottom: 8px; text-align: center;
+    font-family: 'Great Vibes', cursive; font-size: 1.9rem; color: var(--plum);
+  }
+  .photo::before {
+    content: "🌸"; position: absolute; top: -18px; right: -6px; font-size: 2.4rem; transform: rotate(12deg);
+  }
+  .photo::after {
+    content: "🌿"; position: absolute; bottom: -14px; left: -10px; font-size: 2.2rem; transform: rotate(-20deg);
+  }
 
-  /* PRICE */
+  /* ---------- sections ---------- */
+  section { padding: 44px 0 6px; }
+  .eyebrow { text-align: center; font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); font-weight: 800; }
+  section h2 { text-align: center; color: var(--plum); font-size: clamp(1.8rem, 7vw, 2.5rem); margin-top: 6px; }
+  section h2 .script { color: var(--gold); font-size: 1.25em; }
+  .center { text-align: center; }
+  .story p { text-align: center; font-size: 1.08rem; margin-top: 14px; }
+  .story p strong { color: var(--plum); }
+
+  .quote {
+    margin: 30px auto 0; max-width: 560px; text-align: center;
+    background: linear-gradient(135deg, var(--plum-deep), var(--plum) 60%, var(--orchid));
+    color: #fff; border-radius: 26px; padding: 30px 24px; position: relative; overflow: hidden;
+  }
+  .quote::before { content: "❝"; position: absolute; top: -10px; left: 14px; font-size: 5rem; opacity: 0.15; }
+  .quote .script { font-size: clamp(2rem, 8vw, 2.6rem); line-height: 1.15; color: var(--gold-light); }
+  .quote small { display: block; margin-top: 10px; opacity: 0.85; letter-spacing: 0.08em; font-size: 0.82rem; text-transform: uppercase; }
+
+  /* ---------- details ---------- */
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+  .tile {
+    background: #fff; border-radius: 20px; padding: 18px 14px; text-align: center;
+    border: 1px solid #f0dfe7; box-shadow: 0 6px 18px rgba(107, 17, 69, 0.06);
+  }
+  .tile .ico {
+    width: 52px; height: 52px; border-radius: 50%; margin: 0 auto 8px;
+    display: grid; place-items: center; font-size: 1.5rem; background: var(--blush);
+  }
+  .tile:nth-child(even) .ico { background: var(--sage-light); }
+  .tile .lbl { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--muted); font-weight: 800; }
+  .tile .val { font-weight: 800; color: var(--plum-deep); font-size: 1.04rem; line-height: 1.3; margin-top: 2px; }
+  .tile .val span { display: block; font-weight: 600; color: var(--ink); font-size: 0.92rem; }
+  .tile.wide { grid-column: 1 / -1; }
+
+  /* ---------- gifts ---------- */
+  .gifts { display: grid; gap: 12px; margin-top: 22px; }
+  .gift {
+    display: flex; gap: 14px; align-items: center; background: #fff;
+    border-radius: 18px; padding: 14px 16px; border-left: 5px solid var(--gold);
+    box-shadow: 0 6px 18px rgba(107, 17, 69, 0.05);
+  }
+  .gift .e { font-size: 1.9rem; }
+  .gift b { color: var(--plum); display: block; }
+  .gift span { font-size: 0.95rem; color: var(--muted); }
+
+  /* ---------- price ---------- */
   .price {
-    background: linear-gradient(135deg, var(--lavender-dark), var(--lavender));
-    color: white; border-radius: 20px; padding: 26px 20px; text-align: center; margin-top: 24px;
+    margin-top: 26px; text-align: center; border-radius: 28px; padding: 28px 20px;
+    background: radial-gradient(circle at 50% 0%, #fff 0%, var(--gold-light) 100%);
+    border: 2px solid var(--gold);
   }
-  .price .amt { font-family: 'Playfair Display', serif; font-size: 3rem; line-height: 1; }
-  .price .sub { opacity: 0.92; margin-top: 6px; }
-
-  /* STEPS */
-  .steps { list-style: none; counter-reset: s; display: grid; gap: 10px; margin-top: 8px; }
-  .steps li {
-    counter-increment: s; background: var(--white); border: 1px solid var(--line);
-    border-radius: 14px; padding: 14px 16px 14px 56px; position: relative;
-  }
-  .steps li::before {
-    content: counter(s); position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
-    width: 30px; height: 30px; border-radius: 50%; background: var(--gold-light); color: var(--lavender-dark);
-    font-weight: 800; display: grid; place-items: center;
+  .price .lbl { font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.8rem; color: var(--sage); }
+  .price .amt { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 800; color: var(--plum); line-height: 1; margin-top: 6px; }
+  .price .who { font-weight: 700; margin-top: 6px; }
+  .price .gift-note { font-family: 'Great Vibes', cursive; font-size: 1.9rem; color: var(--orchid); line-height: 1.2; }
+  .deadline {
+    display: inline-block; margin-top: 12px; background: var(--plum); color: #fff;
+    border-radius: 999px; padding: 7px 16px; font-weight: 800; font-size: 0.92rem;
   }
 
-  /* CTA */
-  .cta {
-    display: block; width: 100%; text-align: center; text-decoration: none; border: 0; cursor: pointer;
-    background: var(--mint-dark); color: white; font-weight: 800; font-size: 1.2rem;
-    padding: 18px 20px; border-radius: 999px; margin-top: 18px; font-family: inherit;
-    box-shadow: 0 8px 22px rgba(69, 166, 72, 0.3);
+  /* ---------- form ---------- */
+  .form-card {
+    margin-top: 22px; background: #fff; border-radius: 28px; padding: 24px 18px 26px;
+    box-shadow: 0 18px 44px rgba(107, 17, 69, 0.12); border-top: 6px solid var(--orchid);
   }
-  .cta:hover { filter: brightness(1.05); }
-  .cta.secondary { background: var(--lavender-dark); box-shadow: 0 8px 22px rgba(110, 47, 104, 0.25); }
-  .fine { font-size: 0.88rem; color: var(--muted); text-align: center; margin-top: 10px; }
-
-  /* FORM */
-  .card {
-    background: var(--white); border: 1px solid var(--line); border-radius: 20px;
-    padding: 22px 18px; margin-top: 14px;
+  .steps { display: flex; justify-content: space-between; gap: 6px; margin-bottom: 8px; }
+  .steps div { flex: 1; text-align: center; font-size: 0.8rem; font-weight: 700; color: var(--muted); }
+  .steps i {
+    display: grid; place-items: center; width: 32px; height: 32px; margin: 0 auto 4px;
+    border-radius: 50%; background: var(--blush); color: var(--plum); font-style: normal; font-weight: 800;
   }
-  label { display: block; font-weight: 700; margin: 14px 0 6px; font-size: 0.98rem; }
+  label { display: block; font-weight: 800; margin: 16px 0 6px; color: var(--plum-deep); }
   label .opt { color: var(--muted); font-weight: 600; }
   input, select, textarea {
     width: 100%; font: inherit; font-size: 1rem; color: var(--ink);
-    border: 1.5px solid var(--line); border-radius: 12px; padding: 12px 14px; background: #fffdfc;
+    border: 1.5px solid #ead7e1; border-radius: 14px; padding: 13px 14px; background: var(--cream);
   }
-  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--lavender); }
-  textarea { min-height: 70px; resize: vertical; }
-  .zelle-box {
-    background: var(--gold-light); border-radius: 14px; padding: 14px 16px; margin-top: 18px; text-align: center;
+  input:focus, select:focus, textarea:focus { outline: none; border-color: var(--orchid); box-shadow: 0 0 0 4px rgba(178, 86, 167, 0.14); background: #fff; }
+  textarea { min-height: 74px; resize: vertical; }
+
+  .pay {
+    margin-top: 22px; border-radius: 20px; background: var(--sage-light); padding: 18px 16px; text-align: center;
   }
-  .zelle-box strong { font-size: 1.25rem; }
-  .divider { text-align: center; color: var(--muted); margin: 26px 0 0; font-size: 0.95rem; }
-  .divider span { background: var(--cream); padding: 0 10px; }
+  .pay h3 { color: var(--sage); font-size: 1.25rem; }
+  .pay p { font-size: 0.98rem; margin-top: 4px; }
+  .pay .num { font-size: 1.5rem; font-weight: 800; color: var(--plum); white-space: nowrap; }
+  .pay img { width: 170px; margin: 12px auto 0; border-radius: 12px; background: #fff; padding: 6px; }
+  .form-card .btn { margin-top: 18px; }
+  .fine { font-size: 0.88rem; color: var(--muted); text-align: center; margin-top: 10px; }
+  .divider { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 0.9rem; margin: 22px 0 4px; }
+  .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: #ead7e1; }
 
-  footer { text-align: center; padding: 40px 16px 48px; color: var(--muted); font-size: 0.92rem; }
-  footer a { color: var(--lavender-dark); font-weight: 700; }
+  /* ---------- footer ---------- */
+  footer { text-align: center; padding: 50px 16px 60px; margin-top: 40px; background: linear-gradient(180deg, var(--cream), var(--blush)); }
+  footer .script { font-size: 2.2rem; color: var(--plum); line-height: 1.2; }
+  footer img { width: 150px; margin: 18px auto 10px; }
+  footer p { color: var(--muted); font-size: 0.95rem; }
+  footer a { color: var(--plum); font-weight: 800; text-decoration: none; }
 
-  @media (max-width: 380px) { .details { grid-template-columns: 1fr; } }
+  @media (max-width: 360px) { .grid { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
 
+<div class="petals" aria-hidden="true" id="petals"></div>
+
 <header class="hero">
-  <span class="flower">🤍</span>
-  <div class="kicker">Mujeres con Propósito · el Jardín</div>
-  <h1>Florecer en Gratitud</h1>
-  <p class="script">Una tarde para agradecer a la mujer que te inspira</p>
+  <img class="logo" src="logo-mindful-wellness.png" alt="Mindful Wellness">
+  <div class="kicker">Nuestra comunidad · El Jardín</div>
+  <h1>Mujeres con <em>Propósito</em></h1>
+  <div class="script sub">Florecer en Gratitud</div>
+  <p class="lead">Trae a esa mujer en tu vida a quien le das gracias. 🤍</p>
+  <a class="btn" href="#reserva">Reservo nuestro lugar</a>
+  <p class="countdown" id="countdown"></p>
 </header>
 
-<div class="wrap">
-  <div class="details">
-    <div class="detail"><div class="ico">📅</div><div class="lbl">Fecha</div><div class="val">Sáb 21 nov 2026</div></div>
-    <div class="detail"><div class="ico">🕜</div><div class="lbl">Hora</div><div class="val">1:30 – 5:00 pm</div></div>
-    <div class="detail"><div class="ico">🤍</div><div class="lbl">Vestimenta</div><div class="val">Todas de blanco</div></div>
-    <div class="detail"><div class="ico">💐</div><div class="lbl">Entrada</div><div class="val">$50 por pareja</div></div>
-  </div>
-
-  <section class="intro">
-    <h2>Trae a quien agradeces</h2>
-    <p>Cada mujer del Jardín invita a una amiga o mujer especial por la que siente gratitud. Tu invitada viene como regalo tuyo.</p>
-    <p>Compartiremos pavo preparado por Mindful Wellness, un brindis con champán y una tarde para florecer juntas.</p>
-    <div class="price">
-      <div class="amt">$50</div>
-      <div class="sub">por pareja: tú + tu invitada</div>
-    </div>
-  </section>
-
-  <section id="registro">
-    <h2>Regístrate y reserva</h2>
-    <ol class="steps">
-      <li>Escribe tu nombre y el de tu invitada.</li>
-      <li>Cuéntanos si traerás algo adicional (comida, bebidas, flores…).</li>
-      <li>Paga $50 y tu lugar queda reservado al instante.</li>
-    </ol>
-
-    <div id="card-pay" hidden>
-      <a class="cta" id="stripe-btn" href="#" target="_blank" rel="noopener">🤍 Registrarme y pagar con tarjeta</a>
-      <p class="fine">Pago seguro con Stripe. Ahí mismo llenas tu nombre, el de tu invitada y tu aporte.</p>
-      <p class="divider"><span>o paga por Zelle</span></p>
-    </div>
-
-    <form class="card" id="zelle-form" novalidate>
-      <label for="nombre">Tu nombre</label>
-      <input id="nombre" name="nombre" autocomplete="name" required>
-
-      <label for="invitada">Nombre de tu invitada</label>
-      <input id="invitada" name="invitada" required>
-
-      <label for="aporte">¿Contribuyes con algo adicional?</label>
-      <select id="aporte" name="aporte" required>
-        <option value="">Elige una opción</option>
-        <option>Sí, comida (plato, postre, aperitivo)</option>
-        <option>Sí, bebidas</option>
-        <option>Sí, flores o decoración</option>
-        <option>Sí, otra cosa</option>
-        <option>No esta vez</option>
-      </select>
-
-      <label for="detalle">¿Qué traerás? <span class="opt">(opcional)</span></label>
-      <textarea id="detalle" name="detalle" placeholder="Ej.: ensalada para 10, pie de calabaza…"></textarea>
-
-      <div class="zelle-box">
-        📲 Envía <strong>$50</strong> por Zelle al <strong id="zelle-num" style="white-space:nowrap;"></strong><br>
-        <span style="font-size:0.9rem;">Luego toca el botón para confirmar tu registro por WhatsApp.</span>
-      </div>
-
-      <button class="cta secondary" type="submit">✅ Ya pagué: confirmar mi registro</button>
-      <p class="fine" id="form-msg" role="status"></p>
-    </form>
-  </section>
+<div class="photo-wrap">
+  <figure class="photo">
+    <img src="jardin.jpg" alt="Las mujeres del Jardín reunidas y sonriendo alrededor de una mesa">
+    <figcaption>Así florecemos juntas</figcaption>
+  </figure>
 </div>
 
+<main class="wrap">
+
+  <section class="story">
+    <div class="eyebrow">Una tarde para el corazón</div>
+    <h2>Nadie florece <span class="script">sola</span></h2>
+    <p>Detrás de cada una de nosotras hay una mujer que creyó en ti, te escuchó, te sostuvo o te hizo reír cuando más lo necesitabas.</p>
+    <p>Esta vez <strong>la traes contigo</strong>. Un encuentro para celebrar, compartir y agradecer a las mujeres que han hecho florecer algo en nuestra vida.</p>
+
+    <div class="quote">
+      <div class="script">Cuando una mujer agradece, otra mujer florece.</div>
+      <small>Mujeres del Jardín</small>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Guarda la fecha</div>
+    <h2>Te esperamos <span class="script">de blanco</span></h2>
+    <div class="grid">
+      <div class="tile"><div class="ico">📅</div><div class="lbl">Fecha</div><div class="val">Sábado 21<span>de noviembre 2026</span></div></div>
+      <div class="tile"><div class="ico">🕜</div><div class="lbl">Hora</div><div class="val">1:30 – 5:00 pm<span>llega con calma</span></div></div>
+      <div class="tile wide"><div class="ico">📍</div><div class="lbl">Lugar</div><div class="val">Salón Elite de Mujeres con Propósito<span>Wallington, NJ</span></div></div>
+      <div class="tile"><div class="ico">🤍</div><div class="lbl">Vestimenta</div><div class="val">Todas de blanco<span>tú y tu invitada</span></div></div>
+      <div class="tile"><div class="ico">🥂</div><div class="lbl">Brindis</div><div class="val">Con champán<span>por la gratitud</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Lo que vivirás</div>
+    <h2>Una tarde para <span class="script">agradecer</span></h2>
+    <div class="gifts">
+      <div class="gift"><div class="e">🦃</div><div><b>Pavo preparado por Mindful Wellness</b><span>Una mesa compartida, hecha con cariño.</span></div></div>
+      <div class="gift"><div class="e">💐</div><div><b>Un homenaje a tu invitada</b><span>Ella viene como tu regalo de gratitud.</span></div></div>
+      <div class="gift"><div class="e">✨</div><div><b>Conectar y seguir floreciendo</b><span>Mujeres reales, historias reales, haciendo la diferencia.</span></div></div>
+    </div>
+
+    <div class="price">
+      <div class="lbl">Contribución</div>
+      <div class="amt">$50</div>
+      <div class="who">Mujeres del Jardín de Mentes Poderosas</div>
+      <div class="gift-note">Tu invitada, con nuestra cortesía</div>
+      <div class="deadline">Reserva antes del 12 de noviembre</div>
+    </div>
+  </section>
+
+  <section id="reserva">
+    <div class="eyebrow">Tu lugar te espera</div>
+    <h2>Reserva para <span class="script">las dos</span></h2>
+
+    <div class="form-card">
+      <div class="steps">
+        <div><i>1</i>Tus datos</div>
+        <div><i>2</i>Tu aporte</div>
+        <div><i>3</i>Pagas y listo</div>
+      </div>
+
+      <div id="card-pay" hidden>
+        <a class="btn block green" id="stripe-btn" href="#" target="_blank" rel="noopener">💳 Registrarme y pagar con tarjeta</a>
+        <p class="fine">Pago seguro con Stripe. Ahí mismo llenas tus datos y los de tu invitada.</p>
+        <div class="divider">o paga por Zelle</div>
+      </div>
+
+      <form id="zelle-form" novalidate>
+        <label for="nombre">Tu nombre</label>
+        <input id="nombre" name="nombre" autocomplete="name" placeholder="Nombre y apellido" required>
+
+        <label for="invitada">Tu invitada especial</label>
+        <input id="invitada" name="invitada" placeholder="¿A quién le das gracias?" required>
+
+        <label for="aporte">¿Contribuyes con algo adicional?</label>
+        <select id="aporte" name="aporte" required>
+          <option value="">Elige una opción</option>
+          <option>Sí, comida (plato, postre, aperitivo)</option>
+          <option>Sí, bebidas</option>
+          <option>Sí, flores o decoración</option>
+          <option>Sí, otra cosa</option>
+          <option>No esta vez</option>
+        </select>
+
+        <label for="detalle">¿Qué traerás? <span class="opt">(opcional)</span></label>
+        <textarea id="detalle" name="detalle" placeholder="Ej.: ensalada para 10, pie de calabaza, flores blancas…"></textarea>
+
+        <div class="pay">
+          <h3>Paga tu contribución de $50</h3>
+          <p>Por Zelle al <span class="num" id="zelle-num"></span></p>
+          <p style="font-size:0.88rem;color:var(--muted);">Mindful Wellness &amp; Coaching LLC · o escanea el código en la app de tu banco</p>
+          <img src="zelle-qr.jpg" alt="Código QR de Zelle para pagar a Mindful Wellness & Coaching LLC">
+        </div>
+
+        <button class="btn block" type="submit">🤍 Ya pagué: confirmar nuestra reserva</button>
+        <p class="fine" id="form-msg" role="status">Se abrirá WhatsApp con tu registro listo. Solo envíalo con tu comprobante.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
 <footer>
-  ¿Preguntas? Escríbenos por <a id="wa-link" href="#">WhatsApp</a><br>
-  Mindful Wellness · el Jardín 🌸
+  <div class="script">Florezcamos juntas</div>
+  <img src="logo-mindful-wellness.png" alt="Mindful Wellness">
+  <p>¿Preguntas? <a id="wa-link" href="#">WhatsApp 201-679-9969</a></p>
+  <p style="margin-top:6px;"><a href="https://instagram.com/mindfulwellnessnyc" target="_blank" rel="noopener">@mindfulwellnessnyc</a> · <a href="https://mindfulwellness.nyc/" target="_blank" rel="noopener">mindfulwellness.nyc</a></p>
 </footer>
 
 <script>
@@ -216,6 +348,7 @@
   const STRIPE_LINK = "";
   const ZELLE = "201-679-9969";
   const WHATSAPP = "12016799969";
+  const EVENT_DATE = new Date("2026-11-21T13:30:00-05:00");
   // =========================================
 
   document.getElementById("zelle-num").textContent = ZELLE;
@@ -224,6 +357,22 @@
   if (STRIPE_LINK) {
     document.getElementById("stripe-btn").href = STRIPE_LINK;
     document.getElementById("card-pay").hidden = false;
+  }
+
+  const days = Math.ceil((EVENT_DATE - new Date()) / 86400000);
+  if (days > 1) document.getElementById("countdown").innerHTML = "Faltan <b>" + days + " días</b> para florecer juntas 🌸";
+  else if (days === 1) document.getElementById("countdown").innerHTML = "<b>¡Es mañana!</b> 🌸";
+
+  const petals = document.getElementById("petals");
+  const kinds = ["🌸", "🤍", "🍃", "✿"];
+  for (let i = 0; i < 14; i++) {
+    const s = document.createElement("span");
+    s.textContent = kinds[i % kinds.length];
+    s.style.left = Math.random() * 100 + "vw";
+    s.style.fontSize = 12 + Math.random() * 14 + "px";
+    s.style.animationDuration = 14 + Math.random() * 16 + "s";
+    s.style.animationDelay = -Math.random() * 30 + "s";
+    petals.appendChild(s);
   }
 
   document.getElementById("zelle-form").addEventListener("submit", function (e) {
@@ -237,12 +386,12 @@
       return;
     }
     const text =
-      "Hola Mónica 🤍 Me registro para Florecer en Gratitud (sáb 21 nov).\n" +
+      "Hola Mónica 🤍 Reservo para Florecer en Gratitud (sáb 21 nov).\n" +
       "Mi nombre: " + f.nombre.value.trim() + "\n" +
       "Mi invitada: " + f.invitada.value.trim() + "\n" +
       "Aporte: " + f.aporte.value + (f.detalle.value.trim() ? " (" + f.detalle.value.trim() + ")" : "") + "\n" +
       "Ya envié $50 por Zelle al " + ZELLE + ". Adjunto mi comprobante.";
-    msg.textContent = "Abriendo WhatsApp… envía el mensaje con tu comprobante y listo.";
+    msg.textContent = "Abriendo WhatsApp… envía el mensaje con tu comprobante y listo. 🌸";
     window.location.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
   });
 </script>
