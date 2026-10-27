@@ -92,6 +92,27 @@
   .countdown { margin-top: 12px; font-size: 0.98rem; color: var(--muted); font-weight: 700; }
   .countdown b { color: var(--cranberry); }
 
+
+  /* ---------- la foto del Jardín a la mesa (protagonista) ---------- */
+  .mesa { max-width: 680px; margin: 22px auto 0; }
+  .mesa-foto { border-radius: 24px; overflow: hidden; border: 6px solid #fff; box-shadow: 0 22px 46px rgba(74, 11, 48, 0.25); outline: 2px solid var(--gold); outline-offset: 4px; }
+  .mesa-foto img { width: 100%; }
+  .mesa-table {
+    position: relative; z-index: 2; margin: -18px 10px 0; height: 46px;
+    background: linear-gradient(180deg, #fffdf8 0%, #f4e7d6 100%);
+    border-radius: 10px 10px 22px 22px; border-bottom: 4px solid var(--gold);
+    box-shadow: 0 12px 22px rgba(74, 11, 48, 0.18);
+    display: flex; align-items: flex-end; justify-content: space-evenly; padding: 0 6px 8px;
+  }
+  .mesa-table .it { width: auto; filter: drop-shadow(0 6px 6px rgba(0,0,0,0.22)); }
+  .mesa-table .vela { height: 46px; }
+  .mesa-table .hoja1, .mesa-table .hoja2 { height: 28px; }
+  .mesa-table .pie { height: 44px; }
+  .mesa-table .pavo { height: 70px; }
+  .mesa-table .brindis { height: 46px; }
+  .mesa figcaption { margin-top: 14px; font-family: 'Quicksand', sans-serif; font-weight: 700; font-size: 1.25rem; color: var(--plum); }
+  .mesa figcaption span { display: block; font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 1rem; color: var(--pumpkin); }
+
   /* ---------- la cena (central) ---------- */
   .band.dinner {
     background:
@@ -225,6 +246,19 @@
   <div class="community">Jardín de Mujeres con Mente Poderosa</div>
   <h1>Mujeres con Propósito</h1>
   <div class="sub"><img src="iconos/loto.png" alt="">Florecer en Gratitud</div>
+  <figure class="mesa">
+    <div class="mesa-foto"><img src="jardin.jpg" alt="Las mujeres del Jardín reunidas y sonriendo alrededor de una mesa"></div>
+    <div class="mesa-table" aria-hidden="true">
+      <img class="it vela" src="iconos/vela.png" alt="">
+      <img class="it hoja1" src="iconos/hojas.png" alt="">
+      <img class="it pie" src="iconos/pie.png" alt="">
+      <img class="it pavo" src="iconos/pavo.png" alt="">
+      <img class="it brindis" src="iconos/brindis.png" alt="">
+      <img class="it hoja2" src="iconos/hoja.png" alt="">
+      <img class="it vela" src="iconos/vela.png" alt="">
+    </div>
+    <figcaption>Las mujeres del Jardín<span>Este año, tu lugar está en nuestra mesa</span></figcaption>
+  </figure>
   <p class="lead">Trae a esa mujer en tu vida a quien le das gracias</p>
   <div class="chips"><span>Sáb 21 de noviembre</span><span>1:30 – 5:00 pm</span><span>Wallington, NJ</span></div>
   <a class="btn js-contribuir" href="#reserva"><img src="iconos/pavo.png" alt="">¡Yo voy! Reservo mi lugar</a>
@@ -244,15 +278,6 @@
     <div class="dish"><img src="iconos/brindis.png" alt=""><b>Brindis de celebración</b><span>Por la gratitud, por nosotras y por lo que vendrá.</span></div>
     <div class="dish"><img src="iconos/vela.png" alt=""><b>Una mesa vestida de luz</b><span>Velas, flores y todas de blanco.</span></div>
   </div>
-</div>
-
-<div class="photo-wrap">
-  <figure class="photo">
-    <img src="jardin.jpg" alt="Las mujeres del Jardín reunidas y sonriendo alrededor de una mesa">
-    <figcaption>Así florecemos juntas</figcaption>
-    <img class="deco d1" src="iconos/hoja.png" alt="">
-    <img class="deco d2" src="iconos/loto.png" alt="">
-  </figure>
 </div>
 
 <main class="wrap">
