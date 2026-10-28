@@ -110,7 +110,7 @@
   .table-photo img { width: 100%; aspect-ratio: 550 / 133; height: auto; display: block; }
   .menu { display: grid; gap: 26px; margin-top: 40px; }
   .menu-item { text-align: center; padding: 0 10px; }
-  .menu-item .num { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-style: italic; color: var(--gold); line-height: 1; }
+  .menu-item::before { content: ""; display: block; width: 40px; height: 1px; background: var(--gold); margin: 0 auto 14px; }
   .menu-item h3 { color: #fff; font-size: 1.6rem; margin-top: 6px; }
   .menu-item p { font-size: 1rem; opacity: 0.88; margin-top: 6px; }
 
@@ -132,6 +132,18 @@
 
   /* ---------- detalles ---------- */
   .details { padding: 70px 0 20px; }
+  .tile .v, .tile .day { font-variant-numeric: lining-nums; }
+  .tiles { display: grid; gap: 14px; margin-top: 30px; }
+  .tile { position: relative; min-height: 190px; border-radius: 20px; overflow: hidden; background-size: cover; background-position: center; color: #fff; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; text-align: center; padding: 22px 20px; box-shadow: 0 18px 40px rgba(58, 42, 34, 0.18); isolation: isolate; }
+  .tile::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(62, 18, 26, 0.88) 0%, rgba(62, 18, 26, 0.45) 55%, rgba(62, 18, 26, 0.15) 100%); }
+  .tile .k { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #f3cf8e; }
+  .tile .v { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.6rem; line-height: 1.15; margin-top: 6px; }
+  .tile small { display: block; font-size: 0.95rem; opacity: 0.9; margin-top: 4px; }
+  .tile.feature { min-height: 280px; }
+  .tile .date { display: flex; flex-direction: column; align-items: center; margin-bottom: 10px; }
+  .tile .day { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 5.2rem; line-height: 0.9; }
+  .tile .mon { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase; margin-top: 6px; }
+  @media (min-width: 600px) { .tiles { grid-template-columns: 1fr 1fr; } .tile.feature, .tile.wide { grid-column: 1 / -1; } }
   .details h2 { font-size: clamp(2.2rem, 8.5vw, 3.1rem); margin-top: 10px; }
   .deadline { display: inline-block; margin-top: 14px; background: var(--linen); color: var(--burgundy); border-radius: 999px; padding: 8px 18px; font-weight: 800; font-size: 0.95rem; }
   .card-invite {
@@ -243,9 +255,9 @@
     <p class="intro">Nos sentamos juntas a compartir una cena de Thanksgiving hecha con amor, para nutrir el cuerpo, el corazón y los lazos que nos unen.</p>
     <div class="table-photo"><img src="mesa.jpg" alt="Mesa de Thanksgiving con pavo, calabaza blanca, velas y flores"></div>
     <div class="menu">
-      <div class="menu-item"><div class="num">i.</div><h3>Pavo preparado por Mindful Wellness</h3><p>Horneado con cariño para todas.</p></div>
-      <div class="menu-item"><div class="num">ii.</div><h3>Acompañantes y postres compartidos</h3><p>Lo que cada una trae a la mesa la hace más nuestra.</p></div>
-      <div class="menu-item"><div class="num">iii.</div><h3>Brindis de celebración</h3><p>Por la gratitud, por nosotras y por lo que vendrá.</p></div>
+      <div class="menu-item"><h3>Pavo preparado por Mindful Wellness</h3><p>Horneado con cariño para todas.</p></div>
+      <div class="menu-item"><h3>Acompañantes y postres compartidos</h3><p>Lo que cada una trae a la mesa la hace más nuestra.</p></div>
+      <div class="menu-item"><h3>Brindis de celebración</h3><p>Por la gratitud, por nosotras y por lo que vendrá.</p></div>
     </div>
   </div>
 </section>
@@ -273,13 +285,27 @@
     <div class="eyebrow">Te esperamos</div>
     <h2>Detalles del evento</h2>
     <div class="deadline">Reserva antes del 12 de noviembre</div>
-    <div class="card-invite"><div class="inner">
-      <div class="row"><div><div class="k">Fecha</div><div class="v">Sábado 21 de noviembre de 2026</div></div></div>
-      <div class="row"><div><div class="k">Hora</div><div class="v">1:30 – 5:00 pm</div></div></div>
-      <div class="row"><div><div class="k">Lugar</div><div class="v">Salón Elite de Mujeres con Propósito<small>Wallington, NJ</small></div></div></div>
-      <div class="row"><div><div class="k">Código de vestimenta</div><div class="v">Nos vestimos de blanco<small>Tú y tu invitada</small></div></div></div>
-      <div class="row"><div><div class="k">Celebración</div><div class="v">Cena de Thanksgiving y brindis de celebración</div></div></div>
-    </div></div>
+    <div class="tiles">
+      <div class="tile feature" style="background-image:url(d-fecha.jpg)">
+        <div class="date"><span class="day">21</span><span class="mon">noviembre 2026</span></div>
+        <div class="k">Sábado</div>
+        <div class="v">1:30 – 5:00 pm</div>
+      </div>
+      <div class="tile" style="background-image:url(d-lugar.jpg)">
+        <div class="k">Lugar</div>
+        <div class="v">Salón Elite de Mujeres con Propósito</div>
+        <small>Wallington, NJ</small>
+      </div>
+      <div class="tile" style="background-image:url(d-blanco.jpg)">
+        <div class="k">Código de vestimenta</div>
+        <div class="v">Nos vestimos de blanco</div>
+        <small>Tú y tu invitada</small>
+      </div>
+      <div class="tile wide" style="background-image:url(d-celebracion.jpg)">
+        <div class="k">Celebración</div>
+        <div class="v">Cena de Thanksgiving y brindis de celebración</div>
+      </div>
+    </div>
   </div>
 </section>
 
