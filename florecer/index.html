@@ -50,7 +50,8 @@
   }
   .ornament { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--gold); margin: 14px auto; }
   .ornament::before, .ornament::after { content: ""; width: 54px; height: 1px; background: currentColor; }
-  .ornament svg { width: 22px; height: 22px; }
+  .ornament:empty::after { display: none; }
+  .ornament:empty::before { width: 120px; }
 
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 10px;
@@ -119,9 +120,8 @@
   .wellness .intro { color: var(--muted); max-width: 560px; margin: 14px auto 0; }
   .pillars { display: grid; gap: 16px; margin-top: 36px; }
   .pillar { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 28px 22px; text-align: center; }
-  .pillar .mark { width: 54px; height: 54px; border-radius: 50%; margin: 0 auto 12px; display: grid; place-items: center; background: var(--linen); color: var(--terracotta); }
-  .pillar .mark svg { width: 26px; height: 26px; }
   .pillar h3 { font-size: 1.65rem; }
+  .pillar h3::after { content: ""; display: block; width: 36px; height: 1px; background: var(--gold); margin: 12px auto 0; }
   .pillar p { color: var(--muted); font-size: 1rem; margin-top: 8px; }
 
   .quote { margin: 46px auto 0; max-width: 640px; text-align: center; padding: 0 10px; }
@@ -137,10 +137,8 @@
     box-shadow: 0 24px 50px rgba(58, 42, 34, 0.12);
   }
   .card-invite .inner { border: 1px solid var(--gold); border-radius: 3px; padding: 10px 22px; }
-  .row { display: grid; grid-template-columns: 52px 1fr; gap: 14px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--line); text-align: left; }
+  .row { padding: 18px 0; border-bottom: 1px solid var(--line); text-align: center; }
   .row:last-child { border-bottom: 0; }
-  .row .ri { width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--gold); color: var(--terracotta); display: grid; place-items: center; }
-  .row .ri svg { width: 22px; height: 22px; }
   .row .k { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta); }
   .row .v { font-weight: 700; font-size: 1.06rem; line-height: 1.4; }
   .row .v small { display: block; font-weight: 600; color: var(--muted); font-size: 0.92rem; }
@@ -205,15 +203,6 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="leaf" viewBox="0 0 64 64"><path fill="currentColor" d="M32 3c3 6 6 9 11 10-2 3-2 5 0 7 4-1 8-1 12 1-3 4-4 8-3 12-4 0-7 2-8 5 4 2 7 5 8 9-6 0-10 1-13 4l-1-11c-1 4-3 7-6 9-3-2-5-5-6-9l-1 11c-3-3-7-4-13-4 1-4 4-7 8-9-1-3-4-5-8-5 1-4 0-8-3-12 4-2 8-2 12-1 2-2 2-4 0-7 5-1 8-4 11-10z"/><path fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.2" d="M32 10v50M32 30l-12-8M32 30l12-8M32 42l-10-4M32 42l10-4"/></symbol>
-    <symbol id="sprig" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" d="M12 21V9M12 13c-3 0-5-2-6-5 3 0 5 2 6 5zM12 10c3 0 5-2 6-5-3 0-5 2-6 5zM12 17c-2.5 0-4.5-1.5-5.5-4 2.5 0 4.5 1.5 5.5 4zM12 15c2.5 0 4.5-1.5 5.5-4-2.5 0-4.5 1.5-5.5 4z"/></symbol>
-    <symbol id="heart-hands" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 20s-6.5-4-8.5-8A4.5 4.5 0 0 1 12 7a4.5 4.5 0 0 1 8.5 5c-2 4-8.5 8-8.5 8z"/></symbol>
-    <symbol id="circle-people" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2.5 20c.5-3.5 3-5.5 5.5-5.5s5 2 5.5 5.5M10.5 20c.5-3.5 3-5.5 5.5-5.5s5 2 5.5 5.5"/></g></symbol>
-    <symbol id="lotus" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 19c-2-2-3-5-3-8s1-5 3-7c2 2 3 4 3 7s-1 6-3 8z"/><path d="M12 19c-3 0-6-1.5-8-4.5 2-1 4.5-1 6.5 0M12 19c3 0 6-1.5 8-4.5-2-1-4.5-1-6.5 0"/><path d="M4 19.5h16"/></g></symbol>
-    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><circle cx="12" cy="14.5" r="1.2"/></g></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></g></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></g></symbol>
-    <symbol id="i-dress" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3l-.5 4 1.5 2L6 20h12L13.5 9 15 7l-.5-4"/><path d="M9 7h6"/></g></symbol>
-    <symbol id="i-glasses" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h4l-.3 5a2.2 2.2 0 0 1-3.4 0z"/><path d="M8 9.3V17M5.5 17h5M14 3h4l.3 5a2.2 2.2 0 0 1-3.4 0z" transform="translate(0 0)"/><path d="M16.6 9.3V17M14.1 17h5"/></g></symbol>
   </defs>
 </svg>
 
@@ -265,12 +254,12 @@
     <h2>Una tarde para florecer</h2>
     <p class="intro">Detrás de cada una de nosotras hay una mujer que creyó en ti, te escuchó o te sostuvo cuando más lo necesitabas. Esta vez la traes contigo.</p>
     <div class="pillars">
-      <div class="pillar"><div class="mark"><svg><use href="#heart-hands"/></svg></div><h3>Gratitud</h3><p>Un homenaje a tu invitada: ella viene como tu regalo de gratitud.</p></div>
-      <div class="pillar"><div class="mark"><svg><use href="#circle-people"/></svg></div><h3>Conexión</h3><p>Mujeres reales, historias reales, haciendo la diferencia.</p></div>
-      <div class="pillar"><div class="mark"><svg><use href="#lotus"/></svg></div><h3>Cuidado personal</h3><p>Venir y compartir es parte de tu bienestar: una forma de agradecerte por todo lo que has avanzado este año.</p></div>
+      <div class="pillar"><h3>Gratitud</h3><p>Un homenaje a tu invitada: ella viene como tu regalo de gratitud.</p></div>
+      <div class="pillar"><h3>Conexión</h3><p>Mujeres reales, historias reales, haciendo la diferencia.</p></div>
+      <div class="pillar"><h3>Cuidado personal</h3><p>Venir y compartir es parte de tu bienestar: una forma de agradecerte por todo lo que has avanzado este año.</p></div>
     </div>
     <div class="quote">
-      <div class="ornament"><svg><use href="#sprig"/></svg></div>
+      <div class="ornament"></div>
       <blockquote>Cuando una mujer agradece, otra mujer florece.</blockquote>
       <cite>Mujeres con Propósito</cite>
     </div>
@@ -283,11 +272,11 @@
     <h2>Detalles del evento</h2>
     <div class="deadline">Reserva antes del 12 de noviembre</div>
     <div class="card-invite"><div class="inner">
-      <div class="row"><span class="ri"><svg><use href="#i-cal"/></svg></span><div><div class="k">Fecha</div><div class="v">Sábado 21 de noviembre de 2026</div></div></div>
-      <div class="row"><span class="ri"><svg><use href="#i-clock"/></svg></span><div><div class="k">Hora</div><div class="v">1:30 – 5:00 pm</div></div></div>
-      <div class="row"><span class="ri"><svg><use href="#i-pin"/></svg></span><div><div class="k">Lugar</div><div class="v">Salón Elite de Mujeres con Propósito<small>Wallington, NJ</small></div></div></div>
-      <div class="row"><span class="ri"><svg><use href="#i-dress"/></svg></span><div><div class="k">Código de vestimenta</div><div class="v">Nos vestimos de blanco<small>Tú y tu invitada</small></div></div></div>
-      <div class="row"><span class="ri"><svg><use href="#i-glasses"/></svg></span><div><div class="k">Celebración</div><div class="v">Cena de Thanksgiving y brindis de celebración</div></div></div>
+      <div class="row"><div><div class="k">Fecha</div><div class="v">Sábado 21 de noviembre de 2026</div></div></div>
+      <div class="row"><div><div class="k">Hora</div><div class="v">1:30 – 5:00 pm</div></div></div>
+      <div class="row"><div><div class="k">Lugar</div><div class="v">Salón Elite de Mujeres con Propósito<small>Wallington, NJ</small></div></div></div>
+      <div class="row"><div><div class="k">Código de vestimenta</div><div class="v">Nos vestimos de blanco<small>Tú y tu invitada</small></div></div></div>
+      <div class="row"><div><div class="k">Celebración</div><div class="v">Cena de Thanksgiving y brindis de celebración</div></div></div>
     </div></div>
   </div>
 </section>
