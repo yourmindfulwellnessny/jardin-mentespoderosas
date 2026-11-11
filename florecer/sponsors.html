@@ -168,6 +168,43 @@
   .zelle img { width: 150px; margin: 12px auto 0; border-radius: 6px; }
   .zelle p { font-size: 0.92rem; margin-top: 10px; }
 
+  .wizard { margin-top: 34px; background: var(--paper); color: var(--espresso); border-radius: 6px; padding: 28px 22px 26px; text-align: left; box-shadow: 0 30px 60px rgba(0,0,0,0.25); }
+  .progress { height: 6px; background: var(--line); border-radius: 99px; overflow: hidden; }
+  .progress .bar { height: 100%; width: 25%; background: linear-gradient(90deg, var(--plum), var(--leaf)); transition: width .35s ease; }
+  .steps-label { display: flex; justify-content: space-between; margin-top: 10px; font-size: 0.74rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  .steps-label span:last-child { color: var(--plum); }
+  .wizard fieldset { border: 0; padding: 0; margin: 22px 0 0; }
+  .wizard h3 { font-size: 2rem; color: var(--burgundy); }
+  .wizard .lead { color: var(--muted); margin-top: 4px; text-align: left; }
+  .wizard label { display: block; font-weight: 800; font-size: 0.92rem; color: var(--espresso-2); margin-top: 16px; }
+  .wizard label small { display: block; font-weight: 400; color: var(--muted); font-size: 0.85rem; }
+  .wizard .opt { font-weight: 600; color: var(--muted); font-size: 0.8rem; }
+  .wizard input:not([type=checkbox]):not([type=radio]), .wizard textarea { display: block; width: 100%; margin-top: 6px; font: inherit; font-weight: 400; font-size: 1rem; color: var(--espresso); border: 1.5px solid var(--line); border-radius: 4px; padding: 13px 14px; background: #fff; }
+  .wizard input[type=file] { padding: 10px; background: var(--ivory); font-size: 0.9rem; color: var(--muted); }
+  .wizard input[type=file]::file-selector-button { font: inherit; font-weight: 800; font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase; color: #fff; background: var(--plum); border: 0; border-radius: 4px; padding: 9px 14px; margin-right: 12px; cursor: pointer; }
+  .wizard input:focus, .wizard textarea:focus { outline: none; border-color: var(--plum); box-shadow: 0 0 0 3px rgba(178,86,167,0.15); }
+  .wizard textarea { min-height: 84px; resize: vertical; }
+  .wizard .invalid { border-color: #c0392b !important; }
+  .wizard .q { font-weight: 800; font-size: 0.92rem; color: var(--espresso-2); margin-top: 20px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .pills.invalid span { border-color: #c0392b; }
+  .pills label { margin: 0; font-weight: 700; }
+  .pills input { position: absolute; opacity: 0; pointer-events: none; }
+  .pills span { display: inline-block; padding: 10px 16px; border: 1.5px solid var(--line); border-radius: 999px; font-size: 0.92rem; cursor: pointer; transition: all .15s ease; background: #fff; }
+  .pills input:checked + span { background: var(--burgundy); border-color: var(--burgundy); color: #fff; }
+  .pills input:focus-visible + span { box-shadow: 0 0 0 3px rgba(178,86,167,0.3); }
+  .wizard label.consent { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; margin-top: 22px; font-size: 0.92rem; }
+  .wizard label.consent input { width: 18px; height: 18px; margin-top: 3px; flex: none; accent-color: var(--gold); }
+  .wizard .nav { display: flex; gap: 10px; justify-content: space-between; margin-top: 28px; }
+  .wizard .nav .btn { flex: 1; }
+  .wizard .nav .btn.line { color: var(--burgundy); }
+  .wizard .form-msg { color: var(--muted) !important; }
+  .thanks { margin-top: 34px; background: var(--paper); color: var(--espresso); border-radius: 6px; padding: 40px 24px; box-shadow: 0 30px 60px rgba(0,0,0,0.25); }
+  .thanks h3 { font-size: 2.2rem; color: var(--burgundy); }
+  .thanks p { color: var(--muted) !important; text-align: center !important; }
+  .thanks .firma { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; color: var(--burgundy) !important; }
+  .thanks .btn { margin-top: 16px; }
+
   .cover .sub, .letter p, .head p, .benefit p, .tier p, .req small, .note, .event p, .cta p { text-align: justify; hyphens: manual; }
   .cta p.form-msg { text-align: center; }
 
@@ -198,7 +235,7 @@
     <h1>Programa de <em>Sponsors</em></h1>
     <p class="sub">Una invitación formal para que tu marca sea parte de los eventos de Mindful Wellness &amp; Coaching: ante una comunidad que busca productos y servicios de confianza, y que recomienda y apoya a los negocios con propósito.</p>
     <div class="actions">
-      <a class="btn js-form" href="#formulario">Solicitar mi participación</a>
+      <a class="btn" href="#formulario">Solicitar mi participación</a>
       <a class="btn line" href="#participar">Ver la propuesta</a>
     </div>
     <div class="facts">
@@ -348,11 +385,92 @@
   <div class="narrow">
     <div class="kicker">Bienvenido como aliado de Mindful Wellness</div>
     <h2>Estamos felices de contar contigo</h2>
-    <p>Desde ahora tu marca forma parte de nuestro grupo de aliados. Completa el formulario y sube tus archivos para preparar tu ficha de sponsor en Florecer en Gratitud y en los próximos eventos de Mindful Wellness.</p>
+    <p>Desde ahora tu marca forma parte de nuestro grupo de aliados. Completa estos cuatro pasos y sube tus archivos para preparar tu ficha de sponsor en Florecer en Gratitud y en los próximos eventos de Mindful Wellness.</p>
     <div class="deadline">Para Florecer en Gratitud: envía tu material antes del 15 de noviembre</div>
 
-    <div class="actions"><a class="btn green js-form" href="#formulario">Completar el formulario</a></div>
-    <p class="form-msg">En el formulario eliges "Ser sponsor" y subes tus archivos ahí mismo.</p>
+    <form id="sp-form" class="wizard" novalidate>
+      <div class="progress"><div class="bar" id="sp-bar"></div></div>
+      <div class="steps-label"><span id="sp-stepnum">Paso 1 de 4</span><span id="sp-steptitle">Bienvenido, aliado</span></div>
+
+      <fieldset class="step" data-title="Bienvenido, aliado">
+        <h3>Bienvenido, aliado</h3>
+        <p class="lead">Estamos felices de contar contigo. Empecemos por conocerte.</p>
+        <label>Nombre completo<input name="nombre" required autocomplete="name"></label>
+        <label>WhatsApp<input name="telefono" type="tel" required autocomplete="tel" placeholder="201 000 0000"></label>
+        <label>Correo electrónico<input name="correo" type="email" required autocomplete="email"></label>
+      </fieldset>
+
+      <fieldset class="step" data-title="Tu negocio" hidden>
+        <h3>Tu negocio</h3>
+        <p class="lead">Cuéntanos sobre tu marca en pocas palabras.</p>
+        <label>Nombre del negocio o marca<input name="negocio" required></label>
+        <label>¿A qué se dedica tu negocio?<input name="dedica" required placeholder="Ej.: repostería artesanal, coaching, belleza"></label>
+        <label>¿Desde cuándo emprendes?<input name="inicio" type="month"></label>
+        <div class="q">¿Tu negocio está registrado?</div>
+        <div class="pills" data-name="registro" data-required="1">
+          <label><input type="radio" name="registro" value="LLC o corporación"><span>LLC o corporación</span></label>
+          <label><input type="radio" name="registro" value="Negocio individual / DBA"><span>Negocio individual / DBA</span></label>
+          <label><input type="radio" name="registro" value="En proceso"><span>En proceso</span></label>
+          <label><input type="radio" name="registro" value="Aún no"><span>Aún no</span></label>
+        </div>
+        <div class="q">¿En qué etapa está?</div>
+        <div class="pills" data-name="etapa" data-required="1">
+          <label><input type="radio" name="etapa" value="Inicio"><span>Inicio</span></label>
+          <label><input type="radio" name="etapa" value="Creciendo (1 a 3 años)"><span>Creciendo</span></label>
+          <label><input type="radio" name="etapa" value="Establecido (más de 3 años)"><span>Establecido</span></label>
+          <label><input type="radio" name="etapa" value="Expandiéndome"><span>Expandiéndome</span></label>
+        </div>
+        <label>Página web o red social para tu QR<input name="qr" type="url" required placeholder="https://"></label>
+      </fieldset>
+
+      <fieldset class="step" data-title="Tu marca" hidden>
+        <h3>Tu marca</h3>
+        <p class="lead">Con esto preparamos tu ficha para la presentación.</p>
+        <label class="file">Logo<small>PNG con fondo transparente o vector. Si solo tienes JPG, en la mejor calidad.</small><input name="f_logo" type="file" required accept=".png,.svg,.pdf,.ai,.eps,.jpg,.jpeg,image/*"></label>
+        <label class="file">Foto de tu negocio<small>Tu producto, tu local o tu trabajo, con buena luz.</small><input name="f_negocio" type="file" required accept="image/*"></label>
+        <label class="file">Foto tuya<small>Donde se vea tu rostro claramente.</small><input name="f_foto" type="file" required accept="image/*"></label>
+        <label>Tu propósito de vida en una frase<textarea name="proposito" required maxlength="200" placeholder="La frase que te mueve"></textarea></label>
+        <label>Video corto <span class="opt">opcional</span><input name="video_link" type="url" placeholder="Enlace de Google Drive, YouTube o Instagram"></label>
+      </fieldset>
+
+      <fieldset class="step" data-title="Tu participación" hidden>
+        <h3>Tu participación</h3>
+        <p class="lead">Elige cómo quieres sumarte.</p>
+        <div class="q">¿Cómo quieres participar?</div>
+        <div class="pills multi" data-name="participacion" data-required="1">
+          <label><input type="checkbox" name="participacion" value="Productos o servicios"><span>Productos o servicios</span></label>
+          <label><input type="checkbox" name="participacion" value="Presentar mi negocio en persona"><span>Presentar mi negocio en persona</span></label>
+          <label><input type="checkbox" name="participacion" value="Contribución monetaria"><span>Contribución monetaria</span></label>
+          <label><input type="checkbox" name="participacion" value="Decoración o mesa"><span>Decoración o mesa</span></label>
+        </div>
+        <div class="q">¿En qué eventos?</div>
+        <div class="pills multi" data-name="eventos" data-required="1">
+          <label><input type="checkbox" name="eventos" value="Florecer en Gratitud 21 nov"><span>Florecer en Gratitud · 21 nov</span></label>
+          <label><input type="checkbox" name="eventos" value="Futuros eventos"><span>Futuros eventos</span></label>
+        </div>
+        <div class="q">¿Quieres ser parte del grupo de sponsors?</div>
+        <div class="pills" data-name="grupo" data-required="1">
+          <label><input type="radio" name="grupo" value="Sí"><span>Sí, quiero ser parte</span></label>
+          <label><input type="radio" name="grupo" value="Tal vez"><span>Quiero más información</span></label>
+          <label><input type="radio" name="grupo" value="No por ahora"><span>No por ahora</span></label>
+        </div>
+        <label class="consent"><input type="checkbox" name="autoriza" value="Sí" required> Autorizo a Mindful Wellness &amp; Coaching a usar mi logo, fotos, video y frase en la presentación, el material impreso y las redes de sus eventos.</label>
+      </fieldset>
+
+      <div class="nav">
+        <button type="button" class="btn line" id="sp-back" hidden>Atrás</button>
+        <button type="button" class="btn green" id="sp-next">Siguiente</button>
+        <button type="submit" class="btn green" id="sp-send" hidden>Enviar y sumarme</button>
+      </div>
+      <p class="form-msg" id="sp-msg" role="status"></p>
+    </form>
+    <div class="thanks" id="sp-thanks" hidden>
+      <h3>Gracias por sumarte</h3>
+      <p>Recibimos tu información y tus archivos. Estamos felices de contar contigo como aliado de Mindful Wellness.</p>
+      <p class="firma">Mónica Villalba</p>
+      <a class="btn green" href="#aporte" id="sp-paylink" hidden>Hacer mi contribución monetaria</a>
+    </div>
+    <iframe name="sp-target" id="sp-target" title="Envío" style="display:none"></iframe>
   </div>
 </section>
 
@@ -391,9 +509,6 @@
 </footer>
 
 <script>
-  // Enlace del formulario principal de Mindful Wellness en Jotform.
-  // Todos los botones de participar lo usan. Si está vacío, bajan a esta sección.
-  const FORM_LINK = "https://www.jotform.com/app/263144445153150";
   // Enlace de Stripe para la contribución monetaria de sponsors (monto abierto). Si está vacío, solo se muestra Zelle.
   const STRIPE_SPONSOR_LINK = "https://buy.stripe.com/6oU28s3sJcgA2Jq1i6enS0o";
   if (STRIPE_SPONSOR_LINK) {
@@ -401,9 +516,77 @@
     b.href = STRIPE_SPONSOR_LINK; b.target = "_blank"; b.rel = "noopener"; b.hidden = false;
     document.getElementById("stripe-note").hidden = false;
   }
-  if (FORM_LINK) {
-    document.querySelectorAll(".js-form").forEach(a => { a.href = FORM_LINK; a.target = "_blank"; a.rel = "noopener"; });
+
+  // ===== Formulario de sponsors (dentro de esta página) =====
+  // Los envíos van al formulario de Jotform indicado aquí. Mapea cada campo de esta página
+  // con el nombre del campo en Jotform (por ejemplo "q3_nombre"). Si JOTFORM_FORM_ID está vacío,
+  // el formulario funciona como vista previa y no envía.
+  const JOTFORM_FORM_ID = "";
+  const JOTFORM_FIELDS = {};
+
+  const form = document.getElementById("sp-form");
+  const steps = [...form.querySelectorAll(".step")];
+  const back = document.getElementById("sp-back"), next = document.getElementById("sp-next"), send = document.getElementById("sp-send");
+  const msg = document.getElementById("sp-msg");
+  let cur = 0;
+  function show(i) {
+    steps.forEach((st, k) => st.hidden = k !== i);
+    cur = i;
+    document.getElementById("sp-bar").style.width = ((i + 1) / steps.length * 100) + "%";
+    document.getElementById("sp-stepnum").textContent = "Paso " + (i + 1) + " de " + steps.length;
+    document.getElementById("sp-steptitle").textContent = steps[i].dataset.title;
+    back.hidden = i === 0; next.hidden = i === steps.length - 1; send.hidden = i !== steps.length - 1;
+    msg.textContent = "";
   }
+  function valid(st) {
+    let ok = true;
+    st.querySelectorAll("input[required], textarea[required]").forEach(el => {
+      const bad = el.type === "checkbox" ? !el.checked : !el.checkValidity() || (el.type !== "file" && !el.value.trim());
+      el.classList.toggle("invalid", bad); if (bad) ok = false;
+    });
+    st.querySelectorAll(".pills[data-required]").forEach(p => {
+      const bad = !p.querySelector("input:checked"); p.classList.toggle("invalid", bad); if (bad) ok = false;
+    });
+    if (!ok) msg.textContent = "Completa lo marcado para continuar.";
+    return ok;
+  }
+  next.addEventListener("click", () => { if (valid(steps[cur])) { show(cur + 1); form.scrollIntoView({ behavior: "smooth", block: "start" }); } });
+  back.addEventListener("click", () => show(cur - 1));
+  form.addEventListener("change", e => { const p = e.target.closest(".pills"); if (p) p.classList.remove("invalid"); e.target.classList && e.target.classList.remove("invalid"); });
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    if (!valid(steps[cur])) return;
+    const big = [...form.querySelectorAll("input[type=file]")].some(f => f.files[0] && f.files[0].size > 10 * 1048576);
+    if (big) { msg.textContent = "Cada archivo debe pesar menos de 10 MB."; return; }
+    const done = () => {
+      form.hidden = true; document.getElementById("sp-thanks").hidden = false;
+      if ([...form.querySelectorAll("input[name=participacion]:checked")].some(c => c.value === "Contribución monetaria")) document.getElementById("sp-paylink").hidden = false;
+      document.getElementById("formulario").scrollIntoView({ behavior: "smooth" });
+    };
+    if (!JOTFORM_FORM_ID) { msg.textContent = "Vista previa: el formulario aún no está conectado."; return; }
+    // Envío a Jotform con un formulario oculto (admite archivos).
+    const out = document.createElement("form");
+    out.method = "POST"; out.enctype = "multipart/form-data"; out.target = "sp-target";
+    out.action = "https://submit.jotform.com/submit/" + JOTFORM_FORM_ID + "/";
+    out.style.display = "none";
+    const add = (n, v) => { const i = document.createElement("input"); i.type = "hidden"; i.name = n; i.value = v; out.appendChild(i); };
+    add("formID", JOTFORM_FORM_ID);
+    const fd = new FormData(form), joined = {};
+    for (const [k, v] of fd.entries()) { if (v instanceof File) continue; (joined[k] = joined[k] || []).push(v); }
+    for (const k in joined) if (JOTFORM_FIELDS[k]) add(JOTFORM_FIELDS[k], joined[k].join(", "));
+    form.querySelectorAll("input[type=file]").forEach(f => {
+      if (!f.files[0] || !JOTFORM_FIELDS[f.name]) return;
+      const clone = f.cloneNode(); clone.name = JOTFORM_FIELDS[f.name] + "[]";
+      const dt = new DataTransfer(); dt.items.add(f.files[0]); clone.files = dt.files; out.appendChild(clone);
+    });
+    document.body.appendChild(out);
+    send.disabled = true; msg.textContent = "Enviando tu información y tus archivos…";
+    document.getElementById("sp-target").addEventListener("load", done, { once: true });
+    out.submit();
+  });
+  show(0);
+
 </script>
 </body>
 </html>
