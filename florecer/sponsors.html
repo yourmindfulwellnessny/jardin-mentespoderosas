@@ -368,7 +368,7 @@
       <p>Todo se envía en nuestro formulario, donde puedes subir tus archivos directamente.</p>
     </div>
     <div class="reqs">
-      <div class="req"><b>Logo de tu marca</b><span class="fmt">PNG o vector</span><small>Ideal PNG con fondo transparente, o SVG, PDF o AI. Si solo tienes JPG, en la mayor calidad posible (mínimo 1000 px).</small></div>
+      <div class="req"><b>Logo de tu marca</b><span class="fmt">PNG o vector</span><small>Ideal PNG con fondo transparente, o PDF. Si solo tienes JPG, en la mayor calidad posible (mínimo 1000 px).</small></div>
       <div class="req"><b>Foto de tu emprendimiento</b><span class="fmt">JPG o PNG</span><small>Tu producto, tu local o tu trabajo. Con buena luz y en alta resolución.</small></div>
       <div class="req"><b>Foto profesional tuya</b><span class="fmt">JPG o PNG</span><small>Donde se vea tu rostro claramente. Va junto a tu marca.</small></div>
       <div class="req"><b>Enlace para tu QR</b><span class="fmt">Web o red social</span><small>La página donde quieres que te encuentren.</small></div>
@@ -408,14 +408,14 @@
         <label>¿Desde cuándo emprendes?<input name="inicio" type="month"></label>
         <div class="q">¿Tu negocio está registrado?</div>
         <div class="pills" data-name="registro" data-required="1">
-          <label><input type="radio" name="registro" value="LLC o corporación"><span>LLC o corporación</span></label>
-          <label><input type="radio" name="registro" value="Negocio individual / DBA"><span>Negocio individual / DBA</span></label>
-          <label><input type="radio" name="registro" value="En proceso"><span>En proceso</span></label>
+          <label><input type="radio" name="registro" value="Sí, registrado como LLC o corporación"><span>LLC o corporación</span></label>
+          <label><input type="radio" name="registro" value="Sí, como negocio individual / DBA"><span>Negocio individual / DBA</span></label>
+          <label><input type="radio" name="registro" value="En proceso de registro"><span>En proceso</span></label>
           <label><input type="radio" name="registro" value="Aún no"><span>Aún no</span></label>
         </div>
         <div class="q">¿En qué etapa está?</div>
         <div class="pills" data-name="etapa" data-required="1">
-          <label><input type="radio" name="etapa" value="Inicio"><span>Inicio</span></label>
+          <label><input type="radio" name="etapa" value="Idea o inicio (menos de 1 año)"><span>Inicio</span></label>
           <label><input type="radio" name="etapa" value="Creciendo (1 a 3 años)"><span>Creciendo</span></label>
           <label><input type="radio" name="etapa" value="Establecido (más de 3 años)"><span>Establecido</span></label>
           <label><input type="radio" name="etapa" value="Expandiéndome"><span>Expandiéndome</span></label>
@@ -426,9 +426,9 @@
       <fieldset class="step" data-title="Tu marca" hidden>
         <h3>Tu marca</h3>
         <p class="lead">Con esto preparamos tu ficha para la presentación.</p>
-        <label class="file">Logo<small>PNG con fondo transparente o vector. Si solo tienes JPG, en la mejor calidad.</small><input name="f_logo" type="file" required accept=".png,.svg,.pdf,.ai,.eps,.jpg,.jpeg,image/*"></label>
-        <label class="file">Foto de tu negocio<small>Tu producto, tu local o tu trabajo, con buena luz.</small><input name="f_negocio" type="file" required accept="image/*"></label>
-        <label class="file">Foto tuya<small>Donde se vea tu rostro claramente.</small><input name="f_foto" type="file" required accept="image/*"></label>
+        <label class="file">Logo<small>PNG con fondo transparente o PDF. Si solo tienes JPG, en la mejor calidad.</small><input name="f_logo" type="file" required accept=".png,.pdf,.jpg,.jpeg"></label>
+        <label class="file">Foto de tu negocio<small>Tu producto, tu local o tu trabajo, con buena luz.</small><input name="f_negocio" type="file" required accept=".jpg,.jpeg,.png,image/jpeg,image/png"></label>
+        <label class="file">Foto tuya<small>Donde se vea tu rostro claramente.</small><input name="f_foto" type="file" required accept=".jpg,.jpeg,.png,image/jpeg,image/png"></label>
         <label>Tu propósito de vida en una frase<textarea name="proposito" required maxlength="200" placeholder="La frase que te mueve"></textarea></label>
         <label>Video corto <span class="opt">opcional</span><input name="video_link" type="url" placeholder="Enlace de Google Drive, YouTube o Instagram"></label>
       </fieldset>
@@ -438,23 +438,23 @@
         <p class="lead">Elige cómo quieres sumarte.</p>
         <div class="q">¿Cómo quieres participar?</div>
         <div class="pills multi" data-name="participacion" data-required="1">
-          <label><input type="checkbox" name="participacion" value="Productos o servicios"><span>Productos o servicios</span></label>
-          <label><input type="checkbox" name="participacion" value="Presentar mi negocio en persona"><span>Presentar mi negocio en persona</span></label>
+          <label><input type="checkbox" name="participacion" value="Aportar productos o regalos para los asistentes"><span>Productos o servicios</span></label>
+          <label><input type="checkbox" name="participacion" value="Presentar mi negocio en persona durante el evento"><span>Presentar mi negocio en persona</span></label>
           <label><input type="checkbox" name="participacion" value="Contribución monetaria"><span>Contribución monetaria</span></label>
-          <label><input type="checkbox" name="participacion" value="Decoración o mesa"><span>Decoración o mesa</span></label>
+          <label><input type="checkbox" name="participacion" value="Aportar a la decoración o la mesa"><span>Decoración o mesa</span></label>
         </div>
         <div class="q">¿En qué eventos?</div>
         <div class="pills multi" data-name="eventos" data-required="1">
-          <label><input type="checkbox" name="eventos" value="Florecer en Gratitud 21 nov"><span>Florecer en Gratitud · 21 nov</span></label>
-          <label><input type="checkbox" name="eventos" value="Futuros eventos"><span>Futuros eventos</span></label>
+          <label><input type="checkbox" name="eventos" value="Florecer en Gratitud · 21 de noviembre de 2026"><span>Florecer en Gratitud · 21 nov</span></label>
+          <label><input type="checkbox" name="eventos" value="Futuros eventos de Mindful Wellness (cenas, talleres y celebraciones)"><span>Futuros eventos</span></label>
         </div>
         <div class="q">¿Quieres ser parte del grupo de sponsors?</div>
         <div class="pills" data-name="grupo" data-required="1">
-          <label><input type="radio" name="grupo" value="Sí"><span>Sí, quiero ser parte</span></label>
-          <label><input type="radio" name="grupo" value="Tal vez"><span>Quiero más información</span></label>
+          <label><input type="radio" name="grupo" value="Sí, quiero ser parte"><span>Sí, quiero ser parte</span></label>
+          <label><input type="radio" name="grupo" value="Tal vez, quiero más información"><span>Quiero más información</span></label>
           <label><input type="radio" name="grupo" value="No por ahora"><span>No por ahora</span></label>
         </div>
-        <label class="consent"><input type="checkbox" name="autoriza" value="Sí" required> Autorizo a Mindful Wellness &amp; Coaching a usar mi logo, fotos, video y frase en la presentación, el material impreso y las redes de sus eventos.</label>
+        <label class="consent"><input type="checkbox" name="autoriza" value="Autorizo a Mindful Wellness &amp; Coaching a usar mi logo, mis fotos, mi video y mi frase en la presentación, material impreso y redes sociales del evento." required> Autorizo a Mindful Wellness &amp; Coaching a usar mi logo, fotos, video y frase en la presentación, el material impreso y las redes de sus eventos.</label>
       </fieldset>
 
       <div class="nav">
@@ -521,8 +521,17 @@
   // Los envíos van al formulario de Jotform indicado aquí. Mapea cada campo de esta página
   // con el nombre del campo en Jotform (por ejemplo "q3_nombre"). Si JOTFORM_FORM_ID está vacío,
   // el formulario funciona como vista previa y no envía.
-  const JOTFORM_FORM_ID = "";
-  const JOTFORM_FIELDS = {};
+  const JOTFORM_FORM_ID = "263145056135048";
+  // Campo de esta página -> campo del formulario de Jotform
+  const JOTFORM_FIELDS = {
+    correo: "q4_correo_electr__nico", negocio: "q6_nombre_del_negocio_o_marca", dedica: "q7___a_qu___se_dedica_tu_negocio_",
+    registro: "q10___tu_negocio_est___registrado_", etapa: "q11___en_qu___etapa_est___tu_emprendimiento_",
+    qr: "q17_enlace_principal_para_tu_c__digo_qr", proposito: "q22_tu_prop__sito_de_vida_en_una_frase", video_link: "q24_enlace_a_tu_video",
+    participacion: "q25___c__mo_te_gustar__a_participar_como_sponsor_[]", eventos: "q31_enQue[]",
+    grupo: "q28___quieres_formar_parte_del_grupo_de_sponsors_de_mindful_wellness_para_futuros_eventos_",
+    autoriza: "q29_autorizaci__n[]",
+    f_logo: "q18_logo[]", f_negocio: "q20_foto_de_tu_emprendimiento[]", f_foto: "q21_foto_tuya[]"
+  };
 
   const form = document.getElementById("sp-form");
   const steps = [...form.querySelectorAll(".step")];
@@ -557,14 +566,17 @@
   form.addEventListener("submit", e => {
     e.preventDefault();
     if (!valid(steps[cur])) return;
-    const big = [...form.querySelectorAll("input[type=file]")].some(f => f.files[0] && f.files[0].size > 10 * 1048576);
-    if (big) { msg.textContent = "Cada archivo debe pesar menos de 10 MB."; return; }
+    const files = [...form.querySelectorAll("input[type=file]")].filter(f => f.files[0]);
+    if (files.some(f => f.files[0].size > 10 * 1048576)) { msg.textContent = "Cada archivo debe pesar menos de 10 MB."; return; }
+    const okExt = { f_logo: ["png", "pdf", "jpg", "jpeg"], f_negocio: ["jpg", "jpeg", "png"], f_foto: ["jpg", "jpeg", "png"] };
+    const badFile = files.find(f => !okExt[f.name].includes(f.files[0].name.split(".").pop().toLowerCase()));
+    if (badFile) { msg.textContent = "El archivo " + badFile.files[0].name + " no es válido. Usa PNG o JPG" + (badFile.name === "f_logo" ? " (o PDF para el logo)." : "."); return; }
     const done = () => {
       form.hidden = true; document.getElementById("sp-thanks").hidden = false;
       if ([...form.querySelectorAll("input[name=participacion]:checked")].some(c => c.value === "Contribución monetaria")) document.getElementById("sp-paylink").hidden = false;
       document.getElementById("formulario").scrollIntoView({ behavior: "smooth" });
     };
-    if (!JOTFORM_FORM_ID) { msg.textContent = "Vista previa: el formulario aún no está conectado."; return; }
+    if (!JOTFORM_FORM_ID) { msg.textContent = "El formulario aún no está conectado."; return; }
     // Envío a Jotform con un formulario oculto (admite archivos).
     const out = document.createElement("form");
     out.method = "POST"; out.enctype = "multipart/form-data"; out.target = "sp-target";
@@ -572,12 +584,22 @@
     out.style.display = "none";
     const add = (n, v) => { const i = document.createElement("input"); i.type = "hidden"; i.name = n; i.value = v; out.appendChild(i); };
     add("formID", JOTFORM_FORM_ID);
-    const fd = new FormData(form), joined = {};
-    for (const [k, v] of fd.entries()) { if (v instanceof File) continue; (joined[k] = joined[k] || []).push(v); }
-    for (const k in joined) if (JOTFORM_FIELDS[k]) add(JOTFORM_FIELDS[k], joined[k].join(", "));
+    add("simple_spc", JOTFORM_FORM_ID + "-" + JOTFORM_FORM_ID);
+    add("website", "");
+    const fd = new FormData(form);
+    // Nombre en dos partes, teléfono, y mes/año de inicio
+    const nombre = (fd.get("nombre") || "").trim().split(/\s+/);
+    add("q2_nombre_completo[first]", nombre.shift() || "");
+    add("q2_nombre_completo[last]", nombre.join(" "));
+    const tel = (fd.get("telefono") || "").replace(/\D/g, "").replace(/^1(?=\d{10}$)/, "");
+    add("q3_tel__fono___whatsapp[area]", tel.length === 10 ? tel.slice(0, 3) : "");
+    add("q3_tel__fono___whatsapp[phone]", tel.length === 10 ? tel.slice(3) : (fd.get("telefono") || ""));
+    const ini = fd.get("inicio");
+    if (ini) { const [y, m] = ini.split("-"); add("q9_fecha_en_que_iniciaste_tu_emprendimiento[year]", y); add("q9_fecha_en_que_iniciaste_tu_emprendimiento[month]", m); add("q9_fecha_en_que_iniciaste_tu_emprendimiento[day]", "01"); }
+    for (const [k, v] of fd.entries()) { if (v instanceof File || !JOTFORM_FIELDS[k] || k.startsWith("f_")) continue; add(JOTFORM_FIELDS[k], v); }
     form.querySelectorAll("input[type=file]").forEach(f => {
       if (!f.files[0] || !JOTFORM_FIELDS[f.name]) return;
-      const clone = f.cloneNode(); clone.name = JOTFORM_FIELDS[f.name] + "[]";
+      const clone = document.createElement("input"); clone.type = "file"; clone.name = JOTFORM_FIELDS[f.name];
       const dt = new DataTransfer(); dt.items.add(f.files[0]); clone.files = dt.files; out.appendChild(clone);
     });
     document.body.appendChild(out);
