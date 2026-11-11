@@ -382,7 +382,12 @@
         <div class="courtesy">Tu invitada, con nuestra cortesía</div>
       </div>
       <div class="reg-body">
-        <p class="reg-intro" id="reg-intro">Primero cuéntanos sobre ti y tu invitada.<br>Luego completas tu contribución y tu lugar queda reservado.</p>
+        <p class="reg-intro" id="reg-intro">Llena tu registro y completa tu contribución de $50.<br>Así tu lugar y el de tu invitada quedan reservados.</p>
+        <div id="pay-now">
+          <a class="btn block" id="stripe-now" href="https://book.stripe.com/00w8wQ0gxgwQ3NuaSGenS0n" target="_blank" rel="noopener">Contribuir $50 ahora</a>
+          <p class="fine">Con tarjeta, Apple Pay o Google Pay, de forma segura con Stripe. También puedes contribuir por Zelle al final del registro.</p>
+          <div class="or">y llena tu registro</div>
+        </div>
 
         <form id="reg-form" class="reg-form" novalidate>
           <fieldset>
@@ -451,7 +456,7 @@
             <label class="choice" style="margin-top:18px"><input type="checkbox" name="fotos" value="Sí"> Acepto aparecer en fotos y videos del evento para las redes de Mindful Wellness.</label>
           </fieldset>
 
-          <button class="btn block" type="submit" id="reg-submit">Continuar a mi contribución</button>
+          <button class="btn block" type="submit" id="reg-submit">Registrarme y contribuir $50</button>
           <p class="err" id="reg-err" role="alert" hidden></p>
         </form>
 
@@ -515,6 +520,7 @@
   // =========================================
 
   document.getElementById("zelle-num").textContent = ZELLE;
+  document.getElementById("stripe-now").href = STRIPE_LINK;
 
   // Todos los botones "Reservar" llevan al formulario de registro.
   document.querySelectorAll(".js-contribuir").forEach(a => { a.href = "#registro"; });
@@ -586,6 +592,7 @@
 
     form.hidden = true;
     document.getElementById("reg-intro").hidden = true;
+    document.getElementById("pay-now").hidden = true;
     document.getElementById("step2").hidden = false;
     document.getElementById("registro").scrollIntoView({ behavior: "smooth" });
   });
