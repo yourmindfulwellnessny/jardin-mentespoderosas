@@ -261,89 +261,134 @@
     .when span:first-child { padding-left: 0; }
     .menu, .pillars { grid-template-columns: repeat(3, 1fr); }
   }
+
+  /* ===== estilo unificado (como "Detalles del evento") ===== */
+  section, .hero { padding-top: 70px; padding-bottom: 0; }
+  .hero { padding-top: 22px; }
+  .hero::before { display: none; }
+  .dinner, .wellness, .agenda, .details, .register, .sponsors { background: none; color: var(--ink); padding: 70px 0 0; margin-top: 0; }
+  .dinner .eyebrow, .agenda .eyebrow, .wellness .eyebrow, .sponsors .eyebrow { color: var(--terracotta); }
+  .dinner h2, .agenda h2, .wellness h2, .sponsors h2 { color: var(--burgundy); font-size: clamp(2.2rem, 8.5vw, 3.1rem); margin-top: 10px; }
+  .dinner .intro, .agenda .intro, .wellness .intro { color: var(--muted); opacity: 1; max-width: 560px; margin: 14px auto 0; font-size: 1.04rem; }
+  .tile h1 { color: #fff; font-size: clamp(2.6rem, 11vw, 4rem); margin-top: 10px; }
+  .tile h1 em { display: block; font-style: italic; font-weight: 500; color: #f3cf8e; font-size: 0.62em; margin-top: 6px; }
+  .hero-tile { min-height: 0; background-color: #3e121a; background-size: 100% auto; background-repeat: no-repeat; background-position: center top; padding-top: calc(62% - 10px); }
+  .hero-tile::before { background: linear-gradient(to top, rgba(62, 18, 26, 1) 0%, rgba(62, 18, 26, 0.95) 45%, rgba(62, 18, 26, 0.25) 72%, rgba(62, 18, 26, 0) 100%); }
+  .hero-tile .invite { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; line-height: 1.3; margin-top: 12px; max-width: 460px; color: #fff; }
+  .hero-tile .when { color: #fff; margin-top: 14px; font-size: 0.92rem; }
+  .hero-tile .when { justify-content: center !important; }
+  .hero-tile .when span:first-child { padding-left: 12px !important; }
+  .hero-tile .when span + span { border-left-color: rgba(255,255,255,0.4); }
+  .hero .actions { justify-content: center; }
+  .list-tile { margin-top: 30px; min-height: 0; justify-content: flex-start; padding: 0; }
+  .list-tile::before { background: linear-gradient(to bottom, rgba(62, 18, 26, 0.55) 0%, rgba(62, 18, 26, 0.9) 45%, rgba(62, 18, 26, 0.94) 100%); }
+  .list-tile .item { padding: 22px 22px; border-top: 1px solid rgba(243, 207, 142, 0.35); width: 100%; }
+  .list-tile .item:first-child { margin-top: 170px; border-top: 0; }
+  .list-tile .item.star { background: rgba(196, 154, 69, 0.22); }
+  .wellness .tiles { margin-top: 30px; }
+  .quote blockquote { color: var(--burgundy); }
+  .tile .sp-p { max-width: 460px; margin: 10px auto 0; }
+  .btn.gold { margin-top: 20px; background: var(--gold); color: var(--burgundy); box-shadow: none; }
+  .btn.gold:hover { background: #d8b062; }
+  .reg-card { border-radius: 20px; box-shadow: 0 18px 40px rgba(58, 42, 34, 0.18); }
+  .reg-head { background: linear-gradient(to top, rgba(62, 18, 26, 0.92), rgba(62, 18, 26, 0.55)), url(d-celebracion.jpg) center / cover; padding: 46px 22px 30px; }
+  .reg-head .lbl, .reg-head .courtesy { color: #f3cf8e; }
+  .closing { background: none; margin-top: 0; padding: 70px 0 40px; }
+  @media (min-width: 860px) { .hero-text { text-align: center; } }
+  .sp-link { margin-top: 26px; background: var(--burgundy); color: #fbefe2; border-radius: 20px; padding: 30px 24px; box-shadow: 0 18px 40px rgba(58, 42, 34, 0.18); }
+  .sp-link p { max-width: 520px; margin: 0 auto; }
+  .photo-tile { margin-top: 30px; min-height: 340px; background-position: center; }
+  .photo-tile::before { background: linear-gradient(to top, rgba(62, 18, 26, 0.75) 0%, rgba(62, 18, 26, 0) 35%); }
+  .menu-card, .sp-link { background: var(--burgundy); color: #fbefe2; }
+  .menu-card { margin-top: 14px; border-radius: 20px; box-shadow: 0 18px 40px rgba(58, 42, 34, 0.18); overflow: hidden; }
+  .menu-card .item { padding: 22px; border-top: 1px solid rgba(243, 207, 142, 0.3); }
+  .menu-card .item:first-child { border-top: 0; }
+  .menu-card .k { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #f3cf8e; }
+  .menu-card .v { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.6rem; line-height: 1.15; margin-top: 6px; color: #fff; }
+  .menu-card small { display: block; font-size: 0.95rem; opacity: 0.9; margin-top: 4px; }
+  .agenda-card { margin-top: 30px; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 26px 24px 10px; text-align: left; box-shadow: 0 18px 40px rgba(58, 42, 34, 0.10); }
+  .agenda-head { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta); text-align: center; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  .agenda-list { list-style: none; margin: 0; padding: 0; }
+  .agenda-list li { position: relative; padding: 16px 0 16px 28px; border-bottom: 1px solid var(--line); }
+  .agenda-list li:last-child { border-bottom: 0; }
+  .agenda-list li::before { content: ""; position: absolute; left: 4px; top: 27px; width: 10px; height: 10px; border-radius: 50%; background: var(--terracotta); }
+  .agenda-list b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.55rem; line-height: 1.15; color: var(--burgundy); }
+  .agenda-list em { display: inline-block; font-style: normal; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--olive); margin-top: 4px; }
+  .agenda-list span { display: block; color: var(--muted); font-size: 0.98rem; margin-top: 4px; }
+  .agenda-list li.star { background: var(--linen); margin: 0 -24px; padding-left: 52px; padding-right: 24px; }
+  .agenda-list li.star::before { left: 28px; background: var(--burgundy); }
+  .sp-link .btn { margin-top: 20px; }
 </style>
 </head>
 <body>
 
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <symbol id="leaf" viewBox="0 0 64 64"><path fill="currentColor" d="M32 3c3 6 6 9 11 10-2 3-2 5 0 7 4-1 8-1 12 1-3 4-4 8-3 12-4 0-7 2-8 5 4 2 7 5 8 9-6 0-10 1-13 4l-1-11c-1 4-3 7-6 9-3-2-5-5-6-9l-1 11c-3-3-7-4-13-4 1-4 4-7 8-9-1-3-4-5-8-5 1-4 0-8-3-12 4-2 8-2 12-1 2-2 2-4 0-7 5-1 8-4 11-10z"/><path fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1.2" d="M32 10v50M32 30l-12-8M32 30l12-8M32 42l-10-4M32 42l10-4"/></symbol>
-  </defs>
-</svg>
-
 <div class="top"><img src="logo-mindful-wellness.png" alt="Mindful Wellness"></div>
 
-<header class="hero">
-  <div class="container hero-grid">
-    <div class="hero-text">
-      <div class="eyebrow">Jardín de Mujeres con Mente Poderosa te invita</div>
+<header class="hero center">
+  <div class="narrow">
+    <div class="tile hero-tile" style="background-image:url(jardin.jpg)" role="img" aria-label="Las mujeres del Jardín reunidas y sonriendo">
+      <div class="k">Jardín de Mujeres con Mente Poderosa te invita</div>
       <h1>Cena de Thanksgiving<em>Florecer en Gratitud</em></h1>
-      <p class="lead">Mujeres con Propósito</p>
       <p class="invite">Trae a esa mujer en tu vida a quien le das gracias, y celebremos juntas alrededor de la mesa.</p>
       <div class="when"><span>Sábado 21 de noviembre</span><span>1:30 – 5:00 pm</span><span>Wallington, NJ</span></div>
-      <div class="actions">
-        <a class="btn js-contribuir" href="#registro">Reservar nuestro lugar</a>
-        <a class="btn ghost" href="#detalles">Ver detalles</a>
-      </div>
-      <p class="countdown" id="countdown"></p>
     </div>
-
-    <figure class="team">
-      <svg class="leaf-a" viewBox="0 0 64 64" aria-hidden="true"><use href="#leaf"/></svg>
-      <div class="team-frame">
-        <img src="jardin.jpg" alt="Las mujeres del Jardín reunidas y sonriendo alrededor de una mesa">
-        <figcaption>Nuestro Jardín</figcaption>
-      </div>
-      <svg class="leaf-b" viewBox="0 0 64 64" aria-hidden="true"><use href="#leaf"/></svg>
-    </figure>
+    <div class="actions">
+      <a class="btn js-contribuir" href="#registro">Reservar nuestro lugar</a>
+      <a class="btn ghost" href="#detalles">Ver detalles</a>
+    </div>
+    <p class="countdown" id="countdown"></p>
   </div>
 </header>
 
 <section class="dinner center">
-  <div class="container">
+  <div class="narrow">
     <div class="eyebrow">El corazón de la tarde</div>
     <h2>Una mesa servida con gratitud</h2>
     <p class="intro">Nos sentamos juntas a compartir una cena de Thanksgiving hecha con amor, para nutrir el cuerpo, el corazón y los lazos que nos unen.</p>
-    <div class="table-photo"><img src="mesa.jpg" alt="Mesa de Thanksgiving con pavo, calabaza blanca, velas y flores"></div>
-    <div class="menu">
-      <div class="menu-item"><h3>Pavo preparado por Mindful Wellness</h3><p>Horneado con cariño para todas.</p></div>
-      <div class="menu-item"><h3>Acompañantes y postres compartidos</h3><p>Lo que cada una trae a la mesa la hace más nuestra.</p></div>
-      <div class="menu-item"><h3>Brindis de celebración</h3><p>Por la gratitud, por nosotras y por lo que vendrá.</p></div>
+    <div class="tile photo-tile" style="background-image:url(mesa.jpg)" role="img" aria-label="Mesa de Thanksgiving con pavo, calabaza blanca, velas y flores">
+      <div class="k">Nuestra mesa de Thanksgiving</div>
+    </div>
+    <div class="menu-card">
+      <div class="item"><div class="k">El plato principal</div><div class="v">Pavo preparado por Mindful Wellness</div><small>Horneado con cariño para todas.</small></div>
+      <div class="item"><div class="k">Para compartir</div><div class="v">Acompañantes y postres compartidos</div><small>Lo que cada una trae a la mesa la hace más nuestra.</small></div>
+      <div class="item"><div class="k">Para celebrar</div><div class="v">Brindis de celebración</div><small>Por la gratitud, por nosotras y por lo que vendrá.</small></div>
     </div>
   </div>
 </section>
 
 <section class="agenda center" id="agenda">
-  <div class="container">
+  <div class="narrow">
     <div class="eyebrow">Así será nuestra tarde</div>
     <h2>Agenda del encuentro</h2>
     <p class="intro">Una tarde pensada para agradecer, conectar y celebrar lo que cada una está haciendo florecer.</p>
-    <ol class="timeline">
-      <li><h3>Bienvenida</h3><p>Te recibimos con un abrazo, a ti y a tu invitada, para empezar la tarde en calma y con alegría.</p></li>
-      <li><h3>Historia del agradecimiento</h3><p>Un momento para conocer de dónde viene esta tradición de dar gracias y mirar el año con ojos agradecidos.</p></li>
-      <li><h3>Brindis de celebración</h3><p>Brindamos por nosotras, por las mujeres que nos sostienen y por lo que vendrá.</p></li>
-      <li class="star">
-        <img src="conexion.jpg" alt="Mujeres conversando alrededor de una mesa en un encuentro de Mindful Wellness" loading="lazy">
-        <div class="txt">
-          <div class="tag">Durante la cena</div>
-          <h3>Florecer juntas</h3>
-          <p>Mientras compartimos la cena, cada una presenta su proyecto o emprendimiento: lo que hace, lo que sueña y cómo podemos apoyarla.</p>
-        </div>
-      </li>
-      <li><h3>Despedida</h3><p>Cerramos con gratitud, nuevas amistades y el corazón lleno.</p></li>
-    </ol>
+    <div class="agenda-card">
+      <div class="agenda-head">Sábado 21 de noviembre · 1:30 – 5:00 pm</div>
+      <ul class="agenda-list">
+        <li><b>Bienvenida</b><span>Te recibimos con un abrazo, a ti y a tu invitada.</span></li>
+        <li><b>Historia del agradecimiento</b><span>De dónde viene esta tradición de dar gracias, y lo que hemos avanzado este año.</span></li>
+        <li><b>Brindis de celebración</b><span>Por nosotras, por las mujeres que nos sostienen y por lo que vendrá.</span></li>
+        <li class="star"><b>Florecer juntas</b><em>Durante la cena</em><span>Cada una presenta su proyecto o emprendimiento: lo que hace, lo que sueña y cómo podemos apoyarla.</span></li>
+        <li><b>Despedida</b><span>Con gratitud, nuevas amistades y el corazón lleno.</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <section class="wellness center">
-  <div class="container">
+  <div class="narrow">
     <div class="eyebrow">Bienestar en cada detalle</div>
     <h2>Una tarde para florecer</h2>
     <p class="intro">Detrás de cada una de nosotras hay una mujer que creyó en ti, te escuchó o te sostuvo cuando más lo necesitabas. Esta vez la traes contigo.</p>
-    <div class="pillars">
-      <div class="pillar"><img src="gratitud.jpg" alt="Dos mujeres abrazadas celebrando en un evento de Mindful Wellness" loading="lazy" style="object-position:50% 50%"><h3>Gratitud</h3><p>Un homenaje a tu invitada: ella viene como tu regalo de gratitud.</p></div>
-      <div class="pillar"><img src="conexion.jpg" alt="Mujeres conversando alrededor de una mesa con flores y luces en un encuentro de Mindful Wellness" loading="lazy" style="object-position:50% 50%"><h3>Conexión</h3><p>Mujeres reales, historias reales, haciendo la diferencia.</p></div>
-      <div class="pillar"><img src="cuidado.jpg" alt="Hortensias blancas y una taza en un evento de bienestar" loading="lazy" style="object-position:50% 50%"><h3>Cuidado personal</h3><p>Venir y compartir es parte de tu bienestar: una forma de agradecerte por todo lo que has avanzado este año.</p></div>
+    <div class="tiles">
+      <div class="tile wide" style="background-image:url(gratitud.jpg);min-height:300px;background-position:center 30%" role="img" aria-label="Dos mujeres abrazadas celebrando en un evento de Mindful Wellness">
+        <div class="k">Gratitud</div><div class="v">Ella viene como tu regalo de gratitud</div><small>Un homenaje a tu invitada.</small>
+      </div>
+      <div class="tile" style="background-image:url(conexion.jpg);min-height:260px" role="img" aria-label="Mujeres conversando alrededor de una mesa en un encuentro de Mindful Wellness">
+        <div class="k">Conexión</div><div class="v">Mujeres reales, historias reales</div><small>Haciendo la diferencia.</small>
+      </div>
+      <div class="tile" style="background-image:url(cuidado.jpg);min-height:260px;background-position:center 25%" role="img" aria-label="Mujeres con flores en un evento de bienestar">
+        <div class="k">Cuidado personal</div><div class="v">Venir y compartir es bienestar</div><small>Una forma de agradecerte por todo lo que has avanzado.</small>
+      </div>
     </div>
     <div class="quote">
       <div class="ornament"></div>
@@ -501,16 +546,13 @@
   </div>
 </section>
 
-<section class="sponsors" id="sponsors">
-  <div class="container">
-    <div class="sp-card">
-      <img src="gratitud.jpg" alt="Dos mujeres abrazadas celebrando en un evento de Mindful Wellness" loading="lazy">
-      <div class="sp-txt">
-        <div class="eyebrow">Programa de Sponsors</div>
-        <h2>Haz visible tu marca en Florecer en Gratitud</h2>
-        <p>Cuando una persona crece, crece su comunidad. Invitamos a negocios y emprendedores a sumarse como sponsors de este evento y de los que vienen, ante una comunidad que busca productos y servicios de confianza.</p>
-        <a class="btn" href="sponsors.html">Quiero ser sponsor</a>
-      </div>
+<section class="sponsors center" id="sponsors">
+  <div class="narrow">
+    <div class="eyebrow">Programa de Sponsors</div>
+    <h2>Haz visible tu marca</h2>
+    <div class="sp-link">
+      <p>Cuando una persona crece, crece su comunidad. Invitamos a negocios y emprendedores a sumarse como sponsors de este evento y de los que vienen, ante una comunidad que busca productos y servicios de confianza.</p>
+      <a class="btn" href="sponsors.html">Quiero ser sponsor</a>
     </div>
   </div>
 </section>
