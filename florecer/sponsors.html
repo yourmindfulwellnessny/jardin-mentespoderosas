@@ -16,6 +16,7 @@
     --muted: #6e5a68; --line: #eadcea; --plum: #b256a7; --leaf: #74d474; --deep: #4e0d33;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  [hidden] { display: none !important; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Nunito Sans', sans-serif; background: var(--ivory); color: var(--espresso); font-size: 17px; line-height: 1.7; overflow-x: hidden; }
   img, svg { max-width: 100%; display: block; }
@@ -156,6 +157,17 @@
   .foot .lines { font-size: 0.92rem; color: var(--muted); line-height: 1.8; margin-top: 12px; }
   .foot a { color: var(--burgundy); text-decoration: none; font-weight: 700; }
 
+  .tier-link { display: inline-block; margin-top: 14px; font-weight: 800; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--burgundy); text-decoration: none; border-bottom: 2px solid var(--leaf); }
+  .pay { padding-bottom: 70px; }
+  .pay-card { margin-top: 28px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--leaf); padding: 26px 22px; display: grid; gap: 16px; }
+  .pay-fine { text-align: center; font-size: 0.88rem; color: var(--muted); margin-top: -6px; }
+  .zelle { text-align: center; background: var(--ivory); padding: 20px 16px; }
+  .zelle .z-k { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+  .zelle .z-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--burgundy); line-height: 1.1; margin-top: 4px; }
+  .zelle .z-name { font-size: 0.9rem; color: var(--muted); }
+  .zelle img { width: 150px; margin: 12px auto 0; border-radius: 6px; }
+  .zelle p { font-size: 0.92rem; margin-top: 10px; }
+
   .cover .sub, .letter p, .head p, .benefit p, .tier p, .req small, .note, .event p, .cta p { text-align: justify; hyphens: manual; }
   .cta p.form-msg { text-align: center; }
 
@@ -285,6 +297,7 @@
         <div class="t-k">Sponsor económico</div>
         <h3>Contribución monetaria</h3>
         <p>Es la opción de aporte en dinero: apoyas la producción del evento con una cantidad que acordamos contigo. Recibes un recibo de patrocinio a nombre de tu negocio.</p>
+        <a class="tier-link" href="#aporte">Hacer mi contribución</a>
         <ul><li>Logo destacado en impresos</li><li>Mención especial en el evento</li><li>Mención en redes</li></ul>
       </div>
     </div>
@@ -326,19 +339,41 @@
       <div class="req"><b>Información de tu negocio</b><span class="fmt">Formulario</span><small>Fecha de inicio, si está registrado, etapa del negocio, productos o servicios y datos de contacto.</small></div>
       <div class="req"><b>Grupo de sponsors</b><span class="fmt">Tu elección</span><small>Si quieres formar parte del grupo de sponsors de Mindful Wellness para futuros eventos.</small></div>
     </div>
-    <div class="note">Al enviar el formulario autorizas el uso de tu logo, fotos, video y frase en la presentación, el material impreso y las redes del evento. Después te contactamos para confirmar tu forma de participación.</div>
+    <div class="note">Al enviar el formulario autorizas el uso de tu logo, fotos, video y frase en la presentación, el material impreso y las redes del evento. Con tu información preparamos tu ficha de sponsor para el evento.</div>
   </div>
 </section>
 
 <section class="cta" id="formulario">
   <div class="narrow">
-    <div class="kicker">Solicitud de participación</div>
-    <h2>Hagamos crecer tu marca</h2>
-    <p>Completa el formulario y sube tus archivos. Nos pondremos en contacto contigo para confirmar tu participación en Florecer en Gratitud y en los próximos eventos.</p>
-    <div class="deadline">Para Florecer en Gratitud: antes del 15 de noviembre</div>
+    <div class="kicker">Bienvenido como aliado de Mindful Wellness</div>
+    <h2>Estamos felices de contar contigo</h2>
+    <p>Desde ahora tu marca forma parte de nuestro grupo de aliados. Completa el formulario y sube tus archivos para preparar tu ficha de sponsor en Florecer en Gratitud y en los próximos eventos de Mindful Wellness.</p>
+    <div class="deadline">Para Florecer en Gratitud: envía tu material antes del 15 de noviembre</div>
 
     <div class="actions"><a class="btn green js-form" href="#formulario">Completar el formulario</a></div>
     <p class="form-msg">En el formulario eliges "Ser sponsor" y subes tus archivos ahí mismo.</p>
+  </div>
+</section>
+
+<section class="block pay" id="aporte">
+  <div class="narrow">
+    <div class="head">
+      <div class="kicker">Sponsor económico</div>
+      <h2>Tu contribución monetaria</h2>
+      <p>Si elegiste apoyar con un aporte en dinero, puedes hacerlo aquí con la cantidad que acordamos. Al recibirla te enviamos tu recibo de patrocinio a nombre de tu negocio.</p>
+    </div>
+    <div class="pay-card">
+      <a class="btn block" id="stripe-sponsor" href="#aporte" hidden>Contribuir con tarjeta</a>
+      <p class="pay-fine" id="stripe-note" hidden>Con tarjeta, Apple Pay o Google Pay, de forma segura con Stripe.</p>
+      <div class="zelle">
+        <div class="z-k">Por Zelle</div>
+        <div class="z-num">201-679-9969</div>
+        <div class="z-name">Mindful Wellness &amp; Coaching LLC</div>
+        <img src="zelle-qr.jpg" alt="Código QR de Zelle de Mindful Wellness & Coaching LLC">
+        <p>En el mensaje escribe <b>"Sponsor"</b> y el nombre de tu negocio.</p>
+      </div>
+      <a class="btn line block" href="https://wa.me/12016799969?text=Hola%20M%C3%B3nica%2C%20ya%20hice%20mi%20contribuci%C3%B3n%20como%20sponsor%20de%20Mindful%20Wellness.%20Adjunto%20el%20comprobante.">Enviar mi comprobante por WhatsApp</a>
+    </div>
   </div>
 </section>
 
@@ -356,7 +391,14 @@
 <script>
   // Enlace del formulario principal de Mindful Wellness en Jotform.
   // Todos los botones de participar lo usan. Si está vacío, bajan a esta sección.
-  const FORM_LINK = "";
+  const FORM_LINK = "https://www.jotform.com/app/263144445153150";
+  // Enlace de Stripe para la contribución monetaria de sponsors (monto abierto). Si está vacío, solo se muestra Zelle.
+  const STRIPE_SPONSOR_LINK = "";
+  if (STRIPE_SPONSOR_LINK) {
+    const b = document.getElementById("stripe-sponsor");
+    b.href = STRIPE_SPONSOR_LINK; b.target = "_blank"; b.rel = "noopener"; b.hidden = false;
+    document.getElementById("stripe-note").hidden = false;
+  }
   if (FORM_LINK) {
     document.querySelectorAll(".js-form").forEach(a => { a.href = FORM_LINK; a.target = "_blank"; a.rel = "noopener"; });
   }
