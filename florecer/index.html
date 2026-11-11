@@ -297,6 +297,27 @@
   @media (min-width: 860px) { .hero-text { text-align: center; } }
   .sp-link { margin-top: 26px; background: var(--burgundy); color: #fbefe2; border-radius: 20px; padding: 30px 24px; box-shadow: 0 18px 40px rgba(58, 42, 34, 0.18); }
   .sp-link p { max-width: 520px; margin: 0 auto; }
+  .photo-tile { margin-top: 30px; min-height: 340px; background-position: center; }
+  .photo-tile::before { background: linear-gradient(to top, rgba(62, 18, 26, 0.75) 0%, rgba(62, 18, 26, 0) 35%); }
+  .menu-card, .sp-link { background: var(--burgundy); color: #fbefe2; }
+  .menu-card { margin-top: 14px; border-radius: 20px; box-shadow: 0 18px 40px rgba(58, 42, 34, 0.18); overflow: hidden; }
+  .menu-card .item { padding: 22px; border-top: 1px solid rgba(243, 207, 142, 0.3); }
+  .menu-card .item:first-child { border-top: 0; }
+  .menu-card .k { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: #f3cf8e; }
+  .menu-card .v { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.6rem; line-height: 1.15; margin-top: 6px; color: #fff; }
+  .menu-card small { display: block; font-size: 0.95rem; opacity: 0.9; margin-top: 4px; }
+  .agenda-card { margin-top: 30px; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 26px 24px 10px; text-align: left; box-shadow: 0 18px 40px rgba(58, 42, 34, 0.10); }
+  .agenda-head { font-size: 0.78rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--terracotta); text-align: center; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  .agenda-list { list-style: none; margin: 0; padding: 0; }
+  .agenda-list li { position: relative; padding: 16px 0 16px 28px; border-bottom: 1px solid var(--line); }
+  .agenda-list li:last-child { border-bottom: 0; }
+  .agenda-list li::before { content: ""; position: absolute; left: 4px; top: 27px; width: 10px; height: 10px; border-radius: 50%; background: var(--terracotta); }
+  .agenda-list b { display: block; font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 1.55rem; line-height: 1.15; color: var(--burgundy); }
+  .agenda-list em { display: inline-block; font-style: normal; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--olive); margin-top: 4px; }
+  .agenda-list span { display: block; color: var(--muted); font-size: 0.98rem; margin-top: 4px; }
+  .agenda-list li.star { background: var(--linen); margin: 0 -24px; padding-left: 52px; padding-right: 24px; }
+  .agenda-list li.star::before { left: 28px; background: var(--burgundy); }
+  .sp-link .btn { margin-top: 20px; }
 </style>
 </head>
 <body>
@@ -324,7 +345,10 @@
     <div class="eyebrow">El corazón de la tarde</div>
     <h2>Una mesa servida con gratitud</h2>
     <p class="intro">Nos sentamos juntas a compartir una cena de Thanksgiving hecha con amor, para nutrir el cuerpo, el corazón y los lazos que nos unen.</p>
-    <div class="tile list-tile" style="background-image:url(mesa.jpg)" role="img" aria-label="Mesa de Thanksgiving con pavo, calabaza blanca, velas y flores">
+    <div class="tile photo-tile" style="background-image:url(mesa.jpg)" role="img" aria-label="Mesa de Thanksgiving con pavo, calabaza blanca, velas y flores">
+      <div class="k">Nuestra mesa de Thanksgiving</div>
+    </div>
+    <div class="menu-card">
       <div class="item"><div class="k">El plato principal</div><div class="v">Pavo preparado por Mindful Wellness</div><small>Horneado con cariño para todas.</small></div>
       <div class="item"><div class="k">Para compartir</div><div class="v">Acompañantes y postres compartidos</div><small>Lo que cada una trae a la mesa la hace más nuestra.</small></div>
       <div class="item"><div class="k">Para celebrar</div><div class="v">Brindis de celebración</div><small>Por la gratitud, por nosotras y por lo que vendrá.</small></div>
@@ -337,12 +361,15 @@
     <div class="eyebrow">Así será nuestra tarde</div>
     <h2>Agenda del encuentro</h2>
     <p class="intro">Una tarde pensada para agradecer, conectar y celebrar lo que cada una está haciendo florecer.</p>
-    <div class="tile list-tile" style="background-image:url(d-lugar.jpg);background-position:center" role="img" aria-label="Salón Elite preparado con mesas, velas y flores de otoño">
-      <div class="item"><div class="k">Para empezar</div><div class="v">Bienvenida</div><small>Te recibimos con un abrazo, a ti y a tu invitada.</small></div>
-      <div class="item"><div class="k">Para reconocer</div><div class="v">Historia del agradecimiento</div><small>De dónde viene esta tradición de dar gracias, y lo que hemos avanzado este año.</small></div>
-      <div class="item"><div class="k">Para celebrar</div><div class="v">Brindis de celebración</div><small>Por nosotras, por las mujeres que nos sostienen y por lo que vendrá.</small></div>
-      <div class="item star"><div class="k">Durante la cena</div><div class="v">Florecer juntas</div><small>Cada una presenta su proyecto o emprendimiento: lo que hace, lo que sueña y cómo podemos apoyarla.</small></div>
-      <div class="item"><div class="k">Para cerrar</div><div class="v">Despedida</div><small>Con gratitud, nuevas amistades y el corazón lleno.</small></div>
+    <div class="agenda-card">
+      <div class="agenda-head">Sábado 21 de noviembre · 1:30 – 5:00 pm</div>
+      <ul class="agenda-list">
+        <li><b>Bienvenida</b><span>Te recibimos con un abrazo, a ti y a tu invitada.</span></li>
+        <li><b>Historia del agradecimiento</b><span>De dónde viene esta tradición de dar gracias, y lo que hemos avanzado este año.</span></li>
+        <li><b>Brindis de celebración</b><span>Por nosotras, por las mujeres que nos sostienen y por lo que vendrá.</span></li>
+        <li class="star"><b>Florecer juntas</b><em>Durante la cena</em><span>Cada una presenta su proyecto o emprendimiento: lo que hace, lo que sueña y cómo podemos apoyarla.</span></li>
+        <li><b>Despedida</b><span>Con gratitud, nuevas amistades y el corazón lleno.</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -525,7 +552,7 @@
     <h2>Haz visible tu marca</h2>
     <div class="sp-link">
       <p>Cuando una persona crece, crece su comunidad. Invitamos a negocios y emprendedores a sumarse como sponsors de este evento y de los que vienen, ante una comunidad que busca productos y servicios de confianza.</p>
-      <a class="btn gold" href="sponsors.html">Quiero ser sponsor</a>
+      <a class="btn" href="sponsors.html">Quiero ser sponsor</a>
     </div>
   </div>
 </section>
