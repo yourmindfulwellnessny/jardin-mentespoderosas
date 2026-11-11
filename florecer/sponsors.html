@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programa de Sponsors · Mindful Wellness</title>
+<meta name="description" content="Propuesta de alianza comercial para empresarios, emprendedores y dueños de negocio: visibilidad de marca en los eventos de Mindful Wellness & Coaching, comenzando con Florecer en Gratitud.">
+<meta property="og:title" content="Programa de Sponsors · Mindful Wellness">
+<meta property="og:description" content="Una invitación formal para hacer visible tu marca en nuestros eventos de esta temporada y los que vienen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ivory: #faf6fa; --paper: #ffffff; --espresso: #3b1f33; --espresso-2: #4a2a40;
+    --burgundy: #6b1145; --terracotta: #b256a7; --gold: #4f9a3a; --gold-soft: #c9ecbe;
+    --muted: #6e5a68; --line: #eadcea; --plum: #b256a7; --leaf: #74d474; --deep: #4e0d33;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito Sans', sans-serif; background: var(--ivory); color: var(--espresso); font-size: 17px; line-height: 1.7; overflow-x: hidden; }
+  img, svg { max-width: 100%; display: block; }
+  h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.1; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+  .narrow { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  .kicker { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.26em; text-transform: uppercase; color: var(--gold); }
+  .showcase .kicker, .cta .kicker { color: var(--leaf); }
+  .num { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700; color: var(--gold); letter-spacing: 0.08em; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; border: 0; cursor: pointer; font-family: 'Nunito Sans', sans-serif;
+    background: var(--burgundy); color: #fff; font-weight: 800; font-size: 0.98rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 17px 32px; border-radius: 4px; transition: background .2s ease; }
+  .btn:hover { background: var(--deep); }
+  .btn.dark { background: var(--burgundy); color: #fff; }
+  .btn.dark:hover { background: #561622; }
+  .btn.line { background: transparent; color: var(--burgundy); box-shadow: inset 0 0 0 1.5px var(--plum); }
+  .btn.line:hover { background: rgba(178,86,167,0.08); }
+  .btn.green { background: var(--gold); }
+  .btn.green:hover { background: #3f7f2e; }
+
+  /* portada */
+  .cover { background: radial-gradient(ellipse 70% 60% at 100% 0%, rgba(178,86,167,0.16), transparent 70%), radial-gradient(ellipse 60% 50% at 0% 100%, rgba(116,212,116,0.16), transparent 70%), #fff; color: var(--espresso); padding: 28px 0 72px; position: relative; overflow: hidden; border-bottom: 4px solid var(--plum); }
+  .cover::after { content: ""; position: absolute; right: -120px; top: -120px; width: 420px; height: 420px; border-radius: 50%; border: 1px solid rgba(178,86,167,0.28); }
+  .cover::before { content: ""; position: absolute; right: -60px; top: -60px; width: 300px; height: 300px; border-radius: 50%; border: 1px solid rgba(116,212,116,0.35); }
+  .brandbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
+  .brandbar .logo img { width: 170px; }
+  .brandbar .ref { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); text-align: right; line-height: 1.6; }
+  .cover .kicker { margin-top: 56px; }
+  .cover h1 { color: var(--burgundy); font-size: clamp(2.7rem, 11vw, 5rem); margin-top: 14px; max-width: 760px; }
+  .cover h1 em { font-style: italic; font-weight: 500; color: var(--plum); }
+  .cover .sub { font-size: 1.1rem; color: var(--muted); max-width: 560px; margin-top: 18px; }
+  .cover .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .facts { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); margin-top: 52px; border: 1px solid var(--line); }
+  .facts div { background: rgba(255,255,255,0.85); padding: 18px 16px; }
+  .facts b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 600; color: var(--burgundy); line-height: 1.1; }
+  .facts span { display: block; line-height: 1.45; margin-top: 4px; font-size: 0.8rem; color: var(--muted); letter-spacing: 0.04em; }
+
+  /* carta */
+  .letter { padding: 72px 0 20px; }
+  .letter .paper { background: var(--paper); border: 1px solid var(--line); padding: 36px 24px; box-shadow: 0 20px 50px rgba(43,30,26,0.07); position: relative; }
+  .letter .paper::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--burgundy); }
+  .letter h2 { font-size: clamp(1.9rem, 7vw, 2.5rem); color: var(--burgundy); }
+  .letter p { margin-top: 14px; }
+  .sign { margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--line); }
+  .sign .name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.7rem; color: var(--burgundy); line-height: 1.1; }
+  .sign .role { font-size: 0.85rem; color: var(--muted); letter-spacing: 0.04em; }
+
+  section.block { padding: 72px 0 10px; }
+  .head h2 { font-size: clamp(2.1rem, 8vw, 3rem); color: var(--espresso); margin-top: 10px; }
+  .head p { color: var(--muted); max-width: 600px; margin-top: 12px; }
+
+  /* beneficios */
+  .benefits { display: grid; gap: 0; margin-top: 34px; border-top: 1px solid var(--line); }
+  .benefit { display: grid; grid-template-columns: 54px 1fr; gap: 6px 14px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+  .benefit h3 { font-size: 1.55rem; color: var(--burgundy); }
+  .benefit p { grid-column: 2; color: var(--muted); font-size: 0.98rem; }
+
+  /* muestra */
+  .showcase { background: linear-gradient(160deg, var(--burgundy), var(--deep)); color: #f6ece2; padding: 72px 0 80px; margin-top: 72px; }
+  .showcase .head h2 { color: #fff; }
+  .showcase .head p { color: rgba(246,236,226,0.8); }
+  .slide { margin-top: 36px; background: var(--paper); color: var(--espresso); border-radius: 6px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.3); display: grid; }
+  .slide .visual { min-height: 220px; position: relative; display: grid; place-items: center; overflow: hidden;
+    background: linear-gradient(135deg, #f3e6f1 0%, #e6f4e1 100%); }
+  .slide .visual::before { content: ""; position: absolute; inset: 18px; border: 1px dashed rgba(43,30,26,0.35); border-radius: 4px; }
+  .slide .visual span { position: relative; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(43,30,26,0.7); text-align: center; padding: 0 30px; }
+  .slide .info { padding: 26px 24px 28px; display: grid; gap: 14px; }
+  .slide .logo-ph { width: 150px; height: 64px; border: 1px dashed rgba(43,30,26,0.4); display: grid; place-items: center; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; color: var(--muted); }
+  .slide .bname { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--burgundy); line-height: 1.05; }
+  .slide .owner { font-size: 0.9rem; color: var(--muted); margin-top: -8px; }
+  .slide blockquote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.35rem; line-height: 1.3; border-left: 2px solid var(--gold); padding-left: 14px; }
+  .slide .qr { display: flex; align-items: center; gap: 14px; }
+  .slide .qr img { width: 84px; height: 84px; }
+  .slide .qr small { font-size: 0.82rem; color: var(--muted); line-height: 1.4; }
+  .uses { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; margin-top: 28px; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.18); }
+  .uses div { background: rgba(78,13,51,0.55); padding: 16px; font-weight: 700; font-size: 0.95rem; }
+  .uses div small { display: block; font-weight: 400; opacity: 0.75; font-size: 0.85rem; }
+
+  /* participación */
+  .tiers { display: grid; gap: 16px; margin-top: 34px; }
+  .tier { background: var(--paper); border: 1px solid var(--line); padding: 26px 22px; border-top: 3px solid var(--gold); }
+  .tier.feat { border-top-color: var(--burgundy); }
+  .tier .t-k { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--terracotta); }
+  .tier h3 { font-size: 1.7rem; color: var(--espresso); margin-top: 6px; }
+  .tier p { color: var(--muted); font-size: 0.97rem; margin-top: 8px; }
+  .tier ul { list-style: none; margin-top: 12px; }
+  .tier li { font-size: 0.95rem; padding: 7px 0; border-top: 1px solid var(--line); }
+
+  /* evento */
+  .event { margin-top: 72px; background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 64px 0; }
+  .event-grid { display: grid; gap: 30px; }
+  .event h2 { font-size: clamp(2.1rem, 8vw, 2.9rem); color: var(--burgundy); margin-top: 10px; }
+  .event .meta { margin-top: 14px; font-weight: 700; color: var(--espresso-2); }
+  .event .meta span { display: block; font-weight: 400; color: var(--muted); }
+  .agenda { list-style: none; border-top: 1px solid var(--line); }
+  .agenda li { display: grid; grid-template-columns: 44px 1fr; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+  .agenda li b { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 600; color: var(--espresso); line-height: 1.2; display: block; }
+  .agenda li small { color: var(--muted); font-size: 0.92rem; }
+  .agenda li.hl { background: var(--ivory); margin: 0 -14px; padding-left: 14px; padding-right: 14px; }
+  .agenda li.hl b { color: var(--burgundy); }
+
+  /* materiales */
+  .reqs { display: grid; gap: 0; margin-top: 30px; border-top: 1px solid var(--line); }
+  .req { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; padding: 16px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .req b { font-weight: 800; }
+  .req small { grid-column: 1 / -1; color: var(--muted); font-size: 0.93rem; }
+  .req .fmt { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--terracotta); text-align: right; }
+  .note { margin-top: 22px; background: var(--paper); border-left: 3px solid var(--gold); padding: 16px 18px; font-size: 0.95rem; color: var(--espresso-2); }
+
+  /* cierre */
+  .cta { margin-top: 80px; background: linear-gradient(160deg, var(--burgundy), var(--deep)); color: #f6ecf3; padding: 70px 0 34px; text-align: center; }
+  .cta h2 { color: #fff; font-size: clamp(2.2rem, 8.5vw, 3.2rem); margin-top: 12px; }
+  .cta p { color: rgba(246,236,243,0.85); max-width: 560px; margin: 14px auto 0; }
+  .cta .deadline { display: inline-block; margin-top: 18px; border: 1px solid rgba(201,236,190,0.6); color: var(--gold-soft); padding: 8px 18px; font-weight: 700; font-size: 0.92rem; letter-spacing: 0.04em; }
+  .cta .actions { margin-top: 26px; display: flex; justify-content: center; }
+  .form { margin-top: 34px; background: var(--paper); color: var(--espresso); border-radius: 6px; padding: 26px 20px 28px; text-align: left; box-shadow: 0 30px 60px rgba(0,0,0,0.25); }
+  .form fieldset { border: 0; padding: 0 0 22px; margin: 0 0 22px; border-bottom: 1px solid var(--line); }
+  .form legend { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; color: var(--burgundy); margin-bottom: 6px; }
+  .form legend .num { margin-right: 8px; }
+  .form label { display: block; font-weight: 800; font-size: 0.92rem; color: var(--espresso-2); margin-top: 14px; }
+  .form label small { display: block; font-weight: 400; color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
+  .form .opt { font-weight: 600; color: var(--muted); font-size: 0.8rem; }
+  .form input:not([type=checkbox]), .form select, .form textarea { display: block; width: 100%; margin-top: 6px; font: inherit; font-weight: 400; font-size: 1rem; color: var(--espresso); border: 1.5px solid var(--line); border-radius: 4px; padding: 12px 13px; background: #fff; }
+  .form input[type=file] { padding: 10px; background: var(--ivory); }
+  .form input:focus, .form select:focus, .form textarea:focus { outline: none; border-color: var(--plum); box-shadow: 0 0 0 3px rgba(178,86,167,0.15); }
+  .form textarea { min-height: 80px; resize: vertical; }
+  .form .two { display: grid; gap: 0 16px; }
+  .form .group-q { font-weight: 800; font-size: 0.92rem; margin-top: 18px; color: var(--espresso-2); }
+  .form label.chk { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; margin-top: 10px; }
+  .form label.chk input { width: 18px; height: 18px; margin-top: 4px; flex: none; accent-color: var(--gold); }
+  .btn.block { width: 100%; }
+  .cta .form-msg { text-align: center; color: rgba(246,236,243,0.75) !important; font-size: 0.92rem; margin-top: 12px !important; }
+  .thanks { text-align: center; padding: 30px 0; }
+  .thanks h3 { font-size: 2rem; color: var(--burgundy); }
+  .thanks .firma { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; color: var(--burgundy); }
+  .foot { background: #fff; padding: 40px 0 34px; text-align: center; border-top: 4px solid var(--leaf); }
+  .foot img { width: 170px; margin: 0 auto; }
+  .foot .lines { font-size: 0.92rem; color: var(--muted); line-height: 1.8; margin-top: 12px; }
+  .foot a { color: var(--burgundy); text-decoration: none; font-weight: 700; }
+
+  .tier-link { display: inline-block; margin-top: 14px; font-weight: 800; font-size: 0.9rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--burgundy); text-decoration: none; border-bottom: 2px solid var(--leaf); }
+  .pay { padding-bottom: 70px; }
+  .pay-card { margin-top: 28px; background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--leaf); padding: 26px 22px; display: grid; gap: 16px; }
+  .pay-fine { text-align: center; font-size: 0.88rem; color: var(--muted); margin-top: -6px; }
+  .zelle { text-align: center; background: var(--ivory); padding: 20px 16px; }
+  .zelle .z-k { font-size: 0.74rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); }
+  .zelle .z-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; color: var(--burgundy); line-height: 1.1; margin-top: 4px; }
+  .zelle .z-name { font-size: 0.9rem; color: var(--muted); }
+  .zelle img { width: 150px; margin: 12px auto 0; border-radius: 6px; }
+  .zelle p { font-size: 0.92rem; margin-top: 10px; }
+
+  .cover .sub, .letter p, .head p, .benefit p, .tier p, .req small, .note, .event p, .cta p { text-align: justify; hyphens: manual; }
+  .cta p.form-msg { text-align: center; }
+
+  @media (min-width: 820px) {
+    .facts { grid-template-columns: repeat(4, 1fr); }
+    .letter .paper { padding: 50px 56px; }
+    .benefits { grid-template-columns: 1fr 1fr; column-gap: 48px; }
+    .slide { grid-template-columns: 1.1fr 1fr; }
+    .slide .visual { min-height: 380px; }
+    .uses { grid-template-columns: repeat(4, 1fr); }
+    .tiers { grid-template-columns: repeat(3, 1fr); }
+    .event-grid { grid-template-columns: 1fr 1.1fr; align-items: start; }
+    .reqs { grid-template-columns: 1fr 1fr; column-gap: 48px; }
+    .form { padding: 40px 44px; }
+    .form .two { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="brandbar">
+      <div class="logo"><img src="logo-mindful-wellness.png" alt="Mindful Wellness & Coaching"></div>
+      <div class="ref">Propuesta de alianza comercial<br>Temporada 2026 – 2027</div>
+    </div>
+    <div class="kicker">Para empresarios, emprendedores y dueños de negocio</div>
+    <h1>Programa de <em>Sponsors</em></h1>
+    <p class="sub">Una invitación formal para que tu marca sea parte de los eventos de Mindful Wellness &amp; Coaching: ante una comunidad que busca productos y servicios de confianza, y que recomienda y apoya a los negocios con propósito.</p>
+    <div class="actions">
+      <a class="btn js-form" href="#formulario">Solicitar mi participación</a>
+      <a class="btn line" href="#propuesta">Ver la propuesta</a>
+    </div>
+    <div class="facts">
+      <div><b>Comunidad</b><span>Personas que apoyan negocios locales</span></div>
+      <div><b>Eventos</b><span>Cenas, talleres y celebraciones</span></div>
+      <div><b>Visibilidad</b><span>Presentación, impresos y redes</span></div>
+      <div><b>Continuidad</b><span>Este evento y los que vienen</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="letter" id="propuesta">
+  <div class="narrow">
+    <div class="paper">
+      <div class="kicker">Carta de invitación</div>
+      <h2>Estimados empresarios y emprendedores:</h2>
+      <p>En Mindful Wellness &amp; Coaching creemos que cuando una persona crece, crece también su comunidad. Cada negocio que se fortalece genera oportunidades, inspira a otros y abre camino para quienes vienen detrás.</p>
+      <p>Nuestra comunidad reúne a personas que valoran el trabajo hecho con propósito y que buscan productos y servicios de confianza. A lo largo del año organizamos cenas, talleres y celebraciones donde se crean conexiones reales, y queremos que en cada uno de esos encuentros estén presentes las marcas que comparten nuestros valores.</p>
+      <p>Por eso queremos invitarte formalmente a ser <b>sponsor de Mindful Wellness</b>. Tu marca tendrá un lugar visible en la presentación, el material impreso y nuestras redes sociales, y contarás con un espacio para compartir la historia de tu negocio y tu propósito ante nuestra comunidad.</p>
+      <p>Nuestro próximo encuentro es <b>Florecer en Gratitud</b>, el 21 de noviembre, y marca el inicio de una temporada de eventos en la que nos encantaría contar con tu marca.</p>
+      <div class="sign">
+        <div class="name">Mónica Villalba</div>
+        <div class="role">Fundadora · Mindful Wellness &amp; Coaching LLC</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head">
+      <div class="kicker">Lo que recibe tu marca</div>
+      <h2>Beneficios para sponsors</h2>
+      <p>Una alianza pensada para que tu negocio gane presencia, confianza y clientes reales.</p>
+    </div>
+    <div class="benefits">
+      <div class="benefit"><span class="num">01</span><h3>Tu logo en cada pieza</h3><p>En la pantalla del evento, el material impreso y las publicaciones de Mindful Wellness.</p></div>
+      <div class="benefit"><span class="num">02</span><h3>Código QR de tu negocio</h3><p>Creado con tu página web o red social, para que los asistentes te sigan y te compren desde su teléfono.</p></div>
+      <div class="benefit"><span class="num">03</span><h3>Presentación en persona</h3><p>Un espacio para contar la historia de tu negocio y tu propósito frente a los asistentes de nuestros eventos.</p></div>
+      <div class="benefit"><span class="num">04</span><h3>Mención en redes</h3><p>Antes y después del evento, con tus fotos, tu frase de propósito y tu enlace.</p></div>
+      <div class="benefit"><span class="num">05</span><h3>Conexión con otras marcas</h3><p>Relación con otros emprendedores del grupo para colaborar y referirse clientes.</p></div>
+      <div class="benefit"><span class="num">06</span><h3>Prioridad en futuros eventos</h3><p>Los sponsors del grupo son los primeros invitados a participar en cada nueva fecha.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="showcase">
+  <div class="wrap">
+    <div class="head">
+      <div class="kicker">Así se verá tu marca</div>
+      <h2>Tu espacio en la presentación</h2>
+      <p>Con el material que nos envíes armamos una ficha profesional de tu negocio. Este es el formato.</p>
+    </div>
+    <div class="slide">
+      <div class="visual"><span>Foto de tu emprendimiento</span></div>
+      <div class="info">
+        <div class="logo-ph">TU LOGO</div>
+        <div>
+          <div class="bname">Nombre de tu negocio</div>
+          <div class="owner">Tu nombre · Tu cargo</div>
+        </div>
+        <blockquote>"Aquí va tu propósito de vida en una frase."</blockquote>
+        <div class="qr"><img src="qr-sponsors.svg" alt="Ejemplo de código QR"><small>Tu código QR<br>con tu página web o red social</small></div>
+      </div>
+    </div>
+    <div class="uses">
+      <div>Pantalla del evento<small>Presentación de sponsors</small></div>
+      <div>Material impreso<small>Mesa, programa y QR</small></div>
+      <div>Redes sociales<small>Instagram y Facebook</small></div>
+      <div>Grupo de sponsors<small>Futuros eventos</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head">
+      <div class="kicker">Formas de participar</div>
+      <h2>Elige cómo quieres sumarte</h2>
+      <p>Cada marca aporta de la manera que mejor se ajusta a su negocio. Lo acordamos en conjunto.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <div class="t-k">Sponsor en especie</div>
+        <h3>Productos o servicios</h3>
+        <p>Aportas regalos, muestras, un servicio o un sorteo para los asistentes.</p>
+        <ul><li>Logo y QR en la presentación</li><li>Mención en redes</li><li>Tu producto en manos de cada asistente</li></ul>
+      </div>
+      <div class="tier feat">
+        <div class="t-k">Sponsor con presentación</div>
+        <h3>Tu marca presente</h3>
+        <p>Además de tu aporte, presentas tu negocio en persona durante el evento.</p>
+        <ul><li>Todo lo de sponsor en especie</li><li>Presentación de tu proyecto</li><li>Espacio para mostrar tu producto</li></ul>
+      </div>
+      <div class="tier">
+        <div class="t-k">Sponsor económico</div>
+        <h3>Contribución monetaria</h3>
+        <p>Es la opción de aporte en dinero: apoyas la producción del evento con una cantidad que acordamos contigo. Recibes un recibo de patrocinio a nombre de tu negocio.</p>
+        <a class="tier-link" href="#aporte">Hacer mi contribución</a>
+        <ul><li>Logo destacado en impresos</li><li>Mención especial en el evento</li><li>Mención en redes</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="event">
+  <div class="wrap event-grid">
+    <div>
+      <div class="kicker">Próximo evento</div>
+      <h2>Florecer en Gratitud</h2>
+      <p class="meta">Sábado 21 de noviembre de 2026 · 1:30 a 5:00 pm<span>Salón Elite de Mujeres con Propósito, Wallington, NJ</span></p>
+      <p style="margin-top:14px;color:var(--muted)">Cena de Thanksgiving de Mujeres con Propósito y el Jardín de Mujeres con Mente Poderosa.</p>
+    </div>
+    <ol class="agenda">
+      <li><span class="num">01</span><div><b>Bienvenida</b><small>Recepción de los asistentes</small></div></li>
+      <li><span class="num">02</span><div><b>Historia del agradecimiento</b></div></li>
+      <li><span class="num">03</span><div><b>Brindis de celebración</b></div></li>
+      <li class="hl"><span class="num">04</span><div><b>Florecer juntas</b><small>Durante la cena, cada sponsor presenta su proyecto</small></div></li>
+      <li><span class="num">05</span><div><b>Despedida</b></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" id="materiales">
+  <div class="wrap">
+    <div class="head">
+      <div class="kicker">Para preparar tu participación</div>
+      <h2>Material que necesitamos</h2>
+      <p>Todo se envía en nuestro formulario, donde puedes subir tus archivos directamente.</p>
+    </div>
+    <div class="reqs">
+      <div class="req"><b>Logo de tu marca</b><span class="fmt">PNG o vector</span><small>Ideal PNG con fondo transparente, o SVG, PDF o AI. Si solo tienes JPG, en la mayor calidad posible (mínimo 1000 px).</small></div>
+      <div class="req"><b>Foto de tu emprendimiento</b><span class="fmt">JPG o PNG</span><small>Tu producto, tu local o tu trabajo. Con buena luz y en alta resolución.</small></div>
+      <div class="req"><b>Foto profesional tuya</b><span class="fmt">JPG o PNG</span><small>Donde se vea tu rostro claramente. Va junto a tu marca.</small></div>
+      <div class="req"><b>Enlace para tu QR</b><span class="fmt">Web o red social</span><small>La página donde quieres que te encuentren.</small></div>
+      <div class="req"><b>Tu propósito de vida</b><span class="fmt">Una frase</span><small>La frase que te mueve y que quieres compartir con los asistentes.</small></div>
+      <div class="req"><b>Video corto</b><span class="fmt">Opcional</span><small>De 30 a 60 segundos presentando tu negocio, o un enlace a él.</small></div>
+      <div class="req"><b>Información de tu negocio</b><span class="fmt">Formulario</span><small>Fecha de inicio, si está registrado, etapa del negocio, productos o servicios y datos de contacto.</small></div>
+      <div class="req"><b>Grupo de sponsors</b><span class="fmt">Tu elección</span><small>Si quieres formar parte del grupo de sponsors de Mindful Wellness para futuros eventos.</small></div>
+    </div>
+    <div class="note">Al enviar el formulario autorizas el uso de tu logo, fotos, video y frase en la presentación, el material impreso y las redes del evento. Con tu información preparamos tu ficha de sponsor para el evento.</div>
+  </div>
+</section>
+
+<section class="cta" id="formulario">
+  <div class="narrow">
+    <div class="kicker">Bienvenido como aliado de Mindful Wellness</div>
+    <h2>Estamos felices de contar contigo</h2>
+    <p>Desde ahora tu marca forma parte de nuestro grupo de aliados. Completa el formulario y sube tus archivos para preparar tu ficha de sponsor en Florecer en Gratitud y en los próximos eventos de Mindful Wellness.</p>
+    <div class="deadline">Para Florecer en Gratitud: envía tu material antes del 15 de noviembre</div>
+
+    <div class="actions"><a class="btn green js-form" href="#formulario">Completar el formulario</a></div>
+    <p class="form-msg">En el formulario eliges "Ser sponsor" y subes tus archivos ahí mismo.</p>
+  </div>
+</section>
+
+<section class="block pay" id="aporte">
+  <div class="narrow">
+    <div class="head">
+      <div class="kicker">Sponsor económico</div>
+      <h2>Tu contribución monetaria</h2>
+      <p>Si elegiste apoyar con un aporte en dinero, puedes hacerlo aquí con la cantidad que acordamos. Al recibirla te enviamos tu recibo de patrocinio a nombre de tu negocio.</p>
+    </div>
+    <div class="pay-card">
+      <a class="btn block" id="stripe-sponsor" href="#aporte" hidden>Contribuir con tarjeta</a>
+      <p class="pay-fine" id="stripe-note" hidden>Con tarjeta, Apple Pay o Google Pay, de forma segura con Stripe.</p>
+      <div class="zelle">
+        <div class="z-k">Por Zelle</div>
+        <div class="z-num">201-679-9969</div>
+        <div class="z-name">Mindful Wellness &amp; Coaching LLC</div>
+        <img src="zelle-qr.jpg" alt="Código QR de Zelle de Mindful Wellness & Coaching LLC">
+        <p>En el mensaje escribe <b>"Sponsor"</b> y el nombre de tu negocio.</p>
+      </div>
+      <a class="btn line block" href="https://wa.me/12016799969?text=Hola%20M%C3%B3nica%2C%20ya%20hice%20mi%20contribuci%C3%B3n%20como%20sponsor%20de%20Mindful%20Wellness.%20Adjunto%20el%20comprobante.">Enviar mi comprobante por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="narrow">
+    <img src="logo-mindful-wellness.png" alt="Mindful Wellness & Coaching">
+    <div class="lines">
+      Mónica Villalba · Fundadora · Mindful Wellness &amp; Coaching LLC<br>
+      WhatsApp <a href="https://wa.me/12016799969">201-679-9969</a><br>
+      <a href="https://mindfulwellness.nyc/" target="_blank" rel="noopener">mindfulwellness.nyc</a> · <a href="https://instagram.com/mindfulwellnessnyc" target="_blank" rel="noopener">@mindfulwellnessnyc</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Enlace del formulario principal de Mindful Wellness en Jotform.
+  // Todos los botones de participar lo usan. Si está vacío, bajan a esta sección.
+  const FORM_LINK = "https://www.jotform.com/app/263144445153150";
+  // Enlace de Stripe para la contribución monetaria de sponsors (monto abierto). Si está vacío, solo se muestra Zelle.
+  const STRIPE_SPONSOR_LINK = "";
+  if (STRIPE_SPONSOR_LINK) {
+    const b = document.getElementById("stripe-sponsor");
+    b.href = STRIPE_SPONSOR_LINK; b.target = "_blank"; b.rel = "noopener"; b.hidden = false;
+    document.getElementById("stripe-note").hidden = false;
+  }
+  if (FORM_LINK) {
+    document.querySelectorAll(".js-form").forEach(a => { a.href = FORM_LINK; a.target = "_blank"; a.rel = "noopener"; });
+  }
+</script>
+</body>
+</html>
