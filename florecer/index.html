@@ -458,6 +458,10 @@
         <div class="step2" id="step2" hidden>
           <h3>Gracias, <span id="s2-nombre"></span></h3>
           <div class="ok">Recibimos tu registro. Ahora completa tu contribución de <b>$50</b> para reservar tu lugar y el de <b id="s2-invitada"></b>.</div>
+          <div id="wa-reg-box" hidden>
+            <a class="btn block olive" id="wa-reg" href="#" target="_blank" rel="noopener">Paso 1: Enviar mi registro por WhatsApp</a>
+            <p class="fine" style="margin-bottom:16px">Se abre WhatsApp con tus datos listos. Solo presiona enviar y vuelve a esta página.</p>
+          </div>
           <a class="btn block" id="stripe-btn" href="#" target="_blank" rel="noopener">Completar mi contribución</a>
           <p class="fine">Con tarjeta, Apple Pay o Google Pay, de forma segura con Stripe.</p>
           <div class="reminder">En la página de contribución escribe de nuevo <b>tu nombre y el de tu invitada</b>, así unimos tu registro con tu contribución.</div>
@@ -570,6 +574,15 @@
       Object.entries(data).filter(([, v]) => v).map(([k, v]) => k + ": " + v).join("\n") +
       "\nYa envié mi contribución de $50 por Zelle al " + ZELLE + ". Adjunto mi comprobante.";
     document.getElementById("wa-btn").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
+    if (!REGISTRO_ENDPOINT) {
+      // Mientras no haya correo de registros, el registro se envía por WhatsApp.
+      const reg = "Hola Mónica, este es mi registro para la cena de Thanksgiving Florecer en Gratitud (sáb 21 nov).\n" +
+        Object.entries(data).filter(([, v]) => v).map(([k, v]) => k + ": " + v).join("\n");
+      document.getElementById("wa-reg").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(reg);
+      document.getElementById("wa-reg-box").hidden = false;
+      document.getElementById("stripe-btn").textContent = "Paso 2: Completar mi contribución";
+      document.querySelector("#step2 .ok").innerHTML = "Ya casi. Envía tu registro por WhatsApp y completa tu contribución de <b>$50</b> para reservar tu lugar y el de <b>" + data["Invitada"].replace(/[<>&]/g, "") + "</b>.";
+    }
 
     form.hidden = true;
     document.getElementById("reg-intro").hidden = true;
