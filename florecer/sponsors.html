@@ -397,39 +397,39 @@
         <p class="lead">Estamos felices de contar contigo. Empecemos por conocerte.</p>
         <label>Nombre completo<input name="nombre" required autocomplete="name"></label>
         <label>WhatsApp<input name="telefono" type="tel" required autocomplete="tel" placeholder="201 000 0000"></label>
-        <label>Correo electrónico<input name="correo" type="email" required autocomplete="email"></label>
+        <label>Correo electrónico <span class="opt">opcional</span><input name="correo" type="email" autocomplete="email"></label>
       </fieldset>
 
       <fieldset class="step" data-title="Tu negocio" hidden>
         <h3>Tu negocio</h3>
-        <p class="lead">Cuéntanos sobre tu marca en pocas palabras.</p>
+        <p class="lead">Cuéntanos sobre tu marca en pocas palabras. Si aún no tienes algún dato, déjalo en blanco y continúa.</p>
         <label>Nombre del negocio o marca<input name="negocio" required></label>
-        <label>¿A qué se dedica tu negocio?<input name="dedica" required placeholder="Ej.: repostería artesanal, coaching, belleza"></label>
-        <label>¿Desde cuándo emprendes?<input name="inicio" type="month"></label>
-        <div class="q">¿Tu negocio está registrado?</div>
-        <div class="pills" data-name="registro" data-required="1">
+        <label>¿A qué se dedica tu negocio? <span class="opt">opcional</span><input name="dedica" placeholder="Ej.: repostería artesanal, coaching, belleza"></label>
+        <label>¿Desde cuándo emprendes? <span class="opt">opcional</span><input name="inicio" type="month"></label>
+        <div class="q">¿Tu negocio está registrado? <span class="opt">opcional</span></div>
+        <div class="pills" data-name="registro">
           <label><input type="radio" name="registro" value="Sí, registrado como LLC o corporación"><span>LLC o corporación</span></label>
           <label><input type="radio" name="registro" value="Sí, como negocio individual / DBA"><span>Negocio individual / DBA</span></label>
           <label><input type="radio" name="registro" value="En proceso de registro"><span>En proceso</span></label>
           <label><input type="radio" name="registro" value="Aún no"><span>Aún no</span></label>
         </div>
-        <div class="q">¿En qué etapa está?</div>
-        <div class="pills" data-name="etapa" data-required="1">
+        <div class="q">¿En qué etapa está? <span class="opt">opcional</span></div>
+        <div class="pills" data-name="etapa">
           <label><input type="radio" name="etapa" value="Idea o inicio (menos de 1 año)"><span>Inicio</span></label>
           <label><input type="radio" name="etapa" value="Creciendo (1 a 3 años)"><span>Creciendo</span></label>
           <label><input type="radio" name="etapa" value="Establecido (más de 3 años)"><span>Establecido</span></label>
           <label><input type="radio" name="etapa" value="Expandiéndome"><span>Expandiéndome</span></label>
         </div>
-        <label>Página web o red social para tu QR<input name="qr" type="url" required placeholder="https://"></label>
+        <label>Página web o red social para tu QR <span class="opt">opcional</span><input name="qr" placeholder="Tu página web, Instagram o Facebook"></label>
       </fieldset>
 
       <fieldset class="step" data-title="Tu marca" hidden>
         <h3>Tu marca</h3>
-        <p class="lead">Con esto preparamos tu ficha para la presentación.</p>
-        <label class="file">Logo<small>PNG con fondo transparente o PDF. Si solo tienes JPG, en la mejor calidad.</small><input name="f_logo" type="file" required accept=".png,.pdf,.jpg,.jpeg"></label>
-        <label class="file">Foto de tu negocio<small>Tu producto, tu local o tu trabajo, con buena luz.</small><input name="f_negocio" type="file" required accept=".jpg,.jpeg,.png,image/jpeg,image/png"></label>
-        <label class="file">Foto tuya<small>Donde se vea tu rostro claramente.</small><input name="f_foto" type="file" required accept=".jpg,.jpeg,.png,image/jpeg,image/png"></label>
-        <label>Tu propósito de vida en una frase<textarea name="proposito" required maxlength="200" placeholder="La frase que te mueve"></textarea></label>
+        <p class="lead">Con esto preparamos tu ficha para la presentación. Si todavía no tienes logo, fotos o video, termina tu registro y nos los envías después por WhatsApp.</p>
+        <label class="file">Logo <span class="opt">opcional</span><small>PNG con fondo transparente o PDF. Si solo tienes JPG, en la mejor calidad.</small><input name="f_logo" type="file" accept=".png,.pdf,.jpg,.jpeg"></label>
+        <label class="file">Foto de tu negocio <span class="opt">opcional</span><small>Tu producto, tu local o tu trabajo, con buena luz.</small><input name="f_negocio" type="file" accept=".jpg,.jpeg,.png,image/jpeg,image/png"></label>
+        <label class="file">Foto tuya <span class="opt">opcional</span><small>Donde se vea tu rostro claramente.</small><input name="f_foto" type="file" accept=".jpg,.jpeg,.png,image/jpeg,image/png"></label>
+        <label>Tu propósito de vida en una frase <span class="opt">opcional</span><textarea name="proposito" maxlength="200" placeholder="La frase que te mueve"></textarea></label>
         <label>Video corto <span class="opt">opcional</span><input name="video_link" type="url" placeholder="Enlace de Google Drive, YouTube o Instagram"></label>
       </fieldset>
 
@@ -443,13 +443,13 @@
           <label><input type="checkbox" name="participacion" value="Contribución monetaria"><span>Contribución monetaria</span></label>
           <label><input type="checkbox" name="participacion" value="Aportar a la decoración o la mesa"><span>Decoración o mesa</span></label>
         </div>
-        <div class="q">¿En qué eventos?</div>
-        <div class="pills multi" data-name="eventos" data-required="1">
+        <div class="q">¿En qué eventos? <span class="opt">opcional</span></div>
+        <div class="pills multi" data-name="eventos">
           <label><input type="checkbox" name="eventos" value="Florecer en Gratitud · 21 de noviembre de 2026"><span>Florecer en Gratitud · 21 nov</span></label>
           <label><input type="checkbox" name="eventos" value="Futuros eventos de Mindful Wellness (cenas, talleres y celebraciones)"><span>Futuros eventos</span></label>
         </div>
-        <div class="q">¿Quieres ser parte del grupo de sponsors?</div>
-        <div class="pills" data-name="grupo" data-required="1">
+        <div class="q">¿Quieres ser parte del grupo de sponsors? <span class="opt">opcional</span></div>
+        <div class="pills" data-name="grupo">
           <label><input type="radio" name="grupo" value="Sí, quiero ser parte"><span>Sí, quiero ser parte</span></label>
           <label><input type="radio" name="grupo" value="Tal vez, quiero más información"><span>Quiero más información</span></label>
           <label><input type="radio" name="grupo" value="No por ahora"><span>No por ahora</span></label>
@@ -590,10 +590,10 @@
     // Nombre en dos partes, teléfono, y mes/año de inicio
     const nombre = (fd.get("nombre") || "").trim().split(/\s+/);
     add("q2_nombre_completo[first]", nombre.shift() || "");
-    add("q2_nombre_completo[last]", nombre.join(" "));
+    add("q2_nombre_completo[last]", nombre.join(" ") || "-");
     const tel = (fd.get("telefono") || "").replace(/\D/g, "").replace(/^1(?=\d{10}$)/, "");
-    add("q3_tel__fono___whatsapp[area]", tel.length === 10 ? tel.slice(0, 3) : "");
-    add("q3_tel__fono___whatsapp[phone]", tel.length === 10 ? tel.slice(3) : (fd.get("telefono") || ""));
+    add("q3_tel__fono___whatsapp[area]", tel.slice(0, 3) || "-");
+    add("q3_tel__fono___whatsapp[phone]", tel.slice(3) || (fd.get("telefono") || "-"));
     const ini = fd.get("inicio");
     if (ini) { const [y, m] = ini.split("-"); add("q9_fecha_en_que_iniciaste_tu_emprendimiento[year]", y); add("q9_fecha_en_que_iniciaste_tu_emprendimiento[month]", m); add("q9_fecha_en_que_iniciaste_tu_emprendimiento[day]", "01"); }
     for (const [k, v] of fd.entries()) { if (v instanceof File || !JOTFORM_FIELDS[k] || k.startsWith("f_")) continue; add(JOTFORM_FIELDS[k], v); }
