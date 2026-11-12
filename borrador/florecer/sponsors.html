@@ -236,6 +236,10 @@
   .tier ul { flex: 1; }
   .tier .btn { margin-top: 18px; }
   .tier .t-k, .zelle .z-k { font-size: 0.875rem; }
+  .tiers-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--espresso); margin-top: 38px; }
+  .tiers-title + .tiers { margin-top: 16px; }
+  .tiers-sub { color: var(--muted); margin-top: 8px; }
+  .tiers-sub + .tiers { margin-top: 16px; }
   .tier .amount { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--plum); margin-top: 4px; }
   .head .incl { margin-top: 14px; background: var(--paper); border-left: 3px solid var(--leaf); padding: 14px 16px; border-radius: 0 14px 14px 0; color: var(--espresso); }
   .wizard label { display: block; font-weight: 800; font-size: 0.95rem; color: var(--espresso-2); margin-top: 14px; text-align: left; }
@@ -344,6 +348,7 @@
       <h2>Elige cómo quieres sumarte</h2>
       <p class="incl">Presentar tu emprendimiento en Florecer juntas está incluido para todas las asistentes. El programa de sponsors es una alianza comercial aparte.</p>
     </div>
+    <h3 class="tiers-title">Aporte económico</h3>
     <div class="tiers">
       <div class="tier">
         <div class="t-k">Nivel 1</div>
@@ -372,6 +377,38 @@
         <div class="amount">Tú eliges el monto</div>
         <ul><li>Un aporte libre, del tamaño que tu corazón decida</li><li>Agradecimiento con tu nombre o tu marca durante el evento</li><li>Mención de gratitud en nuestras redes</li></ul>
         <a class="btn block" href="#formulario" data-nivel="Desde el corazón">Solicitar este nivel</a>
+      </div>
+    </div>
+    <h3 class="tiers-title">Aporte en especie</h3>
+    <p class="tiers-sub">Si prefieres aportar con lo que tu negocio hace mejor, elige una opción. El detalle lo acordamos contigo.</p>
+    <div class="tiers">
+      <div class="tier">
+        <div class="t-k">En especie</div>
+        <h3>Productos o regalos</h3>
+        <p>Regalos, muestras o kits de tu marca para cada asistente.</p>
+        <ul><li>Logo y código QR en la presentación</li><li>Mención en redes antes y después del evento</li><li>Agradecimiento a tu marca durante el evento</li></ul>
+        <a class="btn block" href="#formulario" data-nivel="En especie: Productos o regalos">Solicitar esta opción</a>
+      </div>
+      <div class="tier">
+        <div class="t-k">En especie</div>
+        <h3>Comida y bebidas</h3>
+        <p>Un plato, postres, café o bebidas para la cena.</p>
+        <ul><li>Logo y código QR en la presentación</li><li>Mención en redes antes y después del evento</li><li>Agradecimiento a tu marca durante el evento</li></ul>
+        <a class="btn block" href="#formulario" data-nivel="En especie: Comida y bebidas">Solicitar esta opción</a>
+      </div>
+      <div class="tier">
+        <div class="t-k">En especie</div>
+        <h3>Flores y decoración</h3>
+        <p>Centros de mesa, flores o detalles para el salón.</p>
+        <ul><li>Logo y código QR en la presentación</li><li>Mención en redes antes y después del evento</li><li>Agradecimiento a tu marca durante el evento</li></ul>
+        <a class="btn block" href="#formulario" data-nivel="En especie: Flores y decoración">Solicitar esta opción</a>
+      </div>
+      <div class="tier">
+        <div class="t-k">En especie</div>
+        <h3>Servicios</h3>
+        <p>Fotografía, música, maquillaje o un sorteo para las asistentes.</p>
+        <ul><li>Logo y código QR en la presentación</li><li>Mención en redes antes y después del evento</li><li>Agradecimiento a tu marca durante el evento</li></ul>
+        <a class="btn block" href="#formulario" data-nivel="En especie: Servicios">Solicitar esta opción</a>
       </div>
     </div>
   </div>
@@ -431,7 +468,7 @@
       <label>Nivel de interés
         <select name="nivel" required>
           <option value="">Elige un nivel</option>
-          <option>Pétalo</option><option>Flor</option><option>Jardín en flor</option><option>Desde el corazón</option><option>Quiero más información</option>
+          <optgroup label="Aporte económico"><option>Pétalo</option><option>Flor</option><option>Jardín en flor</option><option>Desde el corazón</option></optgroup><optgroup label="Aporte en especie"><option value="En especie: Productos o regalos">Productos o regalos</option><option value="En especie: Comida y bebidas">Comida y bebidas</option><option value="En especie: Flores y decoración">Flores y decoración</option><option value="En especie: Servicios">Servicios</option></optgroup><option>Quiero más información</option>
         </select>
       </label>
       <button type="submit" class="btn green block" id="sp-send" style="margin-top:20px">Enviar solicitud</button>
