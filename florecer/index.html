@@ -496,8 +496,8 @@
           <input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="(201) 000-0000" required>
           <label for="email">Correo electrónico</label>
           <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required>
-          <label for="invitada">Nombre de tu invitada</label>
-          <input id="invitada" name="invitada" required>
+          <label for="invitada">Nombre de tu invitada <span class="opt">(si traes)</span></label>
+          <input id="invitada" name="invitada">
           <label for="alergias">Alergias o restricciones de alimentos <span class="opt">(opcional)</span></label>
           <input id="alergias" name="alergias" placeholder="Ej.: sin gluten, vegetariana">
           <label class="choice" style="margin-top:18px"><input type="checkbox" name="fotos" value="Sí"> Autorizo aparecer en fotos y videos del evento para las redes de Mindful Wellness.</label>
@@ -594,11 +594,11 @@
     e.preventDefault();
     err.hidden = true;
     const bad = [...form.querySelectorAll("[required]")].find(el => !el.checkValidity() || !el.value.trim());
-    if (bad) { err.textContent = "Por favor completa tu nombre, WhatsApp, correo y el nombre de tu invitada."; err.hidden = false; bad.focus(); return; }
+    if (bad) { err.textContent = "Por favor completa tu nombre, WhatsApp y correo."; err.hidden = false; bad.focus(); return; }
     const fd = new FormData(form);
     const r = {
       tipo: "Registro", ref: FG.newRef(), nombre: fd.get("nombre").trim(), telefono: fd.get("telefono").trim(),
-      email: fd.get("email").trim(), invitada: fd.get("invitada").trim(), alergias: (fd.get("alergias") || "").trim(),
+      email: fd.get("email").trim(), invitada: (fd.get("invitada") || "").trim() || "Sin invitada", alergias: (fd.get("alergias") || "").trim(),
       fotos: fd.get("fotos") ? "Sí" : "No", estado: "Pendiente", metodo: fd.get("metodo")
     };
     // Si vuelve a intentar con los mismos datos, usamos el mismo registro (no se duplica).
