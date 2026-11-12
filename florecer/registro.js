@@ -25,7 +25,7 @@ FG.save = function (data) {
   for (const k in data) if (FG.F[k] && data[k] != null) body.set(FG.F[k], String(data[k]));
   const send = fetch("https://submit.jotform.com/submit/" + FG.JOTFORM_ID + "/", { method: "POST", mode: "no-cors", body, keepalive: true })
     .catch(() => {});
-  return Promise.race([send, new Promise(r => setTimeout(r, 4000))]);
+  return Promise.race([send, new Promise(r => setTimeout(r, 1500))]);
 };
 
 FG.newRef = function () {

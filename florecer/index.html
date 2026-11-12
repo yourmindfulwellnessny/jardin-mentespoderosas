@@ -507,6 +507,7 @@
             <label class="pw"><input type="radio" name="metodo" value="Zelle"> Zelle</label>
           </div>
           <button class="btn block" type="submit" id="reg-submit">Registrarme y pagar $50</button>
+          <a class="btn block" id="pago-alt" href="#" target="_top" hidden style="margin-top:12px">Si no se abrió el pago, toca aquí</a>
           <p class="fine" id="pay-note">Te llevamos a Stripe para pagar de forma segura. Tu registro queda guardado.</p>
           <p class="err" id="reg-err" role="alert" hidden></p>
         </form>
@@ -563,6 +564,11 @@
 <script>
   const EVENT_DATE = new Date("2026-11-21T13:30:00-05:00");
   document.querySelectorAll(".js-contribuir").forEach(a => { a.href = "#registro"; });
+  document.querySelectorAll('a[href="#registro"]').forEach(a => a.addEventListener("click", e => {
+    e.preventDefault();
+    document.getElementById("registro").scrollIntoView({ behavior: "smooth" });
+    setTimeout(() => { const n = document.querySelector('#registro [name=nombre]'); if (n && !n.closest("[hidden]")) n.focus({ preventScroll: true }); }, 600);
+  }));
 
   const days = Math.ceil((EVENT_DATE - new Date()) / 86400000);
   const cd = document.getElementById("countdown");
@@ -599,7 +605,14 @@
       const url = new URL(FG.STRIPE_LINK);
       url.searchParams.set("prefilled_email", r.email);
       url.searchParams.set("client_reference_id", r.ref);
-      window.location.href = url.toString();
+      const go = url.toString();
+      btn.textContent = "Abriendo el pago…";
+      const alt = document.getElementById("pago-alt");
+      alt.href = go; alt.hidden = false;
+      try {
+        if (window.top !== window.self) { if (!window.open(go, "_top")) window.open(go, "_blank"); }
+        else window.location.href = go;
+      } catch (_) { window.open(go, "_blank"); }
       return;
     }
     const text = "Hola Mónica, me registré para Florecer en Gratitud (sáb 21 nov).\n" +
