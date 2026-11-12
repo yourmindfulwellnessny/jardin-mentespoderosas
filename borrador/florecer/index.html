@@ -504,7 +504,7 @@
           <label class="choice" style="margin-top:18px"><input type="checkbox" name="fotos" value="Sí"> Autorizo aparecer en fotos y videos del evento para las redes de Mindful Wellness.</label>
 
           <div class="paywith" role="radiogroup" aria-label="Forma de pago">
-            <label class="pw"><input type="radio" name="metodo" value="Stripe" checked> Tarjeta, Apple Pay o Google Pay</label>
+            <label class="pw"><input type="radio" name="metodo" value="Stripe" checked> Tarjeta o Apple Pay</label>
             <label class="pw"><input type="radio" name="metodo" value="Zelle"> Zelle</label>
           </div>
           <button class="btn block" type="submit" id="reg-submit">Registrarme y pagar $50</button>
@@ -565,11 +565,12 @@
 <script>
   const EVENT_DATE = new Date("2026-11-21T13:30:00-05:00");
   document.querySelectorAll(".js-contribuir").forEach(a => { a.href = "#registro"; });
-  document.querySelectorAll('a[href="#registro"]').forEach(a => a.addEventListener("click", e => {
+  document.addEventListener("click", e => {
+    const a = e.target.closest('a[href="#registro"]'); if (!a) return;
     e.preventDefault();
     document.getElementById("registro").scrollIntoView({ behavior: "smooth" });
     setTimeout(() => { const n = document.querySelector('#registro [name=nombre]'); if (n && !n.closest("[hidden]")) n.focus({ preventScroll: true }); }, 600);
-  }));
+  });
 
   const days = Math.ceil((EVENT_DATE - new Date()) / 86400000);
   const cd = document.getElementById("countdown");
@@ -580,12 +581,12 @@
   const err = document.getElementById("reg-err");
   const btn = document.getElementById("reg-submit");
   const note = document.getElementById("pay-note");
-  form.addEventListener("change", e => {
-    if (e.target.name !== "metodo") return;
-    const z = e.target.value === "Zelle";
+  function setLabel() {
+    const z = (form.querySelector("[name=metodo]:checked") || {}).value === "Zelle";
     btn.textContent = z ? "Registrarme y pagar con Zelle" : "Registrarme y pagar $50";
     note.textContent = z ? "Te mostramos el número y el código QR de Zelle." : "Te llevamos a Stripe para pagar de forma segura. Tu registro queda guardado.";
-  });
+  }
+  form.addEventListener("change", e => { if (e.target.name === "metodo") setLabel(); });
 
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
@@ -598,16 +599,18 @@
       email: fd.get("email").trim(), invitada: fd.get("invitada").trim(), alergias: (fd.get("alergias") || "").trim(),
       fotos: fd.get("fotos") ? "Sí" : "No", estado: "Pendiente", metodo: fd.get("metodo")
     };
+    // Si vuelve a intentar con los mismos datos, usamos el mismo registro (no se duplica).
+    const prev = FG.recall();
+    const same = prev && prev.ref && ["nombre","telefono","email","invitada","alergias","fotos","metodo"].every(k => prev[k] === r[k]);
+    if (same) r.ref = prev.ref;
     btn.disabled = true; btn.textContent = "Guardando tu registro…";
     FG.remember(r);
-    await FG.save(r);
+    if (!same) await FG.save(r);
 
     if (r.metodo === "Stripe") {
-      const url = new URL(FG.STRIPE_LINK);
-      url.searchParams.set("prefilled_email", r.email);
-      url.searchParams.set("client_reference_id", r.ref);
-      const go = url.toString();
+      const go = FG.stripeUrl(r);
       btn.textContent = "Abriendo el pago…";
+      try { sessionStorage.setItem("fg-a-stripe", r.ref); } catch (_) {}
       const alt = document.getElementById("pago-alt");
       alt.href = go; alt.hidden = false;
       try {
@@ -624,6 +627,18 @@
     document.getElementById("step-zelle").hidden = false;
     FG.renderOptional(document.getElementById("paso-c-zelle"));
     document.getElementById("registro").scrollIntoView({ behavior: "smooth" });
+  });
+
+  // Si la persona vuelve desde Stripe sin pagar (cancela o usa "atrás"), reactivamos el botón y lo explicamos.
+  window.addEventListener("pageshow", function () {
+    let pend = null; try { pend = sessionStorage.getItem("fg-a-stripe"); } catch (_) {}
+    if (!pend) return;
+    try { sessionStorage.removeItem("fg-a-stripe"); } catch (_) {}
+    btn.disabled = false; setLabel();
+    document.getElementById("pago-alt").hidden = true;
+    err.textContent = "Tu pago no se completó y no se hizo ningún cobro. Tu registro está guardado: toca el botón para intentarlo de nuevo.";
+    err.hidden = false;
+    document.getElementById("registro").scrollIntoView();
   });
 
   // Barra fija en celular: se oculta cuando el registro está en pantalla.

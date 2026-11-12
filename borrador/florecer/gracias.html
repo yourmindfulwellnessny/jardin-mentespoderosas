@@ -56,6 +56,7 @@
     <img class="photo" src="jardin.jpg" alt="Las mujeres del Jardín reunidas y sonriendo">
     <div class="body">
       <img class="logo" src="logo-mindful-wellness.png" alt="Mindful Wellness">
+      <div id="ok">
       <div class="eyebrow">Tu lugar está reservado</div>
       <h1>Gracias por sumarte a nuestra mesa</h1>
       <p>Recibimos tu contribución para <b>Florecer en Gratitud</b>. Qué alegría compartir esta tarde contigo y con tu invitada.</p>
@@ -63,11 +64,40 @@
       <p class="agenda">Bienvenida · Historia del agradecimiento · Brindis de celebración · Florecer juntas · Despedida</p>
       <p>Te escribiremos por WhatsApp con los detalles antes del evento.</p>
       <div id="paso-c" style="text-align:center"></div>
+      </div>
+      <div id="nopago" hidden>
+        <div class="eyebrow">Tu pago no se completó</div>
+        <h1>Todavía no recibimos tu contribución</h1>
+        <p>Parece que el pago se canceló o no terminó. No se hizo ningún cobro. Tu registro sigue guardado, así que puedes intentarlo de nuevo.</p>
+        <a class="btn" id="reintentar" href="./#registro">Intentar el pago de nuevo</a>
+        <p style="margin-top:16px">Si ya pagaste y ves este mensaje, escríbenos por <a href="https://wa.me/12016799969" style="color:#b5552b;font-weight:800">WhatsApp</a> y lo revisamos.</p>
+      </div>
       <div class="firma">Con amor, Mónica</div>
       <a class="back" href="./">Volver a la invitación</a>
     </div>
   </div>
 <script src="registro.js"></script>
-<script>FG.renderOptional(document.getElementById("paso-c"));</script>
+<script>
+(function () {
+  const sid = new URLSearchParams(location.search).get("session_id") || "";
+  const paid = /^cs_(live|test)_/.test(sid);
+  if (!paid) {
+    document.getElementById("ok").hidden = true;
+    document.getElementById("nopago").hidden = false;
+    const r = FG.recall();
+    if (r && r.ref) document.getElementById("reintentar").href = FG.stripeUrl(r);
+    return;
+  }
+  const r = FG.recall() || {};
+  // Stripe solo envía aquí cuando el pago fue exitoso: dejamos constancia una sola vez.
+  let done = false; try { done = localStorage.getItem("fg-pagado") === sid; } catch (_) {}
+  if (!done) {
+    FG.save({ tipo: "Pago confirmado", ref: r.ref || "(sin referencia)", nombre: r.nombre, email: r.email, telefono: r.telefono,
+      invitada: r.invitada, estado: "Pagado", metodo: "Stripe · " + sid.slice(0, 24) });
+    try { localStorage.setItem("fg-pagado", sid); sessionStorage.removeItem("fg-a-stripe"); } catch (_) {}
+  }
+  FG.renderOptional(document.getElementById("paso-c"));
+})();
+</script>
 </body>
 </html>
