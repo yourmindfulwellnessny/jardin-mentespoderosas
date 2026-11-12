@@ -215,7 +215,7 @@
     .slide { grid-template-columns: 1.1fr 1fr; }
     .slide .visual { min-height: 380px; }
     .uses { grid-template-columns: repeat(4, 1fr); }
-    .tiers { grid-template-columns: repeat(3, 1fr); }
+    .tiers { grid-template-columns: repeat(2, 1fr); }
     .event-grid { grid-template-columns: 1fr 1.1fr; align-items: start; }
     .reqs { grid-template-columns: 1fr 1fr; column-gap: 48px; }
     .form { padding: 40px 44px; }
@@ -346,24 +346,31 @@
     <div class="tiers">
       <div class="tier">
         <div class="t-k">Nivel 1</div>
-        <h3>Semilla</h3>
+        <h3>Pétalo</h3>
         <div class="amount">$100</div>
         <ul><li>Logo y código QR en la presentación</li><li>Mención en redes antes y después del evento</li><li>Tu producto o muestra en manos de cada asistente</li></ul>
-        <a class="btn block" href="#formulario" data-nivel="Semilla">Solicitar este nivel</a>
+        <a class="btn block" href="#formulario" data-nivel="Pétalo">Solicitar este nivel</a>
       </div>
       <div class="tier feat">
         <div class="t-k">Nivel 2</div>
-        <h3>Raíz</h3>
+        <h3>Flor</h3>
         <div class="amount">$250</div>
-        <ul><li>Todo lo del nivel Semilla</li><li>Ficha destacada de tu marca en la presentación</li><li>Espacio para mostrar tu producto en el evento</li></ul>
-        <a class="btn block" href="#formulario" data-nivel="Raíz">Solicitar este nivel</a>
+        <ul><li>Todo lo del nivel Pétalo</li><li>Ficha destacada de tu marca en la presentación</li><li>Espacio para mostrar tu producto en el evento</li></ul>
+        <a class="btn block" href="#formulario" data-nivel="Flor">Solicitar este nivel</a>
       </div>
       <div class="tier">
         <div class="t-k">Nivel 3</div>
-        <h3>Jardín</h3>
-        <div class="amount">$500</div>
-        <ul><li>Todo lo del nivel Raíz y logo destacado en los impresos</li><li>Mención especial durante el evento</li><li>Prioridad en los próximos eventos de la temporada</li></ul>
-        <a class="btn block" href="#formulario" data-nivel="Jardín">Solicitar este nivel</a>
+        <h3>Jardín en flor</h3>
+        <div class="amount">$350</div>
+        <ul><li>Todo lo del nivel Flor y logo destacado en los impresos</li><li>Mención especial durante el evento</li><li>Prioridad en los próximos eventos de la temporada</li></ul>
+        <a class="btn block" href="#formulario" data-nivel="Jardín en flor">Solicitar este nivel</a>
+      </div>
+      <div class="tier">
+        <div class="t-k">Opcional</div>
+        <h3>Desde el corazón</h3>
+        <div class="amount">Tú eliges el monto</div>
+        <ul><li>Un aporte libre, del tamaño que tu corazón decida</li><li>Agradecimiento con tu nombre o tu marca durante el evento</li><li>Mención de gratitud en nuestras redes</li></ul>
+        <a class="btn block" href="#formulario" data-nivel="Desde el corazón">Solicitar este nivel</a>
       </div>
     </div>
   </div>
@@ -423,7 +430,7 @@
       <label>Nivel de interés
         <select name="nivel" required>
           <option value="">Elige un nivel</option>
-          <option>Semilla</option><option>Raíz</option><option>Jardín</option><option>Quiero más información</option>
+          <option>Pétalo</option><option>Flor</option><option>Jardín en flor</option><option>Desde el corazón</option><option>Quiero más información</option>
         </select>
       </label>
       <button type="submit" class="btn green block" id="sp-send" style="margin-top:20px">Enviar solicitud</button>
