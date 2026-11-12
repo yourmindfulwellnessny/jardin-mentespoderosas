@@ -364,8 +364,14 @@
   /* tarjeta Gratitud sin foto */
   .tile.plain { background: linear-gradient(135deg, #7a2232, #4a1420); }
   .tile.plain::before { display: none; }
+  /* botones con el morado de la marca (13 nov) */
+  .btn, .closing .btn, form .btn, .sticky-bar { background: #8a3a7f; color: #fff; }
+  .btn:hover { background: #742f6b; }
+  .btn.ghost { background: transparent; color: #8a3a7f; box-shadow: inset 0 0 0 1.5px #8a3a7f; }
+  .sp-link .btn { background: #fff; color: #8a3a7f; }
+  .btn.ghost.on { background: #8a3a7f; color: #fff; }
   /* barra fija en celular */
-  .sticky-bar { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 50; display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 999px; background: var(--terracotta); color: #fff; font-weight: 800; text-decoration: none; box-shadow: 0 10px 24px rgba(58, 42, 34, 0.3); transition: transform .25s ease, opacity .25s ease; }
+  .sticky-bar { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 50; display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 999px; background: #8a3a7f; color: #fff; font-weight: 800; text-decoration: none; box-shadow: 0 10px 24px rgba(58, 42, 34, 0.3); transition: transform .25s ease, opacity .25s ease; }
   .sticky-bar.hide { transform: translateY(120%); opacity: 0; pointer-events: none; }
   @media (min-width: 760px) { .sticky-bar { display: none; } }
   @media (max-width: 759px) { body { padding-bottom: 80px; } }
@@ -432,7 +438,7 @@
     <h2>Una tarde para florecer</h2>
     <p class="intro">Detrás de cada una de nosotras hay una mujer que creyó en ti, te escuchó o te sostuvo cuando más lo necesitabas. Esta vez la traes contigo.</p>
     <div class="tiles">
-      <div class="tile wide plain" style="min-height:220px">
+      <div class="tile wide" style="background-image:url(abrazo.jpg);min-height:320px;background-position:center 30%" role="img" aria-label="Dos mujeres de Mindful Wellness sonriendo juntas">
         <div class="k">Gratitud</div><div class="v">Ella viene como tu regalo de gratitud</div><small>Un homenaje a tu invitada.</small>
       </div>
       <div class="tile" style="background-image:url(conexion.jpg);min-height:260px" role="img" aria-label="Mujeres conversando alrededor de una mesa en un encuentro de Mindful Wellness">
