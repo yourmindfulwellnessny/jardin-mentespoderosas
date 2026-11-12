@@ -28,6 +28,14 @@ FG.save = function (data) {
   return Promise.race([send, new Promise(r => setTimeout(r, 1500))]);
 };
 
+// Enlace de Stripe con el correo y la referencia del registro.
+FG.stripeUrl = function (r) {
+  const url = new URL(FG.STRIPE_LINK);
+  if (r.email) url.searchParams.set("prefilled_email", r.email);
+  if (r.ref) url.searchParams.set("client_reference_id", r.ref);
+  return url.toString();
+};
+
 FG.newRef = function () {
   return "FG-" + Date.now().toString(36).toUpperCase() + "-" + Math.random().toString(36).slice(2, 6).toUpperCase();
 };
