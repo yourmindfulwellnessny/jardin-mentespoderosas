@@ -19,7 +19,35 @@
   .info { margin-top: 18px; background: #f4e9d8; border-radius: 16px; padding: 14px; font-weight: 700; color: #6e1e2b; }
   .agenda { margin-top: 16px; font-size: 0.98rem; color: #75625a; }
   .firma { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; color: #6e1e2b; margin-top: 14px; }
-  a { display: inline-block; margin-top: 18px; color: #b5552b; font-weight: 800; text-decoration: none; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 14px 28px; border-radius: 999px; border: 0; cursor: pointer; background: #b5552b; color: #fff; font: 800 1rem 'Nunito Sans', sans-serif; text-decoration: none; margin-top: 0; }
+  .btn.block { display: flex; width: 100%; }
+  .btn.ghost { background: transparent; color: #6e1e2b; box-shadow: inset 0 0 0 1.5px #6e1e2b; }
+  .btn.on { background: #6e1e2b; color: #fff; }
+  .fine { font-size: 0.875rem; color: #75625a; margin-top: 10px; }
+  .opt { color: #75625a; font-weight: 600; }
+  input, select, textarea { width: 100%; font: inherit; font-size: 16px; color: #3a2a22; border: 1.5px solid #e6d5bd; border-radius: 12px; padding: 13px 14px; background: #fff; }
+  textarea { min-height: 74px; }
+  ::placeholder { color: #75625a; opacity: 1; }
+  .choice { display: flex !important; gap: 10px; align-items: center; }
+  .choice input { width: 20px; height: 20px; padding: 0; margin: 0; flex: none; }
+  .opt-step { margin-top: 26px; padding-top: 22px; border-top: 1px solid #e6d5bd; }
+  .opt-step h3 { font-family: 'Cormorant Garamond', serif; color: #6e1e2b; font-size: 1.7rem; }
+  .opt-sub { color: #75625a; }
+  .yesno { display: flex; gap: 12px; justify-content: center; margin-top: 14px; }
+  .yesno .btn { min-width: 110px; }
+  .opt-cards { display: grid; gap: 16px; margin-top: 20px; text-align: left; }
+  .opt-card { border: 1px solid #e6d5bd; border-radius: 20px; padding: 22px; background: #fff; box-shadow: 0 12px 30px rgba(58,42,34,0.10); }
+  .opt-card.sponsor { background: #8a3a7f; color: #fff; border-color: #8a3a7f; }
+  .opt-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: #6e1e2b; }
+  .opt-card.sponsor h4 { color: #fff; }
+  .opt-card p { font-size: 1rem; }
+  .opt-tag { font-size: 0.875rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #6b7a3a; }
+  .opt-card.sponsor .opt-tag { color: #f3d9ef; }
+  .opt-card label { display: block; font-weight: 800; color: #6e1e2b; margin: 14px 0 6px; font-size: 0.95rem; }
+  .opt-card label input, .opt-card label textarea, .opt-card label select { margin-top: 6px; font-weight: 400; }
+  .opt-card .btn { margin-top: 18px; }
+  .opt-card.sponsor .btn { background: #fff; color: #8a3a7f; }
+  .card a.back { display: inline-block; margin-top: 18px; color: #b5552b; font-weight: 800; text-decoration: none; }
 </style>
 </head>
 <body>
@@ -33,9 +61,12 @@
       <div class="info">Sábado 21 de noviembre · 1:30 – 5:00 pm<br>Salón Elite de Mujeres con Propósito, Wallington NJ<br>Código de vestimenta: Nos vestimos de blanco</div>
       <p class="agenda">Bienvenida · Historia del agradecimiento · Brindis de celebración · Florecer juntas · Despedida</p>
       <p>Te escribiremos por WhatsApp con los detalles antes del evento.</p>
+      <div id="paso-c" style="text-align:center"></div>
       <div class="firma">Con amor, Mónica</div>
-      <a href="./">Volver a la invitación</a>
+      <a class="back" href="./">Volver a la invitación</a>
     </div>
   </div>
+<script src="registro.js"></script>
+<script>FG.renderOptional(document.getElementById("paso-c"));</script>
 </body>
 </html>

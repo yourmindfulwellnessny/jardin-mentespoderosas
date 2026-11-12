@@ -221,6 +221,32 @@
     .form { padding: 40px 44px; }
     .form .two { grid-template-columns: 1fr 1fr; }
   }
+
+  /* ===== ajustes 12 nov: misma forma que la invitación ===== */
+  .wrap, .narrow { max-width: 760px; }
+  .btn { border-radius: 999px; text-transform: none; letter-spacing: 0.02em; min-height: 52px; font-size: 1rem; }
+  .kicker, .t-k, .steps-label, .z-k, .req .fmt, .brandbar .ref, .slide .visual span, .slide .logo-ph { font-size: 0.875rem; }
+  .facts span, .sign .role, .form .opt, .form label small, .uses div small, .slide .qr small, .pay-fine, .zelle .z-name, .foot .lines { font-size: 0.875rem; }
+  ::placeholder { color: var(--muted); opacity: 1; }
+  input, select, textarea { font-size: 16px !important; }
+  .tier, .pay-card, .wizard, .zelle, .note { border-radius: 20px; box-shadow: 0 18px 40px rgba(43, 30, 26, 0.10); }
+  .tiers { align-items: stretch; }
+  .tier { display: flex; flex-direction: column; overflow: hidden; }
+  .tier ul { flex: 1; }
+  .tier .btn { margin-top: 18px; }
+  .tier .t-k, .zelle .z-k { font-size: 0.875rem; }
+  .tier .amount { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--plum); margin-top: 4px; }
+  .head .incl { margin-top: 14px; background: var(--paper); border-left: 3px solid var(--leaf); padding: 14px 16px; border-radius: 0 14px 14px 0; color: var(--espresso); }
+  .wizard label { display: block; font-weight: 800; font-size: 0.95rem; color: var(--espresso-2); margin-top: 14px; text-align: left; }
+  .wizard input, .wizard select { display: block; width: 100%; margin-top: 6px; font: inherit; font-weight: 400; color: var(--espresso); border: 1.5px solid var(--line); border-radius: 12px !important; padding: 13px 14px; background: #fff; }
+  .brandbar { justify-content: center; flex-direction: column; text-align: center; }
+  .brandbar .logo img { width: 150px; margin: 0 auto; }
+  .brandbar .ref { text-align: center; }
+  .foot { background: transparent; border-top: 0; padding: 40px 0 34px; }
+  .foot .narrow { background: #8a3a7f; border-radius: 20px; padding: 26px 16px; color: #fff; }
+  .foot img { width: 130px; filter: brightness(0) invert(1); }
+  .foot .lines { color: #fff; }
+  .foot a { color: #fff; }
 </style>
 </head>
 <body>
@@ -315,27 +341,29 @@
     <div class="head">
       <div class="kicker">Formas de participar</div>
       <h2>Elige cómo quieres sumarte</h2>
-      <p>Cada marca aporta de la manera que mejor se ajusta a su negocio. Lo acordamos en conjunto.</p>
+      <p class="incl">Presentar tu emprendimiento en Florecer juntas está incluido para todas las asistentes. El programa de sponsors es una alianza comercial aparte.</p>
     </div>
     <div class="tiers">
       <div class="tier">
-        <div class="t-k">Sponsor en especie</div>
-        <h3>Productos o servicios</h3>
-        <p>Aportas regalos, muestras, un servicio o un sorteo para los asistentes.</p>
-        <ul><li>Logo y QR en la presentación</li><li>Mención en redes</li><li>Tu producto en manos de cada asistente</li></ul>
+        <div class="t-k">Nivel 1</div>
+        <h3>Aliado</h3>
+        <div class="amount">[MONTO]</div>
+        <ul><li>Logo y código QR en la presentación</li><li>Mención en redes antes y después del evento</li><li>Tu producto o muestra en manos de cada asistente</li></ul>
+        <a class="btn block" href="#formulario" data-nivel="Aliado">Solicitar este nivel</a>
       </div>
       <div class="tier feat">
-        <div class="t-k">Sponsor con presentación</div>
-        <h3>Tu marca presente</h3>
-        <p>Además de tu aporte, presentas tu negocio en persona durante el evento.</p>
-        <ul><li>Todo lo de sponsor en especie</li><li>Presentación de tu proyecto</li><li>Espacio para mostrar tu producto</li></ul>
+        <div class="t-k">Nivel 2</div>
+        <h3>Presente</h3>
+        <div class="amount">[MONTO]</div>
+        <ul><li>Todo lo del nivel Aliado</li><li>Ficha destacada de tu marca en la presentación</li><li>Espacio para mostrar tu producto en el evento</li></ul>
+        <a class="btn block" href="#formulario" data-nivel="Presente">Solicitar este nivel</a>
       </div>
       <div class="tier">
-        <div class="t-k">Sponsor económico</div>
-        <h3>Contribución monetaria</h3>
-        <p>Es la opción de aporte en dinero: apoyas la producción del evento con una cantidad que acordamos contigo. Recibes un recibo de patrocinio a nombre de tu negocio.</p>
-        <a class="tier-link" href="#aporte">Hacer mi contribución</a>
-        <ul><li>Logo destacado en impresos</li><li>Mención especial en el evento</li><li>Mención en redes</li></ul>
+        <div class="t-k">Nivel 3</div>
+        <h3>Patrocinador principal</h3>
+        <div class="amount">[MONTO]</div>
+        <ul><li>Logo destacado en todos los impresos</li><li>Mención especial durante el evento</li><li>Prioridad en los próximos eventos de la temporada</li></ul>
+        <a class="btn block" href="#formulario" data-nivel="Patrocinador principal">Solicitar este nivel</a>
       </div>
     </div>
   </div>
@@ -354,7 +382,7 @@
       <li><span class="num">01</span><div><b>Bienvenida</b><small>Recepción de los asistentes</small></div></li>
       <li><span class="num">02</span><div><b>Historia del agradecimiento</b></div></li>
       <li><span class="num">03</span><div><b>Brindis de celebración</b></div></li>
-      <li class="hl"><span class="num">04</span><div><b>Florecer juntas</b><small>Durante la cena, cada sponsor presenta su proyecto</small></div></li>
+      <li class="hl"><span class="num">04</span><div><b>Florecer juntas</b><small>Durante la cena, cada asistente presenta su proyecto; los sponsors tienen además su ficha en la presentación</small></div></li>
       <li><span class="num">05</span><div><b>Despedida</b></div></li>
     </ol>
   </div>
@@ -383,94 +411,28 @@
 
 <section class="cta" id="formulario">
   <div class="narrow">
-    <div class="kicker">Bienvenido como aliado de Mindful Wellness</div>
-    <h2>Estamos felices de contar contigo</h2>
-    <p>Desde ahora tu marca forma parte de nuestro grupo de aliados. Completa estos cuatro pasos y sube tus archivos para preparar tu ficha de sponsor en Florecer en Gratitud y en los próximos eventos de Mindful Wellness.</p>
-    <div class="deadline">Para Florecer en Gratitud: envía tu material antes del 15 de noviembre</div>
+    <div class="kicker">Solicitud de alianza</div>
+    <h2>Solicita tu participación</h2>
+    <p>Déjanos tus datos y el nivel que te interesa. Mónica te contactará para confirmar el acuerdo. El logo, las fotos, la frase y el video se piden después de confirmar.</p>
 
     <form id="sp-form" class="wizard" novalidate>
-      <div class="progress"><div class="bar" id="sp-bar"></div></div>
-      <div class="steps-label"><span id="sp-stepnum">Paso 1 de 4</span><span id="sp-steptitle">Bienvenido, aliado</span></div>
-
-      <fieldset class="step" data-title="Bienvenido, aliado">
-        <h3>Bienvenido, aliado</h3>
-        <p class="lead">Estamos felices de contar contigo. Empecemos por conocerte.</p>
-        <label>Nombre completo<input name="nombre" required autocomplete="name"></label>
-        <label>WhatsApp<input name="telefono" type="tel" required autocomplete="tel" placeholder="201 000 0000"></label>
-        <label>Correo electrónico <span class="opt">opcional</span><input name="correo" type="email" autocomplete="email"></label>
-      </fieldset>
-
-      <fieldset class="step" data-title="Tu negocio" hidden>
-        <h3>Tu negocio</h3>
-        <p class="lead">Cuéntanos sobre tu marca en pocas palabras. Si aún no tienes algún dato, déjalo en blanco y continúa.</p>
-        <label>Nombre del negocio o marca<input name="negocio" required></label>
-        <label>¿A qué se dedica tu negocio? <span class="opt">opcional</span><input name="dedica" placeholder="Ej.: repostería artesanal, coaching, belleza"></label>
-        <label>¿Desde cuándo emprendes? <span class="opt">opcional</span><input name="inicio" type="month"></label>
-        <div class="q">¿Tu negocio está registrado? <span class="opt">opcional</span></div>
-        <div class="pills" data-name="registro">
-          <label><input type="radio" name="registro" value="Sí, registrado como LLC o corporación"><span>LLC o corporación</span></label>
-          <label><input type="radio" name="registro" value="Sí, como negocio individual / DBA"><span>Negocio individual / DBA</span></label>
-          <label><input type="radio" name="registro" value="En proceso de registro"><span>En proceso</span></label>
-          <label><input type="radio" name="registro" value="Aún no"><span>Aún no</span></label>
-        </div>
-        <div class="q">¿En qué etapa está? <span class="opt">opcional</span></div>
-        <div class="pills" data-name="etapa">
-          <label><input type="radio" name="etapa" value="Idea o inicio (menos de 1 año)"><span>Inicio</span></label>
-          <label><input type="radio" name="etapa" value="Creciendo (1 a 3 años)"><span>Creciendo</span></label>
-          <label><input type="radio" name="etapa" value="Establecido (más de 3 años)"><span>Establecido</span></label>
-          <label><input type="radio" name="etapa" value="Expandiéndome"><span>Expandiéndome</span></label>
-        </div>
-        <label>Página web o red social para tu QR <span class="opt">opcional</span><input name="qr" placeholder="Tu página web, Instagram o Facebook"></label>
-      </fieldset>
-
-      <fieldset class="step" data-title="Tu marca" hidden>
-        <h3>Tu marca</h3>
-        <p class="lead">Con esto preparamos tu ficha para la presentación. Si todavía no tienes logo, fotos o video, termina tu registro y nos los envías después por WhatsApp.</p>
-        <label class="file">Logo <span class="opt">opcional</span><small>PNG con fondo transparente o PDF. Si solo tienes JPG, en la mejor calidad.</small><input name="f_logo" type="file" accept=".png,.pdf,.jpg,.jpeg"></label>
-        <label class="file">Foto de tu negocio <span class="opt">opcional</span><small>Tu producto, tu local o tu trabajo, con buena luz.</small><input name="f_negocio" type="file" accept=".jpg,.jpeg,.png,image/jpeg,image/png"></label>
-        <label class="file">Foto tuya <span class="opt">opcional</span><small>Donde se vea tu rostro claramente.</small><input name="f_foto" type="file" accept=".jpg,.jpeg,.png,image/jpeg,image/png"></label>
-        <label>Tu propósito de vida en una frase <span class="opt">opcional</span><textarea name="proposito" maxlength="200" placeholder="La frase que te mueve"></textarea></label>
-        <label>Video corto <span class="opt">opcional</span><input name="video_link" type="url" placeholder="Enlace de Google Drive, YouTube o Instagram"></label>
-      </fieldset>
-
-      <fieldset class="step" data-title="Tu participación" hidden>
-        <h3>Tu participación</h3>
-        <p class="lead">Elige cómo quieres sumarte.</p>
-        <div class="q">¿Cómo quieres participar?</div>
-        <div class="pills multi" data-name="participacion" data-required="1">
-          <label><input type="checkbox" name="participacion" value="Aportar productos o regalos para los asistentes"><span>Productos o servicios</span></label>
-          <label><input type="checkbox" name="participacion" value="Presentar mi negocio en persona durante el evento"><span>Presentar mi negocio en persona</span></label>
-          <label><input type="checkbox" name="participacion" value="Contribución monetaria"><span>Contribución monetaria</span></label>
-          <label><input type="checkbox" name="participacion" value="Aportar a la decoración o la mesa"><span>Decoración o mesa</span></label>
-        </div>
-        <div class="q">¿En qué eventos? <span class="opt">opcional</span></div>
-        <div class="pills multi" data-name="eventos">
-          <label><input type="checkbox" name="eventos" value="Florecer en Gratitud · 21 de noviembre de 2026"><span>Florecer en Gratitud · 21 nov</span></label>
-          <label><input type="checkbox" name="eventos" value="Futuros eventos de Mindful Wellness (cenas, talleres y celebraciones)"><span>Futuros eventos</span></label>
-        </div>
-        <div class="q">¿Quieres ser parte del grupo de sponsors? <span class="opt">opcional</span></div>
-        <div class="pills" data-name="grupo">
-          <label><input type="radio" name="grupo" value="Sí, quiero ser parte"><span>Sí, quiero ser parte</span></label>
-          <label><input type="radio" name="grupo" value="Tal vez, quiero más información"><span>Quiero más información</span></label>
-          <label><input type="radio" name="grupo" value="No por ahora"><span>No por ahora</span></label>
-        </div>
-        <label class="consent"><input type="checkbox" name="autoriza" value="Autorizo a Mindful Wellness &amp; Coaching a usar mi logo, mis fotos, mi video y mi frase en la presentación, material impreso y redes sociales del evento." required> Autorizo a Mindful Wellness &amp; Coaching a usar mi logo, fotos, video y frase en la presentación, el material impreso y las redes de sus eventos.</label>
-      </fieldset>
-
-      <div class="nav">
-        <button type="button" class="btn line" id="sp-back" hidden>Atrás</button>
-        <button type="button" class="btn green" id="sp-next">Siguiente</button>
-        <button type="submit" class="btn green" id="sp-send" hidden>Enviar y sumarme</button>
-      </div>
+      <label>Nombre<input name="nombre" required autocomplete="name"></label>
+      <label>Nombre del negocio<input name="negocio" required autocomplete="organization"></label>
+      <label>WhatsApp<input name="telefono" type="tel" inputmode="tel" required autocomplete="tel" placeholder="201 000 0000"></label>
+      <label>Correo electrónico<input name="correo" type="email" inputmode="email" required autocomplete="email"></label>
+      <label>Nivel de interés
+        <select name="nivel" required>
+          <option value="">Elige un nivel</option>
+          <option>Aliado</option><option>Presente</option><option>Patrocinador principal</option><option>Quiero más información</option>
+        </select>
+      </label>
+      <button type="submit" class="btn green block" id="sp-send" style="margin-top:20px">Enviar solicitud</button>
       <p class="form-msg" id="sp-msg" role="status"></p>
     </form>
     <div class="thanks" id="sp-thanks" hidden>
-      <h3>Gracias por sumarte</h3>
-      <p>Recibimos tu información y tus archivos. Estamos felices de contar contigo como aliado de Mindful Wellness.</p>
-      <p class="firma">Mónica Villalba</p>
-      <a class="btn green" href="#aporte" id="sp-paylink" hidden>Hacer mi contribución monetaria</a>
+      <h3>Solicitud recibida</h3>
+      <p>Mónica te contactará para confirmar el acuerdo.</p>
     </div>
-    <iframe name="sp-target" id="sp-target" title="Envío" style="display:none"></iframe>
   </div>
 </section>
 
@@ -482,7 +444,7 @@
       <p>Si elegiste apoyar con un aporte en dinero, puedes hacerlo aquí con la cantidad que acordamos. Al recibirla te enviamos tu recibo de patrocinio a nombre de tu negocio.</p>
     </div>
     <div class="pay-card">
-      <a class="btn block" id="stripe-sponsor" href="#aporte" hidden>Contribuir con tarjeta</a>
+      <a class="btn block" id="stripe-sponsor" href="https://buy.stripe.com/6oU28s3sJcgA2Jq1i6enS0o" hidden>Contribuir con tarjeta</a>
       <p class="pay-fine" id="stripe-note" hidden>Con tarjeta, Apple Pay o Google Pay, de forma segura con Stripe.</p>
       <div class="zelle">
         <div class="z-k">Por Zelle</div>
@@ -517,98 +479,34 @@
     document.getElementById("stripe-note").hidden = false;
   }
 
-  // ===== Formulario de sponsors (dentro de esta página) =====
-  // Los envíos van al formulario de Jotform indicado aquí. Mapea cada campo de esta página
-  // con el nombre del campo en Jotform (por ejemplo "q3_nombre"). Si JOTFORM_FORM_ID está vacío,
-  // el formulario funciona como vista previa y no envía.
+  // ===== Solicitud de sponsor =====
+  // Se guarda en Jotform, formulario de sponsors (lista aparte de los registros), con Estado = Solicitud.
   const JOTFORM_FORM_ID = "263145056135048";
-  // Campo de esta página -> campo del formulario de Jotform
-  const JOTFORM_FIELDS = {
-    correo: "q4_correo_electr__nico", negocio: "q6_nombre_del_negocio_o_marca", dedica: "q7___a_qu___se_dedica_tu_negocio_",
-    registro: "q10___tu_negocio_est___registrado_", etapa: "q11___en_qu___etapa_est___tu_emprendimiento_",
-    qr: "q17_enlace_principal_para_tu_c__digo_qr", proposito: "q22_tu_prop__sito_de_vida_en_una_frase", video_link: "q24_enlace_a_tu_video",
-    participacion: "q25___c__mo_te_gustar__a_participar_como_sponsor_[]", eventos: "q31_enQue[]",
-    grupo: "q28___quieres_formar_parte_del_grupo_de_sponsors_de_mindful_wellness_para_futuros_eventos_",
-    autoriza: "q29_autorizaci__n[]",
-    f_logo: "q18_logo[]", f_negocio: "q20_foto_de_tu_emprendimiento[]", f_foto: "q21_foto_tuya[]"
-  };
-
+  const SP_EXTRA = { nivel: "q34_nivelDe", estado: "q35_estado", tipo: "q36_tipoDe" };
   const form = document.getElementById("sp-form");
-  const steps = [...form.querySelectorAll(".step")];
-  const back = document.getElementById("sp-back"), next = document.getElementById("sp-next"), send = document.getElementById("sp-send");
   const msg = document.getElementById("sp-msg");
-  let cur = 0;
-  function show(i) {
-    steps.forEach((st, k) => st.hidden = k !== i);
-    cur = i;
-    document.getElementById("sp-bar").style.width = ((i + 1) / steps.length * 100) + "%";
-    document.getElementById("sp-stepnum").textContent = "Paso " + (i + 1) + " de " + steps.length;
-    document.getElementById("sp-steptitle").textContent = steps[i].dataset.title;
-    back.hidden = i === 0; next.hidden = i === steps.length - 1; send.hidden = i !== steps.length - 1;
-    msg.textContent = "";
-  }
-  function valid(st) {
-    let ok = true;
-    st.querySelectorAll("input[required], textarea[required]").forEach(el => {
-      const bad = el.type === "checkbox" ? !el.checked : !el.checkValidity() || (el.type !== "file" && !el.value.trim());
-      el.classList.toggle("invalid", bad); if (bad) ok = false;
-    });
-    st.querySelectorAll(".pills[data-required]").forEach(p => {
-      const bad = !p.querySelector("input:checked"); p.classList.toggle("invalid", bad); if (bad) ok = false;
-    });
-    if (!ok) msg.textContent = "Completa lo marcado para continuar.";
-    return ok;
-  }
-  next.addEventListener("click", () => { if (valid(steps[cur])) { show(cur + 1); form.scrollIntoView({ behavior: "smooth", block: "start" }); } });
-  back.addEventListener("click", () => show(cur - 1));
-  form.addEventListener("change", e => { const p = e.target.closest(".pills"); if (p) p.classList.remove("invalid"); e.target.classList && e.target.classList.remove("invalid"); });
-
-  form.addEventListener("submit", e => {
+  document.querySelectorAll("[data-nivel]").forEach(a => a.addEventListener("click", () => { form.nivel.value = a.dataset.nivel; }));
+  form.addEventListener("submit", async e => {
     e.preventDefault();
-    if (!valid(steps[cur])) return;
-    const files = [...form.querySelectorAll("input[type=file]")].filter(f => f.files[0]);
-    if (files.some(f => f.files[0].size > 10 * 1048576)) { msg.textContent = "Cada archivo debe pesar menos de 10 MB."; return; }
-    const okExt = { f_logo: ["png", "pdf", "jpg", "jpeg"], f_negocio: ["jpg", "jpeg", "png"], f_foto: ["jpg", "jpeg", "png"] };
-    const badFile = files.find(f => !okExt[f.name].includes(f.files[0].name.split(".").pop().toLowerCase()));
-    if (badFile) { msg.textContent = "El archivo " + badFile.files[0].name + " no es válido. Usa PNG o JPG" + (badFile.name === "f_logo" ? " (o PDF para el logo)." : "."); return; }
-    const done = () => {
-      form.hidden = true; document.getElementById("sp-thanks").hidden = false;
-      if ([...form.querySelectorAll("input[name=participacion]:checked")].some(c => c.value === "Contribución monetaria")) document.getElementById("sp-paylink").hidden = false;
-      document.getElementById("formulario").scrollIntoView({ behavior: "smooth" });
-    };
-    if (!JOTFORM_FORM_ID) { msg.textContent = "El formulario aún no está conectado."; return; }
-    // Envío a Jotform con un formulario oculto (admite archivos).
-    const out = document.createElement("form");
-    out.method = "POST"; out.enctype = "multipart/form-data"; out.target = "sp-target";
-    out.action = "https://submit.jotform.com/submit/" + JOTFORM_FORM_ID + "/";
-    out.style.display = "none";
-    const add = (n, v) => { const i = document.createElement("input"); i.type = "hidden"; i.name = n; i.value = v; out.appendChild(i); };
-    add("formID", JOTFORM_FORM_ID);
-    add("simple_spc", JOTFORM_FORM_ID + "-" + JOTFORM_FORM_ID);
-    add("website", "");
+    const bad = [...form.querySelectorAll("[required]")].find(el => !el.checkValidity() || !el.value.trim());
+    if (bad) { msg.textContent = "Completa todos los campos para enviar tu solicitud."; bad.focus(); return; }
     const fd = new FormData(form);
-    // Nombre en dos partes, teléfono, y mes/año de inicio
-    const nombre = (fd.get("nombre") || "").trim().split(/\s+/);
-    add("q2_nombre_completo[first]", nombre.shift() || "");
-    add("q2_nombre_completo[last]", nombre.join(" ") || "-");
-    const tel = (fd.get("telefono") || "").replace(/\D/g, "").replace(/^1(?=\d{10}$)/, "");
-    add("q3_tel__fono___whatsapp[area]", tel.slice(0, 3) || "-");
-    add("q3_tel__fono___whatsapp[phone]", tel.slice(3) || (fd.get("telefono") || "-"));
-    const ini = fd.get("inicio");
-    if (ini) { const [y, m] = ini.split("-"); add("q9_fecha_en_que_iniciaste_tu_emprendimiento[year]", y); add("q9_fecha_en_que_iniciaste_tu_emprendimiento[month]", m); add("q9_fecha_en_que_iniciaste_tu_emprendimiento[day]", "01"); }
-    for (const [k, v] of fd.entries()) { if (v instanceof File || !JOTFORM_FIELDS[k] || k.startsWith("f_")) continue; add(JOTFORM_FIELDS[k], v); }
-    form.querySelectorAll("input[type=file]").forEach(f => {
-      if (!f.files[0] || !JOTFORM_FIELDS[f.name]) return;
-      const clone = document.createElement("input"); clone.type = "file"; clone.name = JOTFORM_FIELDS[f.name];
-      const dt = new DataTransfer(); dt.items.add(f.files[0]); clone.files = dt.files; out.appendChild(clone);
-    });
-    document.body.appendChild(out);
-    send.disabled = true; msg.textContent = "Enviando tu información y tus archivos…";
-    document.getElementById("sp-target").addEventListener("load", done, { once: true });
-    out.submit();
+    const body = new URLSearchParams();
+    body.set("formID", JOTFORM_FORM_ID); body.set("simple_spc", JOTFORM_FORM_ID + "-" + JOTFORM_FORM_ID); body.set("website", "");
+    const nombre = fd.get("nombre").trim().split(/\s+/);
+    body.set("q2_nombre_completo[first]", nombre.shift() || "");
+    body.set("q2_nombre_completo[last]", nombre.join(" ") || "-");
+    const tel = fd.get("telefono").replace(/\D/g, "").replace(/^1(?=\d{10}$)/, "");
+    body.set("q3_tel__fono___whatsapp[area]", tel.slice(0, 3) || "-");
+    body.set("q3_tel__fono___whatsapp[phone]", tel.slice(3) || fd.get("telefono"));
+    body.set("q4_correo_electr__nico", fd.get("correo").trim());
+    body.set("q6_nombre_del_negocio_o_marca", fd.get("negocio").trim());
+    for (const [k, v] of Object.entries(SP_EXTRA)) body.set(v, k === "nivel" ? fd.get("nivel") : k === "estado" ? "Solicitud" : "Solicitud corta (web)");
+    document.getElementById("sp-send").disabled = true; msg.textContent = "Enviando…";
+    await Promise.race([fetch("https://submit.jotform.com/submit/" + JOTFORM_FORM_ID + "/", { method: "POST", mode: "no-cors", body }).catch(() => {}), new Promise(r => setTimeout(r, 4000))]);
+    form.hidden = true; document.getElementById("sp-thanks").hidden = false;
+    document.getElementById("formulario").scrollIntoView({ behavior: "smooth" });
   });
-  show(0);
-
 </script>
 </body>
 </html>
