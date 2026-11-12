@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#6e1e2b">
 <title>Cena de Thanksgiving · Florecer en Gratitud</title>
-<meta name="description" content="Jardín de Mujeres con Mente Poderosa te invita a nuestra cena de Thanksgiving. Sábado 21 de noviembre 2026, 1:30–5:00 pm, Salón Elite, Wallington NJ.">
+<meta name="description" content="Mujeres con Propósito te invita a nuestra cena de Thanksgiving. Sábado 21 de noviembre 2026, 1:30–5:00 pm, Wallington, New Jersey.">
 <meta property="og:title" content="Cena de Thanksgiving · Florecer en Gratitud">
 <meta property="og:description" content="Te invitamos a nuestra cena de Thanksgiving. Trae a esa mujer en tu vida a quien le das gracias. Sáb 21 nov · 1:30–5:00 pm · Wallington, NJ.">
 <meta property="og:image" content="jardin.jpg">
@@ -219,7 +219,7 @@
   @media (min-width: 560px) { .two { grid-template-columns: 1fr 1fr; } }
   .choices { display: grid; gap: 8px; margin-top: 4px; }
   .choice { display: flex; gap: 10px; align-items: flex-start; font-weight: 600; color: var(--ink); margin: 0; font-size: 1rem; cursor: pointer; }
-  .choice input { width: 20px; height: 20px; margin-top: 3px; flex: none; accent-color: var(--terracotta); padding: 0; }
+  .choice input { width: 20px; height: 20px; margin-top: 3px; flex: none; accent-color: #8c5f86; padding: 0; }
   .err { color: var(--terracotta); font-weight: 700; font-size: 0.95rem; text-align: center; margin-top: 12px; }
   .step2 { text-align: center; }
   .step2 h3 { font-size: 2rem; }
@@ -319,6 +319,62 @@
   .agenda-list li.star { background: var(--linen); margin: 0 -24px; padding-left: 52px; padding-right: 24px; }
   .agenda-list li.star::before { left: 28px; background: var(--burgundy); }
   .sp-link .btn { margin-top: 20px; }
+
+  /* ===== ajustes 12 nov ===== */
+  /* texto mínimo 14 px y grises legibles */
+  .eyebrow, .tile .k, .row .k, .menu-card .k, .agenda-head, .agenda-list em, .opt-tag, .reg-head .lbl, .quote cite { font-size: 0.875rem; }
+  .fine, .reg-form .help, label .opt { font-size: 0.875rem; color: var(--muted); }
+  ::placeholder { color: var(--muted); opacity: 1; }
+  input, select, textarea { font-size: 16px; }
+  .btn { text-transform: none; letter-spacing: 0.02em; min-height: 52px; }
+  .reg-head .who { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 600; margin-top: 8px; }
+  .reg-form label:not(.choice):not(.pw) { text-align: left; }
+  .paywith { display: grid; gap: 8px; margin-top: 22px; }
+  .pw { display: flex; gap: 10px; align-items: center; margin: 0; padding: 14px 16px; border: 1.5px solid var(--line); border-radius: 14px; font-weight: 700; color: var(--ink); cursor: pointer; }
+  .pw input { width: 20px; height: 20px; accent-color: #8c5f86; margin: 0; padding: 0; flex: none; }
+  .pw:has(input:checked) { border-color: #8c5f86; background: var(--cream); }
+  .zelle-box .num { font-size: 1.6rem; }
+  /* paso opcional */
+  .opt-step { margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); text-align: center; }
+  .opt-step h3 { font-size: 1.8rem; }
+  .opt-sub { color: var(--muted); margin-top: 6px; }
+  .yesno { display: flex; gap: 12px; justify-content: center; margin-top: 16px; }
+  .yesno .btn { min-width: 110px; }
+  .yesno .btn.on { background: var(--burgundy); color: #fff; box-shadow: none; }
+  .opt-cards { display: grid; gap: 16px; margin-top: 22px; text-align: left; }
+  .opt-card { border: 1px solid var(--line); border-radius: 20px; padding: 22px; background: #fff; box-shadow: 0 12px 30px rgba(58, 42, 34, 0.10); }
+  .opt-card.sponsor { background: #8a3a7f; color: #fff; border-color: #8a3a7f; }
+  .opt-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; color: var(--burgundy); margin-top: 4px; }
+  .opt-card.sponsor h4 { color: #fff; }
+  .opt-card p { font-size: 1rem; margin-top: 6px; }
+  .opt-tag { font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--olive); }
+  .opt-card.sponsor .opt-tag { color: #f3d9ef; }
+  .opt-card label { display: block; font-weight: 800; color: var(--burgundy); margin: 14px 0 6px; font-size: 0.95rem; }
+  .opt-card label input, .opt-card label textarea, .opt-card label select { margin-top: 6px; font-weight: 400; }
+  .opt-card .btn { margin-top: 18px; }
+  .opt-card.sponsor .btn { background: #fff; color: #8a3a7f; box-shadow: none; }
+  /* puente de marca hacia sponsors */
+  .sp-link { background: #8a3a7f; }
+  .sp-link .sp-line { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #fff; margin-bottom: 10px; }
+  .sp-link .btn { background: #fff; color: #8a3a7f; box-shadow: none; }
+  .foot { border-top: 0; margin-top: 50px; padding: 26px 16px; background: #8a3a7f; border-radius: 20px; color: #fff; }
+  .foot img { filter: none; }
+  .foot a { color: #fff; }
+  /* tarjeta Gratitud sin foto */
+  .tile.plain { background: linear-gradient(135deg, #7a2232, #4a1420); }
+  .tile.plain::before { display: none; }
+  /* botones con el morado de la marca (13 nov) */
+  .btn, .closing .btn, form .btn, .sticky-bar { background: #8c5f86; color: #fff; }
+  .btn:hover { background: #7a5074; }
+  .btn.ghost { background: transparent; color: #8c5f86; box-shadow: inset 0 0 0 1.5px #8c5f86; }
+  .sp-link .btn { background: #fff; color: #8a3a7f; }
+  .btn.ghost.on { background: #8c5f86; color: #fff; }
+  /* barra fija en celular */
+  .sticky-bar { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 50; display: flex; align-items: center; justify-content: center; min-height: 54px; border-radius: 999px; background: #8c5f86; color: #fff; font-weight: 800; text-decoration: none; box-shadow: 0 10px 24px rgba(58, 42, 34, 0.3); transition: transform .25s ease, opacity .25s ease; }
+  .sticky-bar.hide { transform: translateY(120%); opacity: 0; pointer-events: none; }
+  @media (min-width: 760px) { .sticky-bar { display: none; } }
+  @media (max-width: 759px) { body { padding-bottom: 80px; } }
+  .narrow { max-width: 760px; }
 </style>
 </head>
 <body>
@@ -328,7 +384,7 @@
 <header class="hero center">
   <div class="narrow">
     <div class="tile hero-tile" style="background-image:url(jardin.jpg)" role="img" aria-label="Las mujeres del Jardín reunidas y sonriendo">
-      <div class="k">Jardín de Mujeres con Mente Poderosa te invita</div>
+      <div class="k">Mujeres con Propósito te invita</div>
       <h1>Cena de Thanksgiving<em>Florecer en Gratitud</em></h1>
       <p class="invite">Trae a esa mujer en tu vida a quien le das gracias, y celebremos juntas alrededor de la mesa.</p>
       <div class="when"><span>Sábado 21 de noviembre</span><span>1:30 – 5:00 pm</span><span>Wallington, NJ</span></div>
@@ -381,7 +437,7 @@
     <h2>Una tarde para florecer</h2>
     <p class="intro">Detrás de cada una de nosotras hay una mujer que creyó en ti, te escuchó o te sostuvo cuando más lo necesitabas. Esta vez la traes contigo.</p>
     <div class="tiles">
-      <div class="tile wide" style="background-image:url(gratitud.jpg);min-height:300px;background-position:center 30%" role="img" aria-label="Dos mujeres abrazadas celebrando en un evento de Mindful Wellness">
+      <div class="tile wide" style="background-image:url(abrazo.jpg);min-height:320px;background-position:center 30%" role="img" aria-label="Dos mujeres de Mindful Wellness sonriendo juntas">
         <div class="k">Gratitud</div><div class="v">Ella viene como tu regalo de gratitud</div><small>Un homenaje a tu invitada.</small>
       </div>
       <div class="tile" style="background-image:url(conexion.jpg);min-height:260px" role="img" aria-label="Mujeres conversando alrededor de una mesa en un encuentro de Mindful Wellness">
@@ -413,7 +469,7 @@
       <div class="tile" style="background-image:url(d-lugar.jpg);min-height:320px;background-position:12% top">
         <div class="k">Lugar</div>
         <div class="v">Salón Elite de Mujeres con Propósito</div>
-        <small>Wallington, NJ</small>
+        <small>Wallington, New Jersey. Te enviamos la dirección exacta al completar tu registro.</small>
       </div>
       <div class="tile" style="background-image:url(d-blanco.jpg);min-height:300px;background-position:center top">
         <div class="k">Código de vestimenta</div>
@@ -435,112 +491,43 @@
 
     <div class="reg-card">
       <div class="reg-head">
-        <div class="lbl">Contribución</div>
         <div class="amt">$50</div>
-        <div class="who">Mujeres del Jardín de Mentes Poderosas</div>
-        <div class="courtesy">Tu invitada, con nuestra cortesía</div>
+        <div class="who">$50 cubre tu lugar y el de tu invitada.</div>
       </div>
       <div class="reg-body">
-        <p class="reg-intro" id="reg-intro">Llena tu registro y completa tu contribución de $50.<br>Así tu lugar y el de tu invitada quedan reservados.</p>
-        <div id="pay-now">
-          <a class="btn block" id="stripe-now" href="https://book.stripe.com/00w8wQ0gxgwQ3NuaSGenS0n" target="_blank" rel="noopener">Contribuir $50 ahora</a>
-          <p class="fine">Con tarjeta, Apple Pay o Google Pay, de forma segura con Stripe. También puedes contribuir por Zelle al final del registro.</p>
-          <div class="or">y llena tu registro</div>
-        </div>
-
         <form id="reg-form" class="reg-form" novalidate>
-          <fieldset>
-            <legend>Tus datos</legend>
-            <div class="two">
-              <div><label for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" autocomplete="name" required></div>
-              <div><label for="telefono">WhatsApp</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" placeholder="(201) 000-0000" required></div>
-            </div>
-            <div class="two">
-              <div><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-              <div><label for="ciudad">Ciudad y estado</label><input id="ciudad" name="ciudad" autocomplete="address-level2" placeholder="Ej.: Wallington, NJ" required></div>
-            </div>
-            <label for="cumple">Fecha de cumpleaños <span class="opt">(opcional, día y mes)</span></label>
-            <input id="cumple" name="cumple" placeholder="Ej.: 14 de marzo">
-            <label for="enteraste">¿Cómo te enteraste del evento?</label>
-            <select id="enteraste" name="enteraste">
-              <option value="">Elige una opción</option>
-              <option>Soy parte del Jardín de Mujeres con Mente Poderosa</option>
-              <option>Me invitó una amiga</option>
-              <option>Instagram o Facebook</option>
-              <option>WhatsApp</option>
-              <option>Otro</option>
-            </select>
-          </fieldset>
+          <label for="nombre">Nombre y apellido</label>
+          <input id="nombre" name="nombre" autocomplete="name" required>
+          <label for="telefono">WhatsApp</label>
+          <input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="(201) 000-0000" required>
+          <label for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" inputmode="email" autocomplete="email" required>
+          <label for="invitada">Nombre de tu invitada <span class="opt">(si traes)</span></label>
+          <input id="invitada" name="invitada">
+          <label for="alergias">Alergias o restricciones de alimentos <span class="opt">(opcional)</span></label>
+          <input id="alergias" name="alergias" placeholder="Ej.: sin gluten, vegetariana">
+          <label class="choice" style="margin-top:18px"><input type="checkbox" name="fotos" value="Sí"> Autorizo aparecer en fotos y videos del evento para las redes de Mindful Wellness.</label>
 
-          <fieldset>
-            <legend>Tu invitada</legend>
-            <p class="help">La mujer en tu vida a quien le das gracias. Ella viene con nuestra cortesía.</p>
-            <div class="two">
-              <div><label for="invitada">Nombre de tu invitada</label><input id="invitada" name="invitada" required></div>
-              <div><label for="tel_invitada">WhatsApp de tu invitada <span class="opt">(opcional)</span></label><input id="tel_invitada" name="tel_invitada" type="tel"></div>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Florecer juntas</legend>
-            <p class="help">Durante la cena cada una presenta su proyecto. Cuéntanos del tuyo para prepararnos.</p>
-            <label for="proyecto">Nombre de tu proyecto o emprendimiento</label>
-            <input id="proyecto" name="proyecto" placeholder="Si aún no tiene nombre, cuéntanos tu idea" required>
-            <label for="proyecto_desc">¿A qué te dedicas o qué sueñas construir?</label>
-            <textarea id="proyecto_desc" name="proyecto_desc" required></textarea>
-            <label for="redes">Página web o redes sociales <span class="opt">(opcional)</span></label>
-            <input id="redes" name="redes" placeholder="@tuemprendimiento o www.tupagina.com">
-            <label>¿Quieres presentar tu proyecto en Florecer juntas?</label>
-            <div class="choices">
-              <label class="choice"><input type="radio" name="presentar" value="Sí, quiero presentar" required> Sí, quiero presentarlo</label>
-              <label class="choice"><input type="radio" name="presentar" value="Prefiero solo escuchar"> Esta vez prefiero escuchar</label>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Para la mesa</legend>
-            <label for="aporte">¿Contribuyes con algo adicional?</label>
-            <select id="aporte" name="aporte" required>
-              <option value="">Elige una opción</option>
-              <option>Sí, comida (plato, postre, aperitivo)</option>
-              <option>Sí, bebidas</option>
-              <option>Sí, flores o decoración</option>
-              <option>Sí, otra cosa</option>
-              <option>No esta vez</option>
-            </select>
-            <label for="detalle">¿Qué traerás? <span class="opt">(opcional)</span></label>
-            <textarea id="detalle" name="detalle" placeholder="Ej.: ensalada para 10, pie de calabaza, flores blancas"></textarea>
-            <label for="alergias">Alergias o restricciones de alimentos <span class="opt">(tuyas o de tu invitada)</span></label>
-            <input id="alergias" name="alergias" placeholder="Ej.: sin gluten, vegetariana, ninguna">
-            <label class="choice" style="margin-top:18px"><input type="checkbox" name="fotos" value="Sí"> Acepto aparecer en fotos y videos del evento para las redes de Mindful Wellness.</label>
-          </fieldset>
-
-          <button class="btn block" type="submit" id="reg-submit">Registrarme y contribuir $50</button>
+          <div class="paywith" role="radiogroup" aria-label="Forma de pago">
+            <label class="pw"><input type="radio" name="metodo" value="Stripe" checked> Tarjeta o Apple Pay</label>
+            <label class="pw"><input type="radio" name="metodo" value="Zelle"> Zelle</label>
+          </div>
+          <button class="btn block" type="submit" id="reg-submit">Registrarme y pagar $50</button>
+          <a class="btn block" id="pago-alt" href="#" target="_top" hidden style="margin-top:12px">Si no se abrió el pago, toca aquí</a>
+          <p class="fine" id="pay-note">Te llevamos a Stripe para pagar de forma segura. Tu registro queda guardado.</p>
           <p class="err" id="reg-err" role="alert" hidden></p>
         </form>
 
-        <div class="step2" id="step2" hidden>
-          <h3>Gracias, <span id="s2-nombre"></span></h3>
-          <div class="ok">Recibimos tu registro. Ahora completa tu contribución de <b>$50</b> para reservar tu lugar y el de <b id="s2-invitada"></b>.</div>
-          <div id="wa-reg-box" hidden>
-            <a class="btn block olive" id="wa-reg" href="#" target="_blank" rel="noopener">Paso 1: Enviar mi registro por WhatsApp</a>
-            <p class="fine" style="margin-bottom:16px">Se abre WhatsApp con tus datos listos. Solo presiona enviar y vuelve a esta página.</p>
+        <div class="step2" id="step-zelle" hidden>
+          <h3>Tu registro está guardado</h3>
+          <div class="ok">Envía tu contribución de <b>$50</b> por Zelle y mándanos el comprobante por WhatsApp.</div>
+          <div class="zelle-box">
+            <div>Zelle a nombre de Mindful Wellness &amp; Coaching LLC</div>
+            <div class="num">201-679-9969</div>
+            <img src="zelle-qr.jpg" alt="Código QR de Zelle de Mindful Wellness & Coaching LLC">
           </div>
-          <a class="btn block" id="stripe-btn" href="#" target="_blank" rel="noopener">Completar mi contribución</a>
-          <p class="fine">Con tarjeta, Apple Pay o Google Pay, de forma segura con Stripe.</p>
-          <div class="reminder">En la página de contribución escribe de nuevo <b>tu nombre y el de tu invitada</b>, así unimos tu registro con tu contribución.</div>
-
-          <div class="or">o si prefieres</div>
-          <details class="zelle" id="zelle" style="border-top:0;margin-top:0">
-            <summary>Contribuir por Zelle</summary>
-            <div class="zelle-box">
-              <div>Envía tu contribución de $50 por Zelle al</div>
-              <div class="num" id="zelle-num"></div>
-              <div style="font-size:0.9rem;color:var(--muted);">Mindful Wellness &amp; Coaching LLC</div>
-              <img src="zelle-qr.jpg" alt="Código QR de Zelle de Mindful Wellness & Coaching LLC">
-            </div>
-            <a class="btn block olive" id="wa-btn" href="#" style="margin-top:16px">Enviar mi comprobante por WhatsApp</a>
-          </details>
+          <a class="btn block olive" id="wa-btn" href="https://wa.me/12016799969" target="_blank" rel="noopener" style="margin-top:16px">Enviar mi comprobante por WhatsApp</a>
+          <div id="paso-c-zelle"></div>
         </div>
       </div>
     </div>
@@ -552,6 +539,7 @@
     <div class="eyebrow">Programa de Sponsors</div>
     <h2>Haz visible tu marca</h2>
     <div class="sp-link">
+      <div class="sp-line">Conoce el programa de alianzas de Mindful Wellness</div>
       <p>Cuando una persona crece, crece su comunidad. Invitamos a negocios y emprendedores a sumarse como sponsors de este evento y de los que vienen, ante una comunidad que busca productos y servicios de confianza.</p>
       <a class="btn" href="sponsors.html">Quiero ser sponsor</a>
     </div>
@@ -568,7 +556,7 @@
     <a class="btn js-contribuir" href="#registro">¡Yo voy!</a>
 
     <div class="foot">
-      <img src="logo-mindful-wellness.png" alt="Mindful Wellness">
+      <img src="logo-pie.png" alt="Mindful Wellness">
       <div class="links">
         <a href="https://instagram.com/mindfulwellnessnyc" target="_blank" rel="noopener">@mindfulwellnessnyc</a>
         <a href="https://mindfulwellness.nyc/" target="_blank" rel="noopener">mindfulwellness.nyc</a>
@@ -578,94 +566,96 @@
   </div>
 </footer>
 
+<script src="registro.js"></script>
 <script>
-  // ===== Configuración (cámbiala aquí) =====
-  // Enlace de Stripe para la contribución (solo de este evento).
-  const STRIPE_LINK = "https://book.stripe.com/00w8wQ0gxgwQ3NuaSGenS0n";
-  // Dónde llegan los registros (cada registro llega como un correo con todos los datos).
-  const REGISTRO_ENDPOINT = "";
-  const ZELLE = "201-679-9969";
-  const WHATSAPP = "12016799969";
   const EVENT_DATE = new Date("2026-11-21T13:30:00-05:00");
-  // =========================================
-
-  document.getElementById("zelle-num").textContent = ZELLE;
-  document.getElementById("stripe-now").href = STRIPE_LINK;
-
-  // Todos los botones "Reservar" llevan al formulario de registro.
-  document.querySelectorAll(".js-contribuir").forEach(a => { a.href = "#registro"; });
+  // "Reservar nuestro lugar", "¡Yo voy!" y la barra del celular van directo al pago de Stripe.
+  document.querySelectorAll(".js-contribuir").forEach(a => { a.href = FG.STRIPE_LINK; });
+  document.addEventListener("click", e => {
+    const a = e.target.closest(".js-contribuir, #sticky-bar"); if (!a) return;
+    const prev = FG.recall();
+    const ref = (prev && prev.ref) || FG.newRef();
+    if (!prev) FG.remember({ ref: ref, tipo: "Directo a Stripe" });
+    a.href = FG.stripeUrl(prev && prev.email ? prev : { ref: ref });
+    try { sessionStorage.setItem("fg-a-stripe", ref); } catch (_) {}
+  });
 
   const days = Math.ceil((EVENT_DATE - new Date()) / 86400000);
   const cd = document.getElementById("countdown");
   if (days > 1) cd.innerHTML = "Faltan <b>" + days + " días</b> para sentarnos juntas a la mesa";
   else if (days === 1) cd.innerHTML = "<b>¡Es mañana!</b> Te esperamos a la mesa";
 
-  const LABELS = {
-    nombre: "Nombre", telefono: "WhatsApp", email: "Correo", ciudad: "Ciudad y estado",
-    cumple: "Cumpleaños", enteraste: "Cómo se enteró", invitada: "Invitada", tel_invitada: "WhatsApp de la invitada",
-    proyecto: "Proyecto o emprendimiento", proyecto_desc: "Sobre su proyecto", redes: "Web o redes",
-    presentar: "Presentar en Florecer juntas", aporte: "Aporte adicional", detalle: "Qué traerá",
-    alergias: "Alergias o restricciones", fotos: "Acepta fotos"
-  };
-
   const form = document.getElementById("reg-form");
   const err = document.getElementById("reg-err");
+  const btn = document.getElementById("reg-submit");
+  const note = document.getElementById("pay-note");
+  function setLabel() {
+    const z = (form.querySelector("[name=metodo]:checked") || {}).value === "Zelle";
+    btn.textContent = z ? "Registrarme y pagar con Zelle" : "Registrarme y pagar $50";
+    note.textContent = z ? "Te mostramos el número y el código QR de Zelle." : "Te llevamos a Stripe para pagar de forma segura. Tu registro queda guardado.";
+  }
+  form.addEventListener("change", e => { if (e.target.name === "metodo") setLabel(); });
+
   form.addEventListener("submit", async function (e) {
     e.preventDefault();
     err.hidden = true;
-    const bad = [...form.querySelectorAll("[required]")].find(el =>
-      el.type === "radio" ? !form.querySelector('input[name="' + el.name + '"]:checked') : !el.checkValidity() || !el.value.trim());
-    if (bad) {
-      err.textContent = "Por favor completa los campos marcados para continuar.";
-      err.hidden = false;
-      bad.focus();
+    const bad = [...form.querySelectorAll("[required]")].find(el => !el.checkValidity() || !el.value.trim());
+    if (bad) { err.textContent = "Por favor completa tu nombre, WhatsApp y correo."; err.hidden = false; bad.focus(); return; }
+    const fd = new FormData(form);
+    const r = {
+      tipo: "Registro", ref: FG.newRef(), nombre: fd.get("nombre").trim(), telefono: fd.get("telefono").trim(),
+      email: fd.get("email").trim(), invitada: (fd.get("invitada") || "").trim() || "Sin invitada", alergias: (fd.get("alergias") || "").trim(),
+      fotos: fd.get("fotos") ? "Sí" : "No", estado: "Pendiente", metodo: fd.get("metodo")
+    };
+    // Si vuelve a intentar con los mismos datos, usamos el mismo registro (no se duplica).
+    const prev = FG.recall();
+    const same = prev && prev.ref && ["nombre","telefono","email","invitada","alergias","fotos","metodo"].every(k => prev[k] === r[k]);
+    if (same) r.ref = prev.ref;
+    btn.disabled = true; btn.textContent = "Guardando tu registro…";
+    FG.remember(r);
+    if (!same) FG.save(r); // se envía en segundo plano; no hacemos esperar a la persona
+
+    if (r.metodo === "Stripe") {
+      const go = FG.stripeUrl(r);
+      btn.textContent = "Abriendo el pago…";
+      try { sessionStorage.setItem("fg-a-stripe", r.ref); } catch (_) {}
+      const alt = document.getElementById("pago-alt");
+      alt.href = go; alt.hidden = false;
+      try {
+        if (window.top !== window.self) { if (!window.open(go, "_top")) window.open(go, "_blank"); }
+        else window.location.href = go;
+      } catch (_) { window.open(go, "_blank"); }
       return;
     }
-    const fd = new FormData(form);
-    const data = {};
-    for (const k in LABELS) data[LABELS[k]] = (fd.get(k) || (k === "fotos" ? "No" : "")).toString().trim();
-
-    const btn = document.getElementById("reg-submit");
-    btn.disabled = true; btn.textContent = "Guardando tu registro…";
-    if (REGISTRO_ENDPOINT) {
-      try {
-        await fetch(REGISTRO_ENDPOINT, {
-          method: "POST",
-          headers: { "Content-Type": "application/json", "Accept": "application/json" },
-          body: JSON.stringify(Object.assign({
-            _subject: "Nuevo registro Florecer en Gratitud: " + data["Nombre"],
-            _template: "table", _captcha: "false"
-          }, data))
-        });
-      } catch (_) { /* si falla, igual continúa; el WhatsApp y Stripe guardan los datos principales */ }
-    }
-
-    const url = new URL(STRIPE_LINK);
-    url.searchParams.set("prefilled_email", data["Correo"]);
-    document.getElementById("stripe-btn").href = url.toString();
-    document.getElementById("s2-nombre").textContent = data["Nombre"].split(" ")[0];
-    document.getElementById("s2-invitada").textContent = data["Invitada"];
-
-    const text = "Hola Mónica, me registré para la cena de Thanksgiving Florecer en Gratitud (sáb 21 nov).\n" +
-      Object.entries(data).filter(([, v]) => v).map(([k, v]) => k + ": " + v).join("\n") +
-      "\nYa envié mi contribución de $50 por Zelle al " + ZELLE + ". Adjunto mi comprobante.";
-    document.getElementById("wa-btn").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text);
-    if (!REGISTRO_ENDPOINT) {
-      // Mientras no haya correo de registros, el registro se envía por WhatsApp.
-      const reg = "Hola Mónica, este es mi registro para la cena de Thanksgiving Florecer en Gratitud (sáb 21 nov).\n" +
-        Object.entries(data).filter(([, v]) => v).map(([k, v]) => k + ": " + v).join("\n");
-      document.getElementById("wa-reg").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(reg);
-      document.getElementById("wa-reg-box").hidden = false;
-      document.getElementById("stripe-btn").textContent = "Paso 2: Completar mi contribución";
-      document.querySelector("#step2 .ok").innerHTML = "Ya casi. Envía tu registro por WhatsApp y completa tu contribución de <b>$50</b> para reservar tu lugar y el de <b>" + data["Invitada"].replace(/[<>&]/g, "") + "</b>.";
-    }
-
+    const text = "Hola Mónica, me registré para Florecer en Gratitud (sáb 21 nov).\n" +
+      "Nombre: " + r.nombre + "\nInvitada: " + r.invitada + "\nReferencia: " + r.ref +
+      "\nAdjunto mi comprobante de Zelle por $50.";
+    document.getElementById("wa-btn").href = "https://wa.me/" + FG.WHATSAPP + "?text=" + encodeURIComponent(text);
     form.hidden = true;
-    document.getElementById("reg-intro").hidden = true;
-    document.getElementById("pay-now").hidden = true;
-    document.getElementById("step2").hidden = false;
+    document.getElementById("step-zelle").hidden = false;
+    FG.renderOptional(document.getElementById("paso-c-zelle"));
     document.getElementById("registro").scrollIntoView({ behavior: "smooth" });
   });
+
+  // Si la persona vuelve desde Stripe sin pagar (cancela o usa "atrás"), reactivamos el botón y lo explicamos.
+  window.addEventListener("pageshow", function () {
+    let pend = null; try { pend = sessionStorage.getItem("fg-a-stripe"); } catch (_) {}
+    if (!pend) return;
+    try { sessionStorage.removeItem("fg-a-stripe"); } catch (_) {}
+    btn.disabled = false; setLabel();
+    document.getElementById("pago-alt").hidden = true;
+    err.textContent = "Tu pago no se completó y no se hizo ningún cobro. Tu registro está guardado: toca el botón para intentarlo de nuevo.";
+    err.hidden = false;
+    document.getElementById("registro").scrollIntoView();
+  });
+
+  // Barra fija en celular: se oculta cuando el registro está en pantalla.
+  const bar = document.getElementById("sticky-bar");
+  if (bar && "IntersectionObserver" in window) {
+    new IntersectionObserver(([en]) => bar.classList.toggle("hide", en.isIntersecting), { threshold: 0.05 })
+      .observe(document.getElementById("registro"));
+  }
 </script>
+<a class="sticky-bar" id="sticky-bar" href="https://book.stripe.com/00w8wQ0gxgwQ3NuaSGenS0n">Reservar mi lugar · $50</a>
 </body>
 </html>
