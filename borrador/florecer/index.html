@@ -359,7 +359,7 @@
   .sp-link .sp-line { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: #fff; margin-bottom: 10px; }
   .sp-link .btn { background: #fff; color: #8a3a7f; box-shadow: none; }
   .foot { border-top: 0; margin-top: 50px; padding: 26px 16px; background: #8a3a7f; border-radius: 20px; color: #fff; }
-  .foot img { filter: brightness(0) invert(1); }
+  .foot img { filter: none; }
   .foot a { color: #fff; }
   /* tarjeta Gratitud sin foto */
   .tile.plain { background: linear-gradient(135deg, #7a2232, #4a1420); }
@@ -551,7 +551,7 @@
     <a class="btn js-contribuir" href="#registro">¡Yo voy!</a>
 
     <div class="foot">
-      <img src="logo-mindful-wellness.png" alt="Mindful Wellness">
+      <img src="logo-pie.png" alt="Mindful Wellness">
       <div class="links">
         <a href="https://instagram.com/mindfulwellnessnyc" target="_blank" rel="noopener">@mindfulwellnessnyc</a>
         <a href="https://mindfulwellness.nyc/" target="_blank" rel="noopener">mindfulwellness.nyc</a>
@@ -564,12 +564,15 @@
 <script src="registro.js"></script>
 <script>
   const EVENT_DATE = new Date("2026-11-21T13:30:00-05:00");
-  document.querySelectorAll(".js-contribuir").forEach(a => { a.href = "#registro"; });
+  // "Reservar nuestro lugar", "¡Yo voy!" y la barra del celular van directo al pago de Stripe.
+  document.querySelectorAll(".js-contribuir").forEach(a => { a.href = FG.STRIPE_LINK; });
   document.addEventListener("click", e => {
-    const a = e.target.closest('a[href="#registro"]'); if (!a) return;
-    e.preventDefault();
-    document.getElementById("registro").scrollIntoView({ behavior: "smooth" });
-    setTimeout(() => { const n = document.querySelector('#registro [name=nombre]'); if (n && !n.closest("[hidden]")) n.focus({ preventScroll: true }); }, 600);
+    const a = e.target.closest(".js-contribuir, #sticky-bar"); if (!a) return;
+    const prev = FG.recall();
+    const ref = (prev && prev.ref) || FG.newRef();
+    if (!prev) FG.remember({ ref: ref, tipo: "Directo a Stripe" });
+    a.href = FG.stripeUrl(prev && prev.email ? prev : { ref: ref });
+    try { sessionStorage.setItem("fg-a-stripe", ref); } catch (_) {}
   });
 
   const days = Math.ceil((EVENT_DATE - new Date()) / 86400000);
@@ -605,7 +608,7 @@
     if (same) r.ref = prev.ref;
     btn.disabled = true; btn.textContent = "Guardando tu registro…";
     FG.remember(r);
-    if (!same) await FG.save(r);
+    if (!same) FG.save(r); // se envía en segundo plano; no hacemos esperar a la persona
 
     if (r.metodo === "Stripe") {
       const go = FG.stripeUrl(r);
@@ -648,6 +651,6 @@
       .observe(document.getElementById("registro"));
   }
 </script>
-<a class="sticky-bar" id="sticky-bar" href="#registro">Reservar mi lugar · $50</a>
+<a class="sticky-bar" id="sticky-bar" href="https://book.stripe.com/00w8wQ0gxgwQ3NuaSGenS0n">Reservar mi lugar · $50</a>
 </body>
 </html>
