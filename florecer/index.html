@@ -466,7 +466,7 @@
   <div class="narrow">
     <div class="eyebrow">Te esperamos</div>
     <h2>Detalles del evento</h2>
-    <div class="deadline">Regístrate hasta el domingo 15 de noviembre</div>
+    <div class="deadline">Regístrate antes del 15 de noviembre</div>
     <div class="tiles">
       <div class="tile feature" style="background-image:url(d-fecha.jpg)">
         <div class="date"><span class="day">21</span><span class="mon">noviembre 2026</span></div>
@@ -519,7 +519,7 @@
             <label class="pw"><input type="radio" name="metodo" value="Stripe" checked> Tarjeta o Apple Pay</label>
             <label class="pw"><input type="radio" name="metodo" value="Zelle"> Zelle</label>
           </div>
-          <button class="btn block" type="submit" id="reg-submit">Registrarme y pagar $50</button>
+          <button class="btn block" type="submit" id="reg-submit">Registrarme y pagar</button>
           <a class="btn block" id="pago-alt" href="#" target="_top" hidden style="margin-top:12px">Si no se abrió el pago, toca aquí</a>
           <p class="fine" id="pay-note">Te llevamos a Stripe para pagar de forma segura. Tu registro queda guardado.</p>
           <p class="err" id="reg-err" role="alert" hidden></p>
@@ -598,7 +598,7 @@
   const note = document.getElementById("pay-note");
   function setLabel() {
     const z = (form.querySelector("[name=metodo]:checked") || {}).value === "Zelle";
-    btn.textContent = z ? "Registrarme y pagar con Zelle" : "Registrarme y pagar $50";
+    btn.textContent = z ? "Registrarme y pagar con Zelle" : "Registrarme y pagar";
     note.textContent = z ? "Te mostramos el número y el código QR de Zelle." : "Te llevamos a Stripe para pagar de forma segura. Tu registro queda guardado.";
   }
   form.addEventListener("change", e => { if (e.target.name === "metodo") setLabel(); });
@@ -663,6 +663,6 @@
       .observe(document.getElementById("registro"));
   }
 </script>
-<a class="sticky-bar" id="sticky-bar" href="https://book.stripe.com/00w8wQ0gxgwQ3NuaSGenS0n">Reservar mi lugar · $50</a>
+<a class="sticky-bar" id="sticky-bar" href="https://book.stripe.com/00w8wQ0gxgwQ3NuaSGenS0n">Reservar mi lugar</a>
 </body>
 </html>
