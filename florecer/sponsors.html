@@ -668,7 +668,14 @@
   document.querySelectorAll(".js-ver").forEach(b => b.addEventListener("click", () => abrir("nivel", b.closest(".tier").dataset.tier)));
   document.querySelector(".js-especie").addEventListener("click", () => abrir("especie"));
 
-  function guardar(d) {
+  function guardar(d, ref) {
+    // Sistema propio: hoja "Solicitudes Mindful Wellness (web)" + correo a Mónica + confirmación al sponsor
+    if (window.MWForm && MWForm.ready()) {
+      const o = { lead_id: ref, estado: "completo", formulario: "sponsors", programa: "Programa de Sponsors · " + d.nivel,
+        nombre: d.nombre, organizacion: d.negocio, email: d.correo, whatsapp: d.telefono,
+        nivel: d.nivel, tipo: d.tipo, idioma_web: "ES", pagina: location.pathname };
+      return Promise.race([MWForm.post(o), new Promise(r => setTimeout(r, 1500))]);
+    }
     const body = new URLSearchParams();
     body.set("formID", CFG.JOTFORM_ID); body.set("simple_spc", CFG.JOTFORM_ID + "-" + CFG.JOTFORM_ID); body.set("website", "");
     const nom = d.nombre.split(/\s+/);
@@ -696,7 +703,7 @@
     }
     $("sp-send").disabled = true; msg.textContent = "Guardando…";
     const ref = "SP-" + Date.now().toString(36).toUpperCase();
-    const envio = guardar(d);
+    const envio = guardar(d, ref);
     if (modo === "especie") { await envio; form.hidden = true; $("sp-thanks").hidden = false; return; }
     if (metodo === "Stripe") {
       const url = new URL(CFG.NIVELES[nivel].stripe || CFG.STRIPE_ABIERTO);
@@ -709,5 +716,6 @@
     form.hidden = true; $("sp-zelle").hidden = false; $("sp-thanks").hidden = false;
   });
 </script>
+<script src="/forms.js"></script>
 </body>
 </html>
