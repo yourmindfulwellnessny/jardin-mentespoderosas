@@ -330,7 +330,28 @@
     .tiers.three { grid-template-columns: repeat(3, 1fr); }
     .quote .paper { grid-template-columns: 140px 1fr; padding: 40px 44px; }
   }
-.tier .for,.incl{text-align:left!important}.fg-deadline{background:#FFF6E0;border-left:4px solid #C9A45C;padding:10px 14px;border-radius:10px;font-size:.95rem;color:#3a2a32}.brandbar{display:flex;align-items:center;justify-content:space-between;gap:12px}.lang-sw{font-weight:800;font-size:.9rem;letter-spacing:.06em;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:999px;padding:6px 14px;opacity:.9}</style>
+.tier .for,.incl{text-align:left!important}.fg-deadline{background:#FFF6E0;border-left:4px solid #C9A45C;padding:10px 14px;border-radius:10px;font-size:.95rem;color:#3a2a32}.brandbar{display:flex;align-items:center;justify-content:space-between;gap:12px}.lang-sw{font-weight:800;font-size:.9rem;letter-spacing:.06em;color:inherit;text-decoration:none;border:1.5px solid currentColor;border-radius:999px;padding:6px 14px;opacity:.9}
+  /* ===== resultados Florecer (23 nov) ===== */
+  .results { padding: 72px 0 10px; }
+  .results .head h2 { color: var(--burgundy); }
+  .r-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; margin-top: 30px; }
+  .r-stats div { background: var(--paper); padding: 18px 12px; text-align: center; }
+  .r-stats b { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2.1rem; font-weight: 700; color: var(--plum); line-height: 1.05; }
+  .r-stats span { display: block; font-size: 0.875rem; color: var(--muted); line-height: 1.4; margin-top: 4px; }
+  .r-gallery { margin: 26px 0 0; display: grid; gap: 10px; grid-template-columns: 1fr 1fr; }
+  .r-gallery img { width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: 0 18px 40px rgba(43,30,26,0.12); }
+  .r-gallery img.wide { grid-column: 1 / -1; }
+  .r-gallery figcaption { grid-column: 1 / -1; font-size: 0.875rem; font-weight: 700; color: var(--plum); text-align: center; margin-top: 4px; }
+  .r-brands { margin-top: 24px; text-align: center; font-size: 1rem; color: var(--espresso-2); }
+  .r-brands b { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; color: var(--burgundy); }
+  .r-impact { margin-top: 14px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; line-height: 1.4; color: var(--espresso); text-align: center; }
+  .r-next { margin-top: 28px; background: var(--paper); border-left: 4px solid var(--leaf); border-radius: 0 20px 20px 0; padding: 22px 20px; box-shadow: 0 18px 40px rgba(43,30,26,0.08); }
+  .r-next .kicker { color: var(--gold); }
+  .r-next h3 { font-size: 1.7rem; color: var(--burgundy); margin-top: 4px; }
+  .r-next p { color: var(--muted); margin-top: 6px; }
+  .r-next .btn { margin-top: 14px; }
+  .ph { background: #FFF6E0; outline: 2px dashed #C9A45C; border-radius: 4px; padding: 0 4px; }
+</style>
 </head>
 <body>
 
@@ -361,6 +382,35 @@
     </div>
   </div>
 </header>
+
+<section class="results" id="resultados">
+  <div class="narrow">
+    <div class="head">
+      <div class="kicker">Resultados · Sábado 21 de noviembre de 2026</div>
+      <h2>Así floreció Florecer en Gratitud</h2>
+      <p>Nuestra cena de Thanksgiving de Mujeres con Propósito reunió a mujeres de la comunidad, vestidas de blanco, alrededor de una misma mesa en Wallington, New Jersey. Nuestras marcas aliadas estuvieron en las mesas, en el buffet y en la presentación del evento.</p>
+    </div>
+    <div class="r-stats">
+      <div><b><span class="ph">[NÚMERO]</span></b><span>asistentes</span></div>
+      <div><b>3</b><span>marcas aliadas presentes en el evento</span></div>
+      <div><b>3½ h</b><span>de encuentro, conversación y conexión</span></div>
+    </div>
+    <figure class="r-gallery">
+      <img src="florecer-resultados-1.jpg" alt="Mónica abraza a una invitada en Florecer en Gratitud, con mujeres vestidas de blanco en las mesas" width="1000" height="1333" loading="lazy">
+      <img src="florecer-resultados-2.jpg" alt="Mónica junto al buffet de Thanksgiving y la tarjeta de agradecimiento a los patrocinadores" width="1000" height="1333" loading="lazy">
+      <img src="florecer-resultados-3.jpg" alt="Postres de Sweet by Vale con su marca, junto a las tarjetas de los patrocinadores" width="1400" height="1050" loading="lazy" class="wide">
+      <figcaption>Fotos reales de Florecer en Gratitud · 21 de noviembre de 2026</figcaption>
+    </figure>
+    <p class="r-brands">Nos acompañaron: <b>Sweet by Vale</b> · <b>Milford Print</b> · <b>Norma Porras, escritora</b></p>
+    <p class="r-impact">Cada marca estuvo en la mesa, no solo en la pantalla: con su tarjeta, su historia y su código QR frente a mujeres que compran, recomiendan y apoyan lo local.</p>
+    <div class="r-next">
+      <div class="kicker">Próximo encuentro</div>
+      <h3>Mapa de Sueños · <span class="ph">[FECHA]</span></h3>
+      <p>Personas que planean su 2027 y marcas que las acompañan a lograrlo. Asegura el lugar de tu marca.</p>
+      <a class="btn" href="#participar">Quiero que mi marca esté en Mapa de Sueños</a>
+    </div>
+  </div>
+</section>
 
 <section class="block">
   <div class="wrap">
@@ -469,7 +519,6 @@
       <div class="kicker" id="rs-kicker">Reserva tu nivel</div>
       <h2 id="rs-title">Reserva en un minuto</h2>
     </div>
-    <p class="fg-deadline" style="margin:0 0 14px">Para aparecer en <b>Florecer en Gratitud</b> (sábado 21 de noviembre), reserva y envía tu logo hasta el <b>jueves 19 de noviembre a las 10:00 pm</b>.</p>
     <form id="sp-form" class="wizard" novalidate>
       <div class="chosen" id="rs-chosen"><b id="rs-nivel">Flor</b><span id="rs-monto">$250</span></div>
       <div class="known" id="rs-known" hidden>Ya tenemos tus datos: <b id="rs-known-txt"></b>. <button type="button" id="rs-edit">Cambiar</button></div>
@@ -539,12 +588,11 @@
       <li>
         <img class="tl-img" src="mesa.jpg" alt="Mesa de la cena de Thanksgiving Florecer en Gratitud">
         <div class="tl-body">
-          <div class="when">Nov 2026 · Próximo evento</div>
+          <div class="when">Nov 2026 · Realizado</div>
           <h3>Florecer en Gratitud</h3>
-          <div class="meta2">Sábado 21 de noviembre · 1:30 a 5:00 pm · Wallington, New Jersey · 14 asistentes</div>
-          <p class="fg-deadline"><b>¿Quieres estar en este evento?</b> Reserva y envía tu logo hasta el <b>jueves 19 de noviembre a las 10:00 pm</b>.</p>
-          <p>Cena de Thanksgiving de Mujeres con Propósito. Es el primer evento de la temporada en el que tu marca puede estar presente.</p>
-          <a class="btn line" href="./">Ver la invitación al evento</a>
+          <div class="meta2">Sábado 21 de noviembre · 1:30 a 5:00 pm · Wallington, New Jersey · <span class="ph">[NÚMERO]</span> asistentes</div>
+          <p>Cena de Thanksgiving de Mujeres con Propósito. El primer evento de la temporada, con tres marcas aliadas en la mesa.</p>
+          <a class="btn line" href="#resultados">Ver los resultados</a>
         </div>
       </li>
       <li>
@@ -554,9 +602,9 @@
           <figcaption>Así vivimos el Mapa de Sueños «Mi 2026 Comienza Hoy»</figcaption>
         </figure>
         <div class="tl-body">
-          <div class="when">Dic 2026 · Siguiente encuentro</div>
+          <div class="when">Dic 2026 · Próximo evento</div>
           <h3>Mapa de Sueños</h3>
-          <div class="meta2">Diciembre de 2026</div>
+          <div class="meta2"><span class="ph">[FECHA]</span> · Diciembre de 2026</div>
           <p>Un encuentro abierto a mujeres y hombres para crear su mapa de sueños y trazar su ruta para el 2027. Personas que planean su año, y marcas que las acompañan a lograrlo.</p>
           <a class="btn line" href="#participar">Quiero que mi marca esté ahí</a>
         </div>
