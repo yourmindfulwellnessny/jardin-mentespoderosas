@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gracias · Brújula 2027 · Mindful Wellness</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="logo-icono.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Nunito+Sans:wght@400;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="brujula.css?v=2">
+<style>
+body{background:var(--plum);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:90px 18px 40px}
+.lg{position:absolute;top:14px;right:18px}.lg img{width:54px}
+.box{background:#fff;border-radius:24px;max-width:560px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.box img.ph{width:100%;aspect-ratio:16/9;object-fit:cover}
+.box .in{padding:26px 24px 30px}
+.box h1{font-size:2rem;margin:8px 0 10px}
+.box ol{margin:10px 0 0 20px}.box li{margin:6px 0}
+</style>
+</head>
+<body>
+<a class="lg" href="index.html" aria-label="Mindful Wellness"><img src="logo-icono.png" alt="Mindful Wellness"></a>
+<div class="box">
+  <img class="ph" id="ph" src="grupo-bienestar.jpg" alt="">
+  <div class="in">
+    <div class="kicker" id="ed">Brújula 2027</div>
+    <h1>Gracias por inscribirte</h1>
+    <p>Si completaste el pago con tarjeta, Stripe te envía el recibo a tu correo en unos minutos.</p>
+    <ol>
+      <li>Mónica revisa tu inscripción y tu pago.</li>
+      <li>Te escribe por WhatsApp para confirmar tu lugar, con la dirección del Salón Elite.</li>
+      <li>Si pediste impresiones, envía tus imágenes antes del lunes 7 de diciembre.</li>
+    </ol>
+    <a class="btn mint" href="index.html#guia" style="margin-top:18px">Ver la Guía Brújula</a>
+    <p class="fine" style="margin-top:16px">¿No te llegó el recibo? Escríbenos por <a href="https://wa.me/12016799969" target="_blank" rel="noopener">WhatsApp (201) 679-9969</a> o a info@mindfulbymonica.com.</p>
+  </div>
+</div>
+<script src="brujula.js?v=2"></script>
+<script>
+{ const q=new URLSearchParams(location.search), ed=q.get('ed'), sid=q.get('session_id')||'';
+  if(ed==='parejas'){ document.getElementById('ph').src='pareja-hero.jpg'; document.getElementById('ed').textContent='Brújula 2027 · Edición Parejas'; }
+  else if(ed==='mujeres'){ document.getElementById('ed').textContent='Brújula 2027 · Edición Mujeres'; }
+  // Registra el regreso desde Stripe en la hoja de control (los datos completos quedan en Stripe).
+  if(sid && BR.send) BR.send({formulario:'brujula-2027',programa:'Brújula 2027 · '+(ed==='parejas'?'Parejas':'Mujeres'),estado:'pagó con tarjeta (Stripe)',metodo_pago:'Tarjeta (Stripe)',lead_id:sid,referencia:q.get('ref')||'',pagina:'gracias'});
+}
+</script>
+</body>
+</html>
