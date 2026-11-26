@@ -485,3 +485,15 @@ footer .credit{color:#f1dcee}
 }
 
 /* pantallas medianas: mapa arriba y texto abajo para que nada tape el titulo */ @media (min-width:761px) and (max-width:1250px){.hero.mapa{display:block;min-height:auto;background:var(--plum)}.hero.mapa .mapsvg{position:relative;display:block;width:100%;height:auto;aspect-ratio:1600/1067}.hero.mapa::after{display:none}.hero.mapa .wrap{padding-top:36px;padding-bottom:52px}.hero.mapa .wrap>*{max-width:820px}}
+
+/* Cierre con invitación de Mónica */
+.invita{background:var(--plum);color:#fff;padding:64px 0}
+.invita-in{max-width:960px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:40px;align-items:center}
+.invita img{width:100%;height:auto;border-radius:22px;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+.invita h2{color:#fff;margin:6px 0 12px}
+.invita .kicker{color:var(--mint)}
+.invita p{font-size:1.15rem;line-height:1.6;color:#f1e6f0;margin:0 0 16px}
+.invita .firma{font-family:'Cormorant Garamond',Georgia,serif;font-size:1.5rem;font-style:italic;color:#fff;line-height:1.2}
+.invita .firma span{font-family:'Nunito Sans',sans-serif;font-style:normal;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}
+.invita .btn{background:var(--mint);color:var(--plum)}
+@media (max-width:720px){.invita-in{grid-template-columns:1fr;gap:26px;text-align:center}.invita img{max-width:360px;margin:0 auto}}
